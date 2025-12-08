@@ -1,0 +1,12 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true",
+    "soilMoisture": {
+      ".indexOn": ["timestamp"]
+    },
+    "sensors": {
+      ".indexOn": ["timestamp"]
+    }
+  }
+}

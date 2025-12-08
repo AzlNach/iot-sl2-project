@@ -1,0 +1,6842 @@
+{
+  "sensorData": {
+    "history": {
+      "9325": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 8945
+      },
+      "11327": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 10815
+      },
+      "11345": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 10626
+      },
+      "11723": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2432,
+        "timestamp": 10802
+      },
+      "12313": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 11596
+      },
+      "12913": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 12071
+      },
+      "13120": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2452,
+        "timestamp": 12696
+      },
+      "13340": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 12815
+      },
+      "13435": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2408,
+        "timestamp": 12511
+      },
+      "13852": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 13460
+      },
+      "14374": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2467,
+        "timestamp": 14068
+      },
+      "14878": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 14162
+      },
+      "15268": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 14855
+      },
+      "15315": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 11936
+      },
+      "16663": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2417,
+        "timestamp": 15946
+      },
+      "16773": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2424,
+        "timestamp": 16565
+      },
+      "16962": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 16761
+      },
+      "17154": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 17025
+      },
+      "17743": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 17535
+      },
+      "18343": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 18139
+      },
+      "18376": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 18287
+      },
+      "18697": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2414,
+        "timestamp": 18567
+      },
+      "19266": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2486,
+        "timestamp": 19208
+      },
+      "19477": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 19347
+      },
+      "19720": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 19572
+      },
+      "19812": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2426,
+        "timestamp": 19684
+      },
+      "20390": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 20229
+      },
+      "20718": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 20588
+      },
+      "22493": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 22124
+      },
+      "22912": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 22784
+      },
+      "22941": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 22225
+      },
+      "23027": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2438,
+        "timestamp": 22962
+      },
+      "24092": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 23976
+      },
+      "24167": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 23960
+      },
+      "24692": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2449,
+        "timestamp": 24408
+      },
+      "25148": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 25100
+      },
+      "25187": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 25122
+      },
+      "25435": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 25307
+      },
+      "25713": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 25510
+      },
+      "26570": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 26441
+      },
+      "26605": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 26529
+      },
+      "27055": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 26848
+      },
+      "28576": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 28404
+      },
+      "29032": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 28902
+      },
+      "29045": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 28916
+      },
+      "29702": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 29525
+      },
+      "29827": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 29703
+      },
+      "30219": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2402,
+        "timestamp": 30155
+      },
+      "30966": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 30834
+      },
+      "30977": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2502,
+        "timestamp": 30937
+      },
+      "31042": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 30913
+      },
+      "31296": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 31240
+      },
+      "31600": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 31470
+      },
+      "32176": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2388,
+        "timestamp": 31989
+      },
+      "32187": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 32061
+      },
+      "32919": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 32791
+      },
+      "33696": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 33535
+      },
+      "34492": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 34433
+      },
+      "35599": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2442,
+        "timestamp": 35471
+      },
+      "36019": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 35887
+      },
+      "36046": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 35925
+      },
+      "36097": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 36057
+      },
+      "36496": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 36413
+      },
+      "36504": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 36368
+      },
+      "36585": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2421,
+        "timestamp": 36456
+      },
+      "36720": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2407,
+        "timestamp": 36563
+      },
+      "36983": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 36852
+      },
+      "37921": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2446,
+        "timestamp": 37792
+      },
+      "38523": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2406,
+        "timestamp": 38394
+      },
+      "39472": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2423,
+        "timestamp": 39345
+      },
+      "39635": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2446,
+        "timestamp": 39428
+      },
+      "40040": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 39970
+      },
+      "41128": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2422,
+        "timestamp": 41000
+      },
+      "41220": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2468,
+        "timestamp": 41179
+      },
+      "41550": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 41378
+      },
+      "41714": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2430,
+        "timestamp": 41624
+      },
+      "41820": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2423,
+        "timestamp": 41648
+      },
+      "41841": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 41660
+      },
+      "41893": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2423,
+        "timestamp": 41688
+      },
+      "42124": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 41985
+      },
+      "42511": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 42380
+      },
+      "43451": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 43322
+      },
+      "43900": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 43849
+      },
+      "44798": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 44641
+      },
+      "45441": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 45288
+      },
+      "46267": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 46217
+      },
+      "46658": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2422,
+        "timestamp": 46530
+      },
+      "46835": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 46780
+      },
+      "47080": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 46951
+      },
+      "47379": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2428,
+        "timestamp": 47322
+      },
+      "47422": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2426,
+        "timestamp": 47214
+      },
+      "47612": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 47552
+      },
+      "48040": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 47911
+      },
+      "49377": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 49201
+      },
+      "49405": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 49260
+      },
+      "51562": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 51226
+      },
+      "52193": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 52060
+      },
+      "52285": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 52096
+      },
+      "52688": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2408,
+        "timestamp": 52632
+      },
+      "53085": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 52906
+      },
+      "53915": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 53851
+      },
+      "53983": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 53847
+      },
+      "54078": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2428,
+        "timestamp": 53939
+      },
+      "54106": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2516,
+        "timestamp": 52567
+      },
+      "54390": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 54325
+      },
+      "54504": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 53830
+      },
+      "55132": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 54996
+      },
+      "57405": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2420,
+        "timestamp": 57223
+      },
+      "57500": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 57371
+      },
+      "58035": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 57967
+      },
+      "58742": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2432,
+        "timestamp": 58614
+      },
+      "59365": {
+        "moisture": 13,
+        "pumpStatus": "ON",
+        "rawADC": 2381,
+        "timestamp": 59301
+      },
+      "59394": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 59247
+      },
+      "59509": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2458,
+        "timestamp": 59379
+      },
+      "59541": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2485,
+        "timestamp": 59302
+      },
+      "59782": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2432,
+        "timestamp": 59720
+      },
+      "60242": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 60175
+      },
+      "60437": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 60233
+      },
+      "61269": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 61145
+      },
+      "62759": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2424,
+        "timestamp": 62695
+      },
+      "63463": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 63286
+      },
+      "63756": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2420,
+        "timestamp": 63534
+      },
+      "64066": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 63938
+      },
+      "64672": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 64629
+      },
+      "64810": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 64750
+      },
+      "65039": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2462,
+        "timestamp": 64910
+      },
+      "65401": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2420,
+        "timestamp": 65239
+      },
+      "65559": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2410,
+        "timestamp": 65440
+      },
+      "66242": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2418,
+        "timestamp": 66114
+      },
+      "67209": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 67079
+      },
+      "69198": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 68990
+      },
+      "69286": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2412,
+        "timestamp": 69076
+      },
+      "70006": {
+        "moisture": 17,
+        "pumpStatus": "ON",
+        "rawADC": 2341,
+        "timestamp": 69799
+      },
+      "70568": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2450,
+        "timestamp": 70439
+      },
+      "70663": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2428,
+        "timestamp": 70451
+      },
+      "70817": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 70774
+      },
+      "71322": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 71146
+      },
+      "71588": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 71460
+      },
+      "72533": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 72404
+      },
+      "72860": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 72731
+      },
+      "74292": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 74233
+      },
+      "74727": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 74551
+      },
+      "75810": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 75741
+      },
+      "76098": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 75969
+      },
+      "76598": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 76390
+      },
+      "76823": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2406,
+        "timestamp": 76685
+      },
+      "76906": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 76709
+      },
+      "76975": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 76916
+      },
+      "77859": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 77651
+      },
+      "79848": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2398,
+        "timestamp": 79670
+      },
+      "80201": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 80137
+      },
+      "81885": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 81677
+      },
+      "82037": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2438,
+        "timestamp": 81909
+      },
+      "82048": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2495,
+        "timestamp": 82006
+      },
+      "82147": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 81982
+      },
+      "82741": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 82534
+      },
+      "83184": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 83028
+      },
+      "83672": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2428,
+        "timestamp": 83543
+      },
+      "84968": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 84794
+      },
+      "86690": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 86617
+      },
+      "87141": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2533,
+        "timestamp": 87098
+      },
+      "87209": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2442,
+        "timestamp": 87050
+      },
+      "87473": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 87282
+      },
+      "87977": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 87847
+      },
+      "88510": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 88342
+      },
+      "89614": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 89442
+      },
+      "89705": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 89576
+      },
+      "90578": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 90514
+      },
+      "92222": {
+        "moisture": 13,
+        "pumpStatus": "ON",
+        "rawADC": 2381,
+        "timestamp": 92014
+      },
+      "92661": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 92589
+      },
+      "92739": {
+        "moisture": 18,
+        "pumpStatus": "ON",
+        "rawADC": 2335,
+        "timestamp": 92532
+      },
+      "93149": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 93095
+      },
+      "93865": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2438,
+        "timestamp": 93629
+      },
+      "93916": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2467,
+        "timestamp": 93788
+      },
+      "95163": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2458,
+        "timestamp": 95104
+      },
+      "96370": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 96239
+      },
+      "96437": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2389,
+        "timestamp": 96229
+      },
+      "97861": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 97690
+      },
+      "98695": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2502,
+        "timestamp": 98648
+      },
+      "98845": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 98781
+      },
+      "98943": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 98734
+      },
+      "98980": {
+        "moisture": 16,
+        "pumpStatus": "ON",
+        "rawADC": 2358,
+        "timestamp": 98851
+      },
+      "99446": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 99317
+      },
+      "101557": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 101388
+      },
+      "101789": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 101558
+      },
+      "101900": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 101692
+      },
+      "103184": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 103011
+      },
+      "104036": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2468,
+        "timestamp": 103982
+      },
+      "104919": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2407,
+        "timestamp": 104792
+      },
+      "105385": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 105258
+      },
+      "105495": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2404,
+        "timestamp": 105366
+      },
+      "106882": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 106712
+      },
+      "106934": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 106865
+      },
+      "108137": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2454,
+        "timestamp": 108010
+      },
+      "109944": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 109818
+      },
+      "110029": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 109990
+      },
+      "110449": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 110320
+      },
+      "110916": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 110786
+      },
+      "111025": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2413,
+        "timestamp": 110895
+      },
+      "112881": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 112818
+      },
+      "113164": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 112956
+      },
+      "113667": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 113537
+      },
+      "115818": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2432,
+        "timestamp": 115752
+      },
+      "115913": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 115827
+      },
+      "115980": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2414,
+        "timestamp": 115852
+      },
+      "116964": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 116757
+      },
+      "118123": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 118083
+      },
+      "118556": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 118348
+      },
+      "118899": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2430,
+        "timestamp": 118693
+      },
+      "119197": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2424,
+        "timestamp": 119068
+      },
+      "121821": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 121693
+      },
+      "122123": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 121993
+      },
+      "122179": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 122049
+      },
+      "124133": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 124004
+      },
+      "124634": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2424,
+        "timestamp": 124465
+      },
+      "124728": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 124597
+      },
+      "125929": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 125799
+      },
+      "126227": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2462,
+        "timestamp": 126174
+      },
+      "128062": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 127933
+      },
+      "128120": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 127988
+      },
+      "129263": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2444,
+        "timestamp": 129194
+      },
+      "129867": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 129660
+      },
+      "131728": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2534,
+        "timestamp": 131641
+      },
+      "131811": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 131672
+      },
+      "131867": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 131660
+      },
+      "132919": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 132711
+      },
+      "134007": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 133795
+      },
+      "134877": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2430,
+        "timestamp": 134748
+      },
+      "134929": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2450,
+        "timestamp": 134721
+      },
+      "134988": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 134820
+      },
+      "136935": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 136790
+      },
+      "138602": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 138562
+      },
+      "138627": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2398,
+        "timestamp": 138348
+      },
+      "139326": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 139118
+      },
+      "139882": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 139752
+      },
+      "140516": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 140401
+      },
+      "140614": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 140279
+      },
+      "141892": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2454,
+        "timestamp": 141763
+      },
+      "142861": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 142653
+      },
+      "143648": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2502,
+        "timestamp": 143603
+      },
+      "144566": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 144437
+      },
+      "144856": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 144652
+      },
+      "145412": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 145283
+      },
+      "145726": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 145663
+      },
+      "145937": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 145743
+      },
+      "147890": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 147829
+      },
+      "148767": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 148725
+      },
+      "149619": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 149292
+      },
+      "149891": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 149719
+      },
+      "150387": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 150011
+      },
+      "150833": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 150777
+      },
+      "150942": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 150814
+      },
+      "151261": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2450,
+        "timestamp": 151053
+      },
+      "154385": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 154256
+      },
+      "156122": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 155815
+      },
+      "156494": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 156164
+      },
+      "156676": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2422,
+        "timestamp": 156345
+      },
+      "156788": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 156452
+      },
+      "157202": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 156993
+      },
+      "158083": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 157876
+      },
+      "158379": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2515,
+        "timestamp": 158327
+      },
+      "159858": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2428,
+        "timestamp": 159786
+      },
+      "161908": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 161722
+      },
+      "162264": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 162057
+      },
+      "162320": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 162141
+      },
+      "162410": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 162282
+      },
+      "162840": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 162427
+      },
+      "163203": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 163034
+      },
+      "165444": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 165237
+      },
+      "167460": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2444,
+        "timestamp": 167233
+      },
+      "167918": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 167847
+      },
+      "168350": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 168222
+      },
+      "168370": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 168164
+      },
+      "169023": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 168895
+      },
+      "170770": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2423,
+        "timestamp": 170627
+      },
+      "171600": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 171392
+      },
+      "172762": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2438,
+        "timestamp": 172592
+      },
+      "173057": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 172993
+      },
+      "173879": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 173753
+      },
+      "174720": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2408,
+        "timestamp": 174307
+      },
+      "175578": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 175165
+      },
+      "176812": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2421,
+        "timestamp": 176751
+      },
+      "177463": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2421,
+        "timestamp": 177398
+      },
+      "178806": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 178734
+      },
+      "179111": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 178981
+      },
+      "180026": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 179818
+      },
+      "180576": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2398,
+        "timestamp": 180449
+      },
+      "182723": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 182660
+      },
+      "183263": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 183055
+      },
+      "183769": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 183152
+      },
+      "184234": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 184029
+      },
+      "184846": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 184512
+      },
+      "186578": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 186330
+      },
+      "186598": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 186188
+      },
+      "190022": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2423,
+        "timestamp": 189732
+      },
+      "190033": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 189747
+      },
+      "190375": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 190245
+      },
+      "190994": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 190706
+      },
+      "193336": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 192840
+      },
+      "193356": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 192739
+      },
+      "195422": {
+        "moisture": 14,
+        "pumpStatus": "ON",
+        "rawADC": 2373,
+        "timestamp": 195360
+      },
+      "195445": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 195189
+      },
+      "195961": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2423,
+        "timestamp": 195343
+      },
+      "196712": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2449,
+        "timestamp": 196185
+      },
+      "196932": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 196394
+      },
+      "198354": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 188350
+      },
+      "199071": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2454,
+        "timestamp": 198941
+      },
+      "199910": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 199778
+      },
+      "200574": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2516,
+        "timestamp": 200513
+      },
+      "202115": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 201578
+      },
+      "202187": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2492,
+        "timestamp": 202125
+      },
+      "203486": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 203357
+      },
+      "203635": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 203222
+      },
+      "206398": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 206355
+      },
+      "206470": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 206259
+      },
+      "208193": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 208066
+      },
+      "211636": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2486,
+        "timestamp": 211574
+      },
+      "211787": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 211599
+      },
+      "213723": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 213594
+      },
+      "216128": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 210878
+      },
+      "217380": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 217331
+      },
+      "217522": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 217316
+      },
+      "217758": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2430,
+        "timestamp": 217693
+      },
+      "219048": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 218920
+      },
+      "219412": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 218992
+      },
+      "224578": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 224446
+      },
+      "224690": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 224563
+      },
+      "224925": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2440,
+        "timestamp": 224862
+      },
+      "226163": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 225831
+      },
+      "226283": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2488,
+        "timestamp": 226218
+      },
+      "229834": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 229774
+      },
+      "230221": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2413,
+        "timestamp": 230092
+      },
+      "230725": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2458,
+        "timestamp": 230596
+      },
+      "231693": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 231597
+      },
+      "232337": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2468,
+        "timestamp": 232287
+      },
+      "235215": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 235154
+      },
+      "236391": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 236327
+      },
+      "237074": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 236945
+      },
+      "238250": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 238116
+      },
+      "238358": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 238302
+      },
+      "240666": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 240560
+      },
+      "242600": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 242471
+      },
+      "243832": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 243704
+      },
+      "243997": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 243853
+      },
+      "245600": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 245316
+      },
+      "246604": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 246399
+      },
+      "248130": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2476,
+        "timestamp": 248000
+      },
+      "249047": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2438,
+        "timestamp": 248981
+      },
+      "249716": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2407,
+        "timestamp": 249382
+      },
+      "252199": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2476,
+        "timestamp": 252125
+      },
+      "253157": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 253030
+      },
+      "253681": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 253531
+      },
+      "255097": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 254889
+      },
+      "255450": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 255321
+      },
+      "258687": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2423,
+        "timestamp": 258557
+      },
+      "259599": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 259469
+      },
+      "259743": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 259702
+      },
+      "260422": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 260244
+      },
+      "260980": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2404,
+        "timestamp": 260848
+      },
+      "264216": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 264088
+      },
+      "264926": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 264717
+      },
+      "265438": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 265373
+      },
+      "265687": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 265641
+      },
+      "266306": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2389,
+        "timestamp": 266179
+      },
+      "270046": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 269867
+      },
+      "270158": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2402,
+        "timestamp": 270027
+      },
+      "270805": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 270763
+      },
+      "270867": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2454,
+        "timestamp": 270659
+      },
+      "272040": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2406,
+        "timestamp": 271710
+      },
+      "275575": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 275410
+      },
+      "275890": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2404,
+        "timestamp": 275762
+      },
+      "276601": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 276394
+      },
+      "277774": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2408,
+        "timestamp": 277644
+      },
+      "278793": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2490,
+        "timestamp": 278749
+      },
+      "281104": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 280896
+      },
+      "282035": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2388,
+        "timestamp": 281703
+      },
+      "282131": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 281961
+      },
+      "283304": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 283174
+      },
+      "284529": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 284484
+      },
+      "286839": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 286631
+      },
+      "287566": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2416,
+        "timestamp": 287438
+      },
+      "288479": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 288351
+      },
+      "289860": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 289728
+      },
+      "290365": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 290318
+      },
+      "292777": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 292570
+      },
+      "293095": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 292967
+      },
+      "294550": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 294494
+      },
+      "295188": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 295052
+      },
+      "295558": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 295512
+      },
+      "298102": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 297950
+      },
+      "298828": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 298699
+      },
+      "300563": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 300435
+      },
+      "301319": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 301277
+      },
+      "301326": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 301198
+      },
+      "304658": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2490,
+        "timestamp": 304527
+      },
+      "304771": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 304638
+      },
+      "306093": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 305963
+      },
+      "306791": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 306726
+      },
+      "307052": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 307009
+      },
+      "310185": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 310056
+      },
+      "310299": {
+        "moisture": 15,
+        "pumpStatus": "ON",
+        "rawADC": 2361,
+        "timestamp": 310171
+      },
+      "312646": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 312518
+      },
+      "312795": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2390,
+        "timestamp": 312665
+      },
+      "312848": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 312781
+      },
+      "315723": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 315586
+      },
+      "316442": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 316314
+      },
+      "318120": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2442,
+        "timestamp": 317949
+      },
+      "319186": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 319120
+      },
+      "319201": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 319071
+      },
+      "321971": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 321843
+      },
+      "323240": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 323080
+      },
+      "323435": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 323369
+      },
+      "324730": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 324604
+      },
+      "326393": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 325571
+      },
+      "327502": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 327371
+      },
+      "328550": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 328482
+      },
+      "328567": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 328361
+      },
+      "331080": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2476,
+        "timestamp": 330794
+      },
+      "331148": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 331101
+      },
+      "333236": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 332903
+      },
+      "333621": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 333566
+      },
+      "334071": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 333887
+      },
+      "336406": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 336274
+      },
+      "338971": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2413,
+        "timestamp": 338637
+      },
+      "339271": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 339060
+      },
+      "339641": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 339469
+      },
+      "340874": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2476,
+        "timestamp": 340828
+      },
+      "342344": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 342214
+      },
+      "344909": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2404,
+        "timestamp": 344702
+      },
+      "345962": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 345898
+      },
+      "346178": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 346047
+      },
+      "346688": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 346645
+      },
+      "348290": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2426,
+        "timestamp": 348153
+      },
+      "351452": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 351362
+      },
+      "351464": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 351337
+      },
+      "351556": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2467,
+        "timestamp": 351222
+      },
+      "353993": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 353939
+      },
+      "354512": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2430,
+        "timestamp": 354445
+      },
+      "356993": {
+        "moisture": 15,
+        "pumpStatus": "ON",
+        "rawADC": 2361,
+        "timestamp": 356864
+      },
+      "357033": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 356825
+      },
+      "357087": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2470,
+        "timestamp": 356956
+      },
+      "359956": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 359827
+      },
+      "360026": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 359955
+      },
+      "362550": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2495,
+        "timestamp": 362487
+      },
+      "363138": {
+        "moisture": 15,
+        "pumpStatus": "ON",
+        "rawADC": 2367,
+        "timestamp": 363006
+      },
+      "363382": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 363174
+      },
+      "365116": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2541,
+        "timestamp": 365074
+      },
+      "365897": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 365562
+      },
+      "368462": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 368258
+      },
+      "369008": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 368945
+      },
+      "369169": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2514,
+        "timestamp": 369039
+      },
+      "370887": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 370808
+      },
+      "371427": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2452,
+        "timestamp": 371298
+      },
+      "374236": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 374079
+      },
+      "374607": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 373784
+      },
+      "374637": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 374571
+      },
+      "376249": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2490,
+        "timestamp": 375932
+      },
+      "377622": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2437,
+        "timestamp": 377157
+      },
+      "380176": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 379562
+      },
+      "380205": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 379893
+      },
+      "380341": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 380133
+      },
+      "381734": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2506,
+        "timestamp": 381662
+      },
+      "382690": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2430,
+        "timestamp": 382510
+      },
+      "385789": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2521,
+        "timestamp": 385632
+      },
+      "386116": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2410,
+        "timestamp": 385909
+      },
+      "387032": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 386991
+      },
+      "387304": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 387176
+      },
+      "388425": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 388295
+      },
+      "391629": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2496,
+        "timestamp": 391566
+      },
+      "391644": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 391470
+      },
+      "392442": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2643,
+        "timestamp": 392313
+      },
+      "392834": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 392702
+      },
+      "394158": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2450,
+        "timestamp": 394030
+      },
+      "397637": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2535,
+        "timestamp": 397507
+      },
+      "397681": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2488,
+        "timestamp": 397640
+      },
+      "397791": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 397582
+      },
+      "398979": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 398851
+      },
+      "399170": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 399110
+      },
+      "403417": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2509,
+        "timestamp": 403374
+      },
+      "403523": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 403320
+      },
+      "403576": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 403446
+      },
+      "405125": {
+        "moisture": 13,
+        "pumpStatus": "ON",
+        "rawADC": 2380,
+        "timestamp": 404997
+      },
+      "405486": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 405421
+      },
+      "408506": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 408462
+      },
+      "410487": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 410358
+      },
+      "410651": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 410446
+      },
+      "410953": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 410788
+      },
+      "412383": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2495,
+        "timestamp": 412177
+      },
+      "414487": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2426,
+        "timestamp": 414432
+      },
+      "416221": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 416014
+      },
+      "416439": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 416384
+      },
+      "417097": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 416950
+      },
+      "417381": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 417322
+      },
+      "421712": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2421,
+        "timestamp": 421506
+      },
+      "421751": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2407,
+        "timestamp": 421596
+      },
+      "422396": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 422344
+      },
+      "422833": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 422702
+      },
+      "423455": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2488,
+        "timestamp": 423238
+      },
+      "427242": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 427083
+      },
+      "427281": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 427077
+      },
+      "428361": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 428232
+      },
+      "429177": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 428969
+      },
+      "429474": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2495,
+        "timestamp": 429416
+      },
+      "432811": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 432603
+      },
+      "434304": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2438,
+        "timestamp": 434170
+      },
+      "434502": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2474,
+        "timestamp": 434336
+      },
+      "434615": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2406,
+        "timestamp": 434284
+      },
+      "434982": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2533,
+        "timestamp": 434915
+      },
+      "437931": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2389,
+        "timestamp": 437786
+      },
+      "439622": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 439438
+      },
+      "439830": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 439702
+      },
+      "441318": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2424,
+        "timestamp": 441244
+      },
+      "442109": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2587,
+        "timestamp": 441978
+      },
+      "443256": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 443098
+      },
+      "445292": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 445231
+      },
+      "445913": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2432,
+        "timestamp": 445842
+      },
+      "447721": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 447387
+      },
+      "447973": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 447918
+      },
+      "448990": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 448781
+      },
+      "451501": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2462,
+        "timestamp": 451167
+      },
+      "453251": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 453122
+      },
+      "454315": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2404,
+        "timestamp": 454144
+      },
+      "457031": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2505,
+        "timestamp": 456828
+      },
+      "457060": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2494,
+        "timestamp": 455828
+      },
+      "459200": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 459062
+      },
+      "461280": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 460741
+      },
+      "462247": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 462196
+      },
+      "462742": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2476,
+        "timestamp": 462688
+      },
+      "464658": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2414,
+        "timestamp": 464591
+      },
+      "467218": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 466884
+      },
+      "467680": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 467510
+      },
+      "469494": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 469446
+      },
+      "471275": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 471145
+      },
+      "472932": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 472878
+      },
+      "473979": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 473646
+      },
+      "477444": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 477289
+      },
+      "478872": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2499,
+        "timestamp": 477843
+      },
+      "479968": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 479690
+      },
+      "480121": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2420,
+        "timestamp": 479997
+      },
+      "482742": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 482611
+      },
+      "484197": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2515,
+        "timestamp": 484070
+      },
+      "485649": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 485524
+      },
+      "485703": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2476,
+        "timestamp": 485573
+      },
+      "488480": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2421,
+        "timestamp": 488348
+      },
+      "489839": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 489800
+      },
+      "491028": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 490824
+      },
+      "491589": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 491459
+      },
+      "494213": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2423,
+        "timestamp": 493878
+      },
+      "495884": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2509,
+        "timestamp": 495844
+      },
+      "497118": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2414,
+        "timestamp": 496990
+      },
+      "497722": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 497657
+      },
+      "499742": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 499612
+      },
+      "501282": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 501238
+      },
+      "502651": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 502521
+      },
+      "503111": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2470,
+        "timestamp": 502980
+      },
+      "506297": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 506166
+      },
+      "507302": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2501,
+        "timestamp": 507243
+      },
+      "508178": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 508048
+      },
+      "508641": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 508512
+      },
+      "512032": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2413,
+        "timestamp": 511696
+      },
+      "513642": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 513577
+      },
+      "513899": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 513810
+      },
+      "516767": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2496,
+        "timestamp": 516528
+      },
+      "517570": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 517432
+      },
+      "519237": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 519108
+      },
+      "519290": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 519141
+      },
+      "523159": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2472,
+        "timestamp": 523086
+      },
+      "523296": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2412,
+        "timestamp": 522977
+      },
+      "524768": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 524639
+      },
+      "525230": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 525023
+      },
+      "529847": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 529743
+      },
+      "530297": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 530168
+      },
+      "531095": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 530967
+      },
+      "531988": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 531862
+      },
+      "535968": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 535902
+      },
+      "536403": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2420,
+        "timestamp": 535990
+      },
+      "537282": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 537213
+      },
+      "537520": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 537314
+      },
+      "541561": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 541431
+      },
+      "542750": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 542568
+      },
+      "545505": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 545377
+      },
+      "546762": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2480,
+        "timestamp": 546554
+      },
+      "546888": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 546758
+      },
+      "551035": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2502,
+        "timestamp": 550907
+      },
+      "552415": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 552287
+      },
+      "552743": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2505,
+        "timestamp": 552701
+      },
+      "556565": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 556444
+      },
+      "558151": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 557918
+      },
+      "559565": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 559186
+      },
+      "563323": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2507,
+        "timestamp": 562785
+      },
+      "564295": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 563550
+      },
+      "566155": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2514,
+        "timestamp": 566092
+      },
+      "568854": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2452,
+        "timestamp": 568724
+      },
+      "569824": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2410,
+        "timestamp": 569694
+      },
+      "572915": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2509,
+        "timestamp": 572849
+      },
+      "574318": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 574254
+      },
+      "575559": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 575224
+      },
+      "578609": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 578483
+      },
+      "579503": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2505,
+        "timestamp": 579295
+      },
+      "580884": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 580711
+      },
+      "584753": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 584658
+      },
+      "587109": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 586874
+      },
+      "587437": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 587307
+      },
+      "590702": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2441,
+        "timestamp": 590565
+      },
+      "592611": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2458,
+        "timestamp": 592480
+      },
+      "593377": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2404,
+        "timestamp": 593248
+      },
+      "596573": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 596503
+      },
+      "598479": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2501,
+        "timestamp": 598419
+      },
+      "599112": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 598777
+      },
+      "604080": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 603949
+      },
+      "606075": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 605740
+      },
+      "606310": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 606239
+      },
+      "610018": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 609890
+      },
+      "611381": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 611326
+      },
+      "611809": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2407,
+        "timestamp": 611476
+      },
+      "616573": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 615625
+      },
+      "617749": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 617415
+      },
+      "617829": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2543,
+        "timestamp": 617702
+      },
+      "622720": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 622587
+      },
+      "623483": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2421,
+        "timestamp": 623149
+      },
+      "625543": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 625484
+      },
+      "628246": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2446,
+        "timestamp": 628117
+      },
+      "629217": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 628885
+      },
+      "634113": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 633984
+      },
+      "634390": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 634057
+      },
+      "634953": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 634618
+      },
+      "640116": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2467,
+        "timestamp": 640062
+      },
+      "640125": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 639996
+      },
+      "641712": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 641504
+      },
+      "645604": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 645523
+      },
+      "647036": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2408,
+        "timestamp": 646876
+      },
+      "647122": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 646307
+      },
+      "652209": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2474,
+        "timestamp": 652078
+      },
+      "653260": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 653131
+      },
+      "653590": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 653460
+      },
+      "658762": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 658430
+      },
+      "659324": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 659119
+      },
+      "662886": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 662759
+      },
+      "664444": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2408,
+        "timestamp": 664291
+      },
+      "665316": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 665053
+      },
+      "668668": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 668625
+      },
+      "669563": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 669399
+      },
+      "670863": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 670638
+      },
+      "674748": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2421,
+        "timestamp": 674685
+      },
+      "674879": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 674841
+      },
+      "676375": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 676198
+      },
+      "679973": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 679930
+      },
+      "680622": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 680419
+      },
+      "681963": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2446,
+        "timestamp": 681902
+      },
+      "686359": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 686149
+      },
+      "686889": {
+        "moisture": 22,
+        "pumpStatus": "ON",
+        "rawADC": 2299,
+        "timestamp": 686845
+      },
+      "687996": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2467,
+        "timestamp": 687920
+      },
+      "692297": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 692089
+      },
+      "693439": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 693371
+      },
+      "694019": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 692582
+      },
+      "698032": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 697825
+      },
+      "698699": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2482,
+        "timestamp": 698518
+      },
+      "700129": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2523,
+        "timestamp": 697906
+      },
+      "704638": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2472,
+        "timestamp": 704454
+      },
+      "704789": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 704455
+      },
+      "709758": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2454,
+        "timestamp": 709599
+      },
+      "710730": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 710604
+      },
+      "711426": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2413,
+        "timestamp": 711195
+      },
+      "714878": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 714691
+      },
+      "716258": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 716130
+      },
+      "717609": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2490,
+        "timestamp": 717569
+      },
+      "720001": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 719824
+      },
+      "721995": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 721871
+      },
+      "723830": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2537,
+        "timestamp": 723790
+      },
+      "725118": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 724942
+      },
+      "727727": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 727599
+      },
+      "728977": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 728934
+      },
+      "731672": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 731338
+      },
+      "733463": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 733333
+      },
+      "735200": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2567,
+        "timestamp": 735158
+      },
+      "738225": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 738100
+      },
+      "738824": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 738580
+      },
+      "742330": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2485,
+        "timestamp": 741709
+      },
+      "744522": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2420,
+        "timestamp": 743778
+      },
+      "744986": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2486,
+        "timestamp": 744449
+      },
+      "748701": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2421,
+        "timestamp": 748364
+      },
+      "749847": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2425,
+        "timestamp": 749677
+      },
+      "751539": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2462,
+        "timestamp": 751408
+      },
+      "754578": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 754512
+      },
+      "756612": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 756271
+      },
+      "757478": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 757348
+      },
+      "762145": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2412,
+        "timestamp": 761927
+      },
+      "763007": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 762878
+      },
+      "763243": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 762012
+      },
+      "768500": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 768329
+      },
+      "768689": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2398,
+        "timestamp": 768483
+      },
+      "769735": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 769692
+      },
+      "774477": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2480,
+        "timestamp": 774269
+      },
+      "775038": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2404,
+        "timestamp": 774830
+      },
+      "777580": {
+        "moisture": 25,
+        "pumpStatus": "ON",
+        "rawADC": 2269,
+        "timestamp": 776754
+      },
+      "780007": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 779630
+      },
+      "781591": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 781290
+      },
+      "786180": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2506,
+        "timestamp": 785844
+      },
+      "786559": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 786432
+      },
+      "787547": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 787406
+      },
+      "792037": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 791960
+      },
+      "792221": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 792091
+      },
+      "793101": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 792933
+      },
+      "797414": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 797234
+      },
+      "798796": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 798459
+      },
+      "803149": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 802944
+      },
+      "804740": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 804606
+      },
+      "807991": {
+        "moisture": 18,
+        "pumpStatus": "ON",
+        "rawADC": 2334,
+        "timestamp": 807783
+      },
+      "808681": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 808474
+      },
+      "810265": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 810134
+      },
+      "813807": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 813647
+      },
+      "814687": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 814623
+      },
+      "815769": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 815662
+      },
+      "820011": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 819969
+      },
+      "820763": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 820639
+      },
+      "821119": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 820989
+      },
+      "826081": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 826028
+      },
+      "826292": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2488,
+        "timestamp": 826163
+      },
+      "826653": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2388,
+        "timestamp": 826519
+      },
+      "832167": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 832102
+      },
+      "832602": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2412,
+        "timestamp": 832458
+      },
+      "833629": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 833563
+      },
+      "837761": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 837632
+      },
+      "838329": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 837987
+      },
+      "842401": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2519,
+        "timestamp": 841371
+      },
+      "843291": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 842956
+      },
+      "843853": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2407,
+        "timestamp": 843651
+      },
+      "849181": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2408,
+        "timestamp": 848972
+      },
+      "849230": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 849101
+      },
+      "849462": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 849255
+      },
+      "854759": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 854555
+      },
+      "855330": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2468,
+        "timestamp": 855273
+      },
+      "856142": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2407,
+        "timestamp": 856032
+      },
+      "861528": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2389,
+        "timestamp": 861462
+      },
+      "861599": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 861553
+      },
+      "861723": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 861596
+      },
+      "866995": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 866787
+      },
+      "867588": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2490,
+        "timestamp": 867457
+      },
+      "867867": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2490,
+        "timestamp": 867659
+      },
+      "872330": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 872111
+      },
+      "872879": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 872814
+      },
+      "874348": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 873729
+      },
+      "877849": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 877645
+      },
+      "878313": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 878156
+      },
+      "879672": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2439,
+        "timestamp": 879337
+      },
+      "883379": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 883174
+      },
+      "884047": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 883843
+      },
+      "886020": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 885969
+      },
+      "888909": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2396,
+        "timestamp": 888705
+      },
+      "889576": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 889407
+      },
+      "891524": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 891447
+      },
+      "894605": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 894530
+      },
+      "895486": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2408,
+        "timestamp": 895332
+      },
+      "897504": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 897462
+      },
+      "900021": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 899839
+      },
+      "902608": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 902553
+      },
+      "904884": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2413,
+        "timestamp": 900861
+      },
+      "905347": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 904984
+      },
+      "907696": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 907649
+      },
+      "908161": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2408,
+        "timestamp": 907542
+      },
+      "910877": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 910667
+      },
+      "913742": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 913689
+      },
+      "914306": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 914097
+      },
+      "916406": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 916198
+      },
+      "919506": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2476,
+        "timestamp": 919069
+      },
+      "919839": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 919626
+      },
+      "922960": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2467,
+        "timestamp": 922831
+      },
+      "925754": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 924805
+      },
+      "926185": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 924965
+      },
+      "928492": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 927949
+      },
+      "931205": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 931154
+      },
+      "932123": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 931994
+      },
+      "934019": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 933890
+      },
+      "936927": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 936887
+      },
+      "937652": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2419,
+        "timestamp": 937523
+      },
+      "939548": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 939341
+      },
+      "942318": {
+        "moisture": 15,
+        "pumpStatus": "ON",
+        "rawADC": 2360,
+        "timestamp": 942271
+      },
+      "942977": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 942848
+      },
+      "946307": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2456,
+        "timestamp": 946181
+      },
+      "947376": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 947332
+      },
+      "949120": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2423,
+        "timestamp": 948785
+      },
+      "951308": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2458,
+        "timestamp": 951245
+      },
+      "952465": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 952422
+      },
+      "955060": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 954932
+      },
+      "957162": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 956955
+      },
+      "958827": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 958700
+      },
+      "961409": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 961280
+      },
+      "963100": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 962971
+      },
+      "963965": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 963923
+      },
+      "966939": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2413,
+        "timestamp": 966809
+      },
+      "968631": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2484,
+        "timestamp": 968502
+      },
+      "969151": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 969112
+      },
+      "972469": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2413,
+        "timestamp": 972338
+      },
+      "974160": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 974031
+      },
+      "974264": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 974211
+      },
+      "978016": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 977872
+      },
+      "979349": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2492,
+        "timestamp": 979306
+      },
+      "980509": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2449,
+        "timestamp": 980379
+      },
+      "983937": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2389,
+        "timestamp": 983808
+      },
+      "984519": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 984470
+      },
+      "985629": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 985458
+      },
+      "989467": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 989337
+      },
+      "990688": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2402,
+        "timestamp": 990646
+      },
+      "992798": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 992463
+      },
+      "994997": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 994867
+      },
+      "995782": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 995738
+      },
+      "999696": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2450,
+        "timestamp": 999632
+      },
+      "1000916": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 1000856
+      },
+      "1000936": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 1000806
+      },
+      "1005700": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2486,
+        "timestamp": 1005495
+      },
+      "1005978": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 1005931
+      },
+      "1006466": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 1006337
+      },
+      "1011996": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 1011866
+      },
+      "1012869": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 1012739
+      },
+      "1014582": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2485,
+        "timestamp": 1014509
+      },
+      "1017525": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 1017318
+      },
+      "1018808": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 1018677
+      },
+      "1021747": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 1021679
+      },
+      "1024288": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 1023745
+      },
+      "1024951": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 1024824
+      },
+      "1027655": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2452,
+        "timestamp": 1027614
+      },
+      "1030277": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 1030148
+      },
+      "1032959": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2501,
+        "timestamp": 1032916
+      },
+      "1036011": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2444,
+        "timestamp": 1035886
+      },
+      "1038826": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 1029891
+      },
+      "1038939": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2472,
+        "timestamp": 1038882
+      },
+      "1041541": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2450,
+        "timestamp": 1041412
+      },
+      "1045974": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 1044946
+      },
+      "1047685": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 1047352
+      },
+      "1051114": {
+        "moisture": 14,
+        "pumpStatus": "ON",
+        "rawADC": 2375,
+        "timestamp": 1050703
+      },
+      "1052664": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2520,
+        "timestamp": 1052602
+      },
+      "1053349": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1053290
+      },
+      "1057871": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2409,
+        "timestamp": 1057743
+      },
+      "1060397": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 1060355
+      },
+      "1064221": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 1064092
+      },
+      "1065777": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 1065733
+      },
+      "1070162": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 1070030
+      },
+      "1072429": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 1072367
+      },
+      "1076305": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2392,
+        "timestamp": 1075969
+      },
+      "1078679": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 1078637
+      },
+      "1081834": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 1081702
+      },
+      "1084758": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2485,
+        "timestamp": 1084697
+      },
+      "1087364": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 1087235
+      },
+      "1090032": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 1089980
+      },
+      "1093304": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 1093177
+      },
+      "1096971": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 1096634
+      },
+      "1099858": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2407,
+        "timestamp": 1099731
+      },
+      "1104387": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2573,
+        "timestamp": 1104339
+      },
+      "1105797": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 1104996
+      },
+      "1110803": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 1110568
+      },
+      "1111052": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 1110960
+      },
+      "1116467": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2518,
+        "timestamp": 1116423
+      },
+      "1116887": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2407,
+        "timestamp": 1116648
+      },
+      "1123615": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 1123484
+      },
+      "1125551": {
+        "moisture": 13,
+        "pumpStatus": "ON",
+        "rawADC": 2384,
+        "timestamp": 1124900
+      },
+      "1129555": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2397,
+        "timestamp": 1129346
+      },
+      "1134674": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2398,
+        "timestamp": 1134551
+      },
+      "1138135": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2568,
+        "timestamp": 1137927
+      },
+      "1140212": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2394,
+        "timestamp": 1139999
+      },
+      "1144218": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2472,
+        "timestamp": 1144150
+      },
+      "1146143": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2390,
+        "timestamp": 1145936
+      },
+      "1150256": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 1150216
+      },
+      "1153313": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2399,
+        "timestamp": 1152980
+      },
+      "1156095": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 1156028
+      },
+      "1160068": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2403,
+        "timestamp": 1159247
+      },
+      "1163646": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 1162094
+      },
+      "1167237": {
+        "moisture": 11,
+        "pumpStatus": "ON",
+        "rawADC": 2405,
+        "timestamp": 1166903
+      },
+      "1171160": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2536,
+        "timestamp": 1170083
+      },
+      "1172972": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2391,
+        "timestamp": 1172637
+      },
+      "1176986": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2505,
+        "timestamp": 1176942
+      },
+      "1179322": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2410,
+        "timestamp": 1179193
+      },
+      "1184864": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2613,
+        "timestamp": 1184806
+      },
+      "1185259": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 1185134
+      },
+      "1190089": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2505,
+        "timestamp": 1190051
+      },
+      "1190790": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2411,
+        "timestamp": 1190662
+      },
+      "1195726": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2504,
+        "timestamp": 1195684
+      },
+      "1196324": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2389,
+        "timestamp": 1196193
+      },
+      "1201764": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2523,
+        "timestamp": 1201723
+      },
+      "1202259": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 1202087
+      },
+      "1208419": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 1208073
+      },
+      "1209151": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 1209075
+      },
+      "1214958": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2393,
+        "timestamp": 1214828
+      },
+      "1216028": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2588,
+        "timestamp": 1215976
+      },
+      "1220487": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2395,
+        "timestamp": 1220357
+      },
+      "1223845": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2474,
+        "timestamp": 1223717
+      },
+      "1231970": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 1231911
+      },
+      "1237398": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2515,
+        "timestamp": 1237030
+      },
+      "1245657": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 1245450
+      },
+      "1252620": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2485,
+        "timestamp": 1252491
+      },
+      "1258557": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2509,
+        "timestamp": 1258431
+      },
+      "1264908": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 1264619
+      },
+      "1270479": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 1270435
+      },
+      "1276521": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 1276454
+      },
+      "1283990": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 1283929
+      },
+      "1290305": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 1289278
+      },
+      "1296004": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2468,
+        "timestamp": 1295706
+      },
+      "1301774": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1300951
+      },
+      "1308468": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2474,
+        "timestamp": 1308406
+      },
+      "1318464": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2522,
+        "timestamp": 1318337
+      },
+      "1325368": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 1325324
+      },
+      "1331878": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1331752
+      },
+      "1337137": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2470,
+        "timestamp": 1337079
+      },
+      "1344001": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2468,
+        "timestamp": 1343959
+      },
+      "1350313": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2501,
+        "timestamp": 1350079
+      },
+      "1360352": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 1360301
+      },
+      "1366118": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 1366057
+      },
+      "1375605": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1375477
+      },
+      "1380869": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 1380824
+      },
+      "1386018": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 1385969
+      },
+      "1391801": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2508,
+        "timestamp": 1391758
+      },
+      "1397546": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 1397492
+      },
+      "1405532": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1405486
+      },
+      "1411256": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2485,
+        "timestamp": 1411213
+      },
+      "1416992": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 1416949
+      },
+      "1422110": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1422069
+      },
+      "1427318": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2500,
+        "timestamp": 1427190
+      },
+      "1432484": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 1432440
+      },
+      "1440453": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 1440399
+      },
+      "1445661": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2468,
+        "timestamp": 1445621
+      },
+      "1450914": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2511,
+        "timestamp": 1450870
+      },
+      "1456724": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2527,
+        "timestamp": 1456681
+      },
+      "1462253": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2509,
+        "timestamp": 1462210
+      },
+      "1467317": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 1467273
+      },
+      "1473107": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2470,
+        "timestamp": 1473063
+      },
+      "1478508": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2488,
+        "timestamp": 1478288
+      },
+      "1484869": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2485,
+        "timestamp": 1484048
+      },
+      "1490026": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 1489986
+      },
+      "1495739": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2476,
+        "timestamp": 1495696
+      },
+      "1501048": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 1500847
+      },
+      "1507196": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 1506865
+      },
+      "1513660": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 1513617
+      },
+      "1519789": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2467,
+        "timestamp": 1518865
+      },
+      "1529105": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2509,
+        "timestamp": 1527258
+      },
+      "1534547": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 1534505
+      },
+      "1540280": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2491,
+        "timestamp": 1540240
+      },
+      "1545406": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 1545363
+      },
+      "1550729": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2509,
+        "timestamp": 1550686
+      },
+      "1558715": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 1558673
+      },
+      "1564127": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1563919
+      },
+      "1570603": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 1570552
+      },
+      "1576828": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2467,
+        "timestamp": 1575624
+      },
+      "1582289": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 1582225
+      },
+      "1607550": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1606931
+      },
+      "1613730": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 1613688
+      },
+      "1618899": {
+        "moisture": 22,
+        "pumpStatus": "ON",
+        "rawADC": 2297,
+        "timestamp": 1618854
+      },
+      "1624019": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1623973
+      },
+      "1629144": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1629094
+      },
+      "1634902": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 1634860
+      },
+      "1640637": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 1640594
+      },
+      "1645846": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1645613
+      },
+      "1655310": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 1655238
+      },
+      "1661584": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1661327
+      },
+      "1669400": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2493,
+        "timestamp": 1668373
+      },
+      "1677629": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 1677587
+      },
+      "1682915": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2474,
+        "timestamp": 1682754
+      },
+      "1688662": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 1688622
+      },
+      "1694504": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2476,
+        "timestamp": 1694460
+      },
+      "1699722": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2520,
+        "timestamp": 1699680
+      },
+      "1707001": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 1706951
+      },
+      "1712056": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2629,
+        "timestamp": 1712015
+      },
+      "1722572": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2431,
+        "timestamp": 1722517
+      },
+      "1728906": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 1728866
+      },
+      "1734586": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 1734523
+      },
+      "1740377": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2470,
+        "timestamp": 1740336
+      },
+      "1745494": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 1745453
+      },
+      "1751231": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1751189
+      },
+      "1756966": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1756922
+      },
+      "1762173": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1762012
+      },
+      "1768762": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2508,
+        "timestamp": 1768701
+      },
+      "1775076": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 1774789
+      },
+      "1780748": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 1780681
+      },
+      "1788524": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2472,
+        "timestamp": 1788461
+      },
+      "1794124": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 1793504
+      },
+      "1800282": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 1800240
+      },
+      "1805425": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2445,
+        "timestamp": 1805386
+      },
+      "1812147": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 1811575
+      },
+      "1817105": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 1817063
+      },
+      "1822422": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2495,
+        "timestamp": 1822382
+      },
+      "1827584": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2462,
+        "timestamp": 1827545
+      },
+      "1833970": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1833930
+      },
+      "1839090": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2505,
+        "timestamp": 1839049
+      },
+      "1844800": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1844579
+      },
+      "1850148": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2509,
+        "timestamp": 1850108
+      },
+      "1855680": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2621,
+        "timestamp": 1855640
+      },
+      "1860800": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 1860758
+      },
+      "1865939": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 1865888
+      },
+      "1871658": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1871616
+      },
+      "1877493": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 1877453
+      },
+      "1882683": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2627,
+        "timestamp": 1882643
+      },
+      "1891198": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 1890589
+      },
+      "1896405": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 1896321
+      },
+      "1901904": {
+        "moisture": 9,
+        "pumpStatus": "ON",
+        "rawADC": 2424,
+        "timestamp": 1901849
+      },
+      "1907008": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 1906969
+      },
+      "1912147": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 1912104
+      },
+      "1918144": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 1918106
+      },
+      "1923264": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2589,
+        "timestamp": 1923224
+      },
+      "1928604": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2467,
+        "timestamp": 1928552
+      },
+      "1934651": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1934591
+      },
+      "1940351": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2468,
+        "timestamp": 1940223
+      },
+      "1946248": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 1946201
+      },
+      "1951527": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2486,
+        "timestamp": 1951487
+      },
+      "1957263": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 1957224
+      },
+      "1962385": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 1962343
+      },
+      "1967521": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2501,
+        "timestamp": 1967464
+      },
+      "1973239": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 1973198
+      },
+      "1979063": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2437,
+        "timestamp": 1978445
+      },
+      "1984916": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 1984875
+      },
+      "1992170": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2459,
+        "timestamp": 1992041
+      },
+      "1999984": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2520,
+        "timestamp": 1999925
+      },
+      "2005953": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 2005911
+      },
+      "2011248": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 2011189
+      },
+      "2018944": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2511,
+        "timestamp": 2018869
+      },
+      "2028903": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2519,
+        "timestamp": 2028601
+      },
+      "2036818": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2507,
+        "timestamp": 2035994
+      },
+      "2046957": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 2044802
+      },
+      "2050478": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2477,
+        "timestamp": 2050436
+      },
+      "2056480": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 2056270
+      },
+      "2061438": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 2061396
+      },
+      "2069295": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 2069254
+      },
+      "2075027": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2457,
+        "timestamp": 2074986
+      },
+      "2080092": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2440,
+        "timestamp": 2080049
+      },
+      "2085884": {
+        "moisture": 14,
+        "pumpStatus": "ON",
+        "rawADC": 2377,
+        "timestamp": 2085841
+      },
+      "2091089": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 2090882
+      },
+      "2098295": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2451,
+        "timestamp": 2098254
+      },
+      "2103582": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 2103449
+      },
+      "2109696": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 2109629
+      },
+      "2125222": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 2125163
+      },
+      "2132403": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 2132332
+      },
+      "2138930": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 2138885
+      },
+      "2146432": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2490,
+        "timestamp": 2146389
+      },
+      "2152517": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 2152448
+      },
+      "2157770": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 2157729
+      },
+      "2163117": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2427,
+        "timestamp": 2163051
+      },
+      "2168180": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2454,
+        "timestamp": 2168138
+      },
+      "2173965": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2429,
+        "timestamp": 2173905
+      },
+      "2179683": {
+        "moisture": 7,
+        "pumpStatus": "ON",
+        "rawADC": 2443,
+        "timestamp": 2179639
+      },
+      "2185432": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2469,
+        "timestamp": 2185375
+      },
+      "2190550": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 2190497
+      },
+      "2196288": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 2196227
+      },
+      "2205676": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2507,
+        "timestamp": 2205036
+      },
+      "2212017": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2464,
+        "timestamp": 2211205
+      },
+      "2218784": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 2218552
+      },
+      "2225310": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2472,
+        "timestamp": 2225240
+      },
+      "2232447": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2482,
+        "timestamp": 2232377
+      },
+      "2238653": {
+        "moisture": 12,
+        "pumpStatus": "ON",
+        "rawADC": 2390,
+        "timestamp": 2237829
+      },
+      "2244321": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2447,
+        "timestamp": 2244256
+      },
+      "2250157": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2509,
+        "timestamp": 2250117
+      },
+      "2255444": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2507,
+        "timestamp": 2255283
+      },
+      "2261298": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2452,
+        "timestamp": 2261254
+      },
+      "2269080": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2487,
+        "timestamp": 2269039
+      },
+      "2274228": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 2274184
+      },
+      "2280037": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2495,
+        "timestamp": 2279994
+      },
+      "2285051": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 2285009
+      },
+      "2291946": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 2291900
+      },
+      "2297958": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 2297915
+      },
+      "2303693": {
+        "moisture": 6,
+        "pumpStatus": "ON",
+        "rawADC": 2453,
+        "timestamp": 2303648
+      },
+      "2309425": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 2309385
+      },
+      "2314750": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2520,
+        "timestamp": 2314708
+      },
+      "2319838": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2501,
+        "timestamp": 2319797
+      },
+      "2325604": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2472,
+        "timestamp": 2325563
+      },
+      "2330930": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 2330888
+      },
+      "2336254": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2478,
+        "timestamp": 2336213
+      },
+      "2341990": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 2341948
+      },
+      "2351190": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2468,
+        "timestamp": 2350163
+      },
+      "2357473": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2503,
+        "timestamp": 2357409
+      },
+      "2362805": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 2362735
+      },
+      "2370443": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 2369416
+      },
+      "2375883": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2489,
+        "timestamp": 2375844
+      },
+      "2381004": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2483,
+        "timestamp": 2380962
+      },
+      "2386100": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 2386053
+      },
+      "2391483": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2463,
+        "timestamp": 2391234
+      },
+      "2397390": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2460,
+        "timestamp": 2397348
+      },
+      "2402532": {
+        "moisture": 1,
+        "pumpStatus": "ON",
+        "rawADC": 2494,
+        "timestamp": 2402468
+      },
+      "2407800": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2486,
+        "timestamp": 2407758
+      },
+      "2414818": {
+        "moisture": 2,
+        "pumpStatus": "ON",
+        "rawADC": 2485,
+        "timestamp": 2414777
+      },
+      "2420544": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2470,
+        "timestamp": 2420491
+      },
+      "2425945": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 2425815
+      },
+      "2430998": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2475,
+        "timestamp": 2430937
+      },
+      "2436315": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2479,
+        "timestamp": 2436262
+      },
+      "2442138": {
+        "moisture": 0,
+        "pumpStatus": "ON",
+        "rawADC": 2522,
+        "timestamp": 2442095
+      },
+      "2447361": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2455,
+        "timestamp": 2447319
+      },
+      "2453099": {
+        "moisture": 8,
+        "pumpStatus": "ON",
+        "rawADC": 2428,
+        "timestamp": 2453055
+      },
+      "2458321": {
+        "moisture": 5,
+        "pumpStatus": "ON",
+        "rawADC": 2461,
+        "timestamp": 2458276
+      },
+      "2464183": {
+        "moisture": 4,
+        "pumpStatus": "ON",
+        "rawADC": 2471,
+        "timestamp": 2464115
+      },
+      "2469483": {
+        "moisture": 3,
+        "pumpStatus": "ON",
+        "rawADC": 2473,
+        "timestamp": 2469439
+      },
+      "2474608": {
+        "moisture": 10,
+        "pumpStatus": "ON",
+        "rawADC": 2415,
+        "timestamp": 2474558
+      }
+    },
+    "latest": {
+      "moisture": 12,
+      "pumpStatus": "ON",
+      "rawADC": 2396,
+      "timestamp": 542568
+    }
+  },
+  "soilMoisture": {
+    "-OfxUq8BsHPdeNjLWnpo": {
+      "moisture": 11,
+      "pumpStatus": "ON",
+      "rawADC": 2403,
+      "timestamp": 704455
+    },
+    "-OfxUq8LSFIp2WyqB8ny": {
+      "moisture": 15,
+      "pumpStatus": "ON",
+      "rawADC": 2483,
+      "timestamp": -2895545
+    },
+    "-OfxUq8MozrBWpOqa_oL": {
+      "moisture": 20,
+      "pumpStatus": "ON",
+      "rawADC": 2584,
+      "timestamp": -6495545
+    },
+    "-OfxUq8N_rdPogiljwE_": {
+      "moisture": 1,
+      "pumpStatus": "ON",
+      "rawADC": 2198,
+      "timestamp": -10095545
+    },
+    "-OfxUq8O77XMQWCHmbu6": {
+      "moisture": 10,
+      "pumpStatus": "ON",
+      "rawADC": 2381,
+      "timestamp": -13695545
+    },
+    "-OfxUq8Pygorm_jsnKSP": {
+      "moisture": 12,
+      "pumpStatus": "ON",
+      "rawADC": 2421,
+      "timestamp": -17295545
+    },
+    "-OfxUq8TVlONwd9du6l0": {
+      "moisture": 17,
+      "pumpStatus": "ON",
+      "rawADC": 2516,
+      "timestamp": -20895545
+    },
+    "-OfxUq8VGFqHtzNxoL_G": {
+      "moisture": 6,
+      "pumpStatus": "ON",
+      "rawADC": 2287,
+      "timestamp": -24495545
+    },
+    "-OfxUq8XFQT99pM6-MdY": {
+      "moisture": 2,
+      "pumpStatus": "ON",
+      "rawADC": 2219,
+      "timestamp": -28095545
+    },
+    "-OfxUq8YmVY5XJQVe7Kr": {
+      "moisture": 2,
+      "pumpStatus": "ON",
+      "rawADC": 2215,
+      "timestamp": -31695545
+    },
+    "-OfxUq8Zvk8hMIT_kWHm": {
+      "moisture": 9,
+      "pumpStatus": "ON",
+      "rawADC": 2361,
+      "timestamp": -35295545
+    },
+    "-OfxUq8_QPqIhQRGenxL": {
+      "moisture": 19,
+      "pumpStatus": "ON",
+      "rawADC": 2555,
+      "timestamp": -38895545
+    },
+    "-OfxUq8aUl9Kw4xbxFBf": {
+      "moisture": 12,
+      "pumpStatus": "ON",
+      "rawADC": 2409,
+      "timestamp": -42495545
+    },
+    "-OfxUq8b-qrc8RUI9rL9": {
+      "moisture": 13,
+      "pumpStatus": "ON",
+      "rawADC": 2448,
+      "timestamp": -46095545
+    },
+    "-OfxUq8clZ_D2khkEeWG": {
+      "moisture": 19,
+      "pumpStatus": "ON",
+      "rawADC": 2553,
+      "timestamp": -49695545
+    },
+    "-OfxUq8daGUDbgsRajz_": {
+      "moisture": 2,
+      "pumpStatus": "ON",
+      "rawADC": 2204,
+      "timestamp": -53295545
+    },
+    "-OfxUq8daGUDbgsRajza": {
+      "moisture": 4,
+      "pumpStatus": "ON",
+      "rawADC": 2258,
+      "timestamp": -56895545
+    },
+    "-OfxUq8eA-YVgjtlo4nb": {
+      "moisture": 20,
+      "pumpStatus": "ON",
+      "rawADC": 2587,
+      "timestamp": -60495545
+    },
+    "-OfxUq8eA-YVgjtlo4nc": {
+      "moisture": 14,
+      "pumpStatus": "ON",
+      "rawADC": 2465,
+      "timestamp": -64095545
+    },
+    "-OfxUq8eA-YVgjtlo4nd": {
+      "moisture": 18,
+      "pumpStatus": "ON",
+      "rawADC": 2541,
+      "timestamp": -67695545
+    },
+    "-OfxUq8fBXcsAhAMBLlk": {
+      "moisture": 18,
+      "pumpStatus": "ON",
+      "rawADC": 2546,
+      "timestamp": -71295545
+    },
+    "-OfxUq8fBXcsAhAMBLll": {
+      "moisture": 1,
+      "pumpStatus": "ON",
+      "rawADC": 2197,
+      "timestamp": -74895545
+    },
+    "-OfxUq8fBXcsAhAMBLlm": {
+      "moisture": 16,
+      "pumpStatus": "ON",
+      "rawADC": 2502,
+      "timestamp": -78495545
+    },
+    "-OfxUq8g7dZzW_mkG4zX": {
+      "moisture": 15,
+      "pumpStatus": "ON",
+      "rawADC": 2476,
+      "timestamp": -82095545
+    },
+    "-OfxUq8s-COxg3dRwRtS": {
+      "moisture": 5,
+      "pumpStatus": "ON",
+      "rawADC": 2268,
+      "timestamp": 704455
+    },
+    "-OfxUq8tHsQiayR_PZgV": {
+      "moisture": 15,
+      "pumpStatus": "ON",
+      "rawADC": 2486,
+      "timestamp": -2895545
+    },
+    "-OfxUq8tHsQiayR_PZgW": {
+      "moisture": 3,
+      "pumpStatus": "ON",
+      "rawADC": 2240,
+      "timestamp": -6495545
+    },
+    "-OfxUq8uQ-Jqz4NN0UlX": {
+      "moisture": 1,
+      "pumpStatus": "ON",
+      "rawADC": 2197,
+      "timestamp": -10095545
+    },
+    "-OfxUq8vBmkIGpdoYm1P": {
+      "moisture": 11,
+      "pumpStatus": "ON",
+      "rawADC": 2407,
+      "timestamp": -13695545
+    },
+    "-OfxUq8wFPWZtUEZNpNK": {
+      "moisture": 20,
+      "pumpStatus": "ON",
+      "rawADC": 2585,
+      "timestamp": -17295545
+    },
+    "-OfxUq8yeqG9QvMLQ_aR": {
+      "moisture": 7,
+      "pumpStatus": "ON",
+      "rawADC": 2318,
+      "timestamp": -20895545
+    },
+    "-OfxUq8yeqG9QvMLQ_aS": {
+      "moisture": 18,
+      "pumpStatus": "ON",
+      "rawADC": 2537,
+      "timestamp": -24495545
+    },
+    "-OfxUq8znLLMMcaxaB0w": {
+      "moisture": 8,
+      "pumpStatus": "ON",
+      "rawADC": 2343,
+      "timestamp": -28095545
+    },
+    "-OfxUq90RsC3QXwg0qcf": {
+      "moisture": 21,
+      "pumpStatus": "ON",
+      "rawADC": 2596,
+      "timestamp": -31695545
+    },
+    "-OfxUq94KrIf7W7r0cro": {
+      "moisture": 18,
+      "pumpStatus": "ON",
+      "rawADC": 2549,
+      "timestamp": -35295545
+    },
+    "-OfxUq95jaeMdcrQ_YeS": {
+      "moisture": 12,
+      "pumpStatus": "ON",
+      "rawADC": 2425,
+      "timestamp": -38895545
+    },
+    "-OfxUq96aCz1--sQGHa1": {
+      "moisture": 19,
+      "pumpStatus": "ON",
+      "rawADC": 2563,
+      "timestamp": -42495545
+    },
+    "-OfxUq96aCz1--sQGHa2": {
+      "moisture": 15,
+      "pumpStatus": "ON",
+      "rawADC": 2483,
+      "timestamp": -46095545
+    },
+    "-OfxUq970Zb0UvXeHg7j": {
+      "moisture": 14,
+      "pumpStatus": "ON",
+      "rawADC": 2457,
+      "timestamp": -49695545
+    },
+    "-OfxUq970Zb0UvXeHg7k": {
+      "moisture": 5,
+      "pumpStatus": "ON",
+      "rawADC": 2265,
+      "timestamp": -53295545
+    },
+    "-OfxUq970Zb0UvXeHg7l": {
+      "moisture": 17,
+      "pumpStatus": "ON",
+      "rawADC": 2525,
+      "timestamp": -56895545
+    },
+    "-OfxUq980N8DymsOUHMJ": {
+      "moisture": 21,
+      "pumpStatus": "ON",
+      "rawADC": 2597,
+      "timestamp": -60495545
+    },
+    "-OfxUq980N8DymsOUHMK": {
+      "moisture": 10,
+      "pumpStatus": "ON",
+      "rawADC": 2382,
+      "timestamp": -64095545
+    },
+    "-OfxUq99NhwkDsgxRmC8": {
+      "moisture": 20,
+      "pumpStatus": "ON",
+      "rawADC": 2585,
+      "timestamp": -67695545
+    },
+    "-OfxUq99NhwkDsgxRmC9": {
+      "moisture": 18,
+      "pumpStatus": "ON",
+      "rawADC": 2550,
+      "timestamp": -71295545
+    },
+    "-OfxUq99NhwkDsgxRmCA": {
+      "moisture": 12,
+      "pumpStatus": "ON",
+      "rawADC": 2408,
+      "timestamp": -74895545
+    },
+    "-OfxUq99NhwkDsgxRmCB": {
+      "moisture": 11,
+      "pumpStatus": "ON",
+      "rawADC": 2401,
+      "timestamp": -78495545
+    },
+    "-OfxUq9AFlgrq5VRJeIR": {
+      "moisture": 20,
+      "pumpStatus": "ON",
+      "rawADC": 2572,
+      "timestamp": -82095545
+    },
+    "-Ofx_0tvRmRqheTJp7En": {
+      "moisture": 12,
+      "pumpStatus": "ON",
+      "rawADC": 2396,
+      "timestamp": 1765190932951
+    },
+    "-OfxaQkGsQm7On2r8SqI": {
+      "moisture": 12,
+      "pumpStatus": "ON",
+      "rawADC": 2396,
+      "timestamp": 1765191300963
+    },
+    "-OfxbZvHZnn26FYx0Lm3": {
+      "moisture": 12,
+      "pumpStatus": "ON",
+      "rawADC": 2396,
+      "timestamp": 1765191600677
+    },
+    "-Ofxci9bOaucs5hBL33j": {
+      "moisture": 12,
+      "pumpStatus": "ON",
+      "rawADC": 2396,
+      "timestamp": 1765191900665
+    }
+  }
+}

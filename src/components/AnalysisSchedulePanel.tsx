@@ -1,0 +1,105 @@
+"use client";
+
+import { useAIAnalysis, ScheduleInterval } from "@/hooks/useAIAnalysis";
+
+export default function AnalysisSchedulePanel() {
+  const {
+    isAnalyzing,
+    scheduleInterval,
+    runAnalysis,
+    updateSchedule,
+    getIntervalLabel,
+    getNextAnalysisTime,
+  } = useAIAnalysis();
+
+  const scheduleOptions: ScheduleInterval[] = ["manual", "3h", "6h", "12h", "24h", "3d", "7d", "30d"];
+
+  return (
+    <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+      {/* Header - Minimalist White with Green Border */}
+      <div className="bg-white border-b-4 border-green-500 px-6 py-5">
+        <div className="flex items-center space-x-3">
+          <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-2xl shadow-md">
+            ⏰
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">Jadwal Analisis</h2>
+            <p className="text-sm text-gray-600">Atur frekuensi analisis AI</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Content - Flex-1 for equal height */}
+      <div className="p-6 flex-1 flex flex-col">
+        {/* Schedule Options */}
+        <div className="mb-6">
+          <h4 className="text-sm font-semibold text-gray-600 mb-3 uppercase tracking-wide">Pilih Interval</h4>
+          <div className="grid grid-cols-2 gap-2">
+            {scheduleOptions.map((option) => (
+              <button
+                key={option}
+                onClick={() => updateSchedule(option)}
+                disabled={isAnalyzing}
+                className={`
+                  px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200
+                  ${scheduleInterval === option
+                    ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg transform scale-105 ring-2 ring-green-300'
+                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border-2 border-gray-200 hover:border-green-300'
+                  }
+                  ${isAnalyzing ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+                `}
+              >
+                {getIntervalLabel(option)}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Active Schedule Status */}
+        {scheduleInterval !== "manual" && (
+          <div className="mb-6 p-4 bg-green-50 rounded-xl border-2 border-green-200">
+            <div className="flex items-center space-x-3 mb-2">
+              <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm text-gray-900 font-bold">Analisis Otomatis Aktif</span>
+            </div>
+            <p className="text-sm text-green-700 font-medium ml-5">
+              Berikutnya: {getNextAnalysisTime()}
+            </p>
+          </div>
+        )}
+
+        {/* Manual Analysis Button */}
+        <div>
+          <h4 className="text-sm font-semibold text-gray-600 mb-3 uppercase tracking-wide">Analisis Manual</h4>
+          <button
+            onClick={() => runAnalysis(true)}
+            disabled={isAnalyzing}
+            className={`
+              w-full flex items-center justify-center space-x-3 px-6 py-4 rounded-xl font-bold text-base
+              transition-all duration-200 border-2
+              ${isAnalyzing
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-200'
+                : 'bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 border-green-500 shadow-lg hover:shadow-xl transform hover:scale-[1.02]'
+              }
+            `}
+          >
+            {isAnalyzing ? (
+              <>
+                <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-gray-400"></div>
+                <span>Menganalisis...</span>
+              </>
+            ) : (
+              <>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span>Analisis Sekarang</span>
+              </>
+            )}
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+}

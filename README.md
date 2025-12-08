@@ -41,15 +41,6 @@ A real-time IoT sensor monitoring dashboard built with Next.js 14, Tailwind CSS,
 
 4. **Configure Firebase credentials in `.env.local`**
    ```env
-   NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyAXJcJYhMmS81mqPoFk6I-IruhDlKv_OnQ
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=iot-sl2.firebaseapp.com
-   NEXT_PUBLIC_FIREBASE_DATABASE_URL=https://iot-sl2-default-rtdb.asia-southeast1.firebasedatabase.app
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=iot-sl2
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=iot-sl2.firebasestorage.app
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=1015059017204
-   NEXT_PUBLIC_FIREBASE_APP_ID=1:1015059017204:web:76a9ead7baa921e5521da1
-   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-N3SD0FLE9V
-   ```
 
 5. **Run the development server**
    ```bash

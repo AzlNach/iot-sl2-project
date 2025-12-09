@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { AnalysisHistoryItem } from "@/hooks/useAIAnalysis";
 
 interface AnalysisHistoryPanelProps {
@@ -12,6 +12,20 @@ interface AnalysisHistoryPanelProps {
 export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: AnalysisHistoryPanelProps) {
   const [selectedItem, setSelectedItem] = useState<AnalysisHistoryItem | null>(null);
   const [showFullAnalysis, setShowFullAnalysis] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll functions for carousel
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -320, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+    }
+  };
 
   // Format analysis text with elegant styling (same as AIAnalysisPanel)
   const formatAnalysis = (text: string | undefined): JSX.Element[] => {
@@ -133,12 +147,6 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
     }
   };
 
-  const getTrendColor = (tren: string) => {
-    if (tren?.toLowerCase().includes('naik')) return 'text-red-600 bg-red-50';
-    if (tren?.toLowerCase().includes('turun')) return 'text-green-600 bg-green-50';
-    return 'text-gray-600 bg-gray-50';
-  };
-
   const getTrendIcon = (tren: string) => {
     if (tren?.toLowerCase().includes('naik')) return '📈';
     if (tren?.toLowerCase().includes('turun')) return '📉';
@@ -171,8 +179,8 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
           </div>
         </div>
 
-        {/* Content - Flex-1 for equal height */}
-        <div className="p-6 flex-1 overflow-y-auto">
+        {/* Content - Flex-1 for equal height with Carousel */}
+        <div className="p-6 flex-1 overflow-hidden flex flex-col">
           {isLoading ? (
             <div className="text-center py-12">
               <div className="inline-block animate-spin text-4xl mb-4">⏳</div>
@@ -185,66 +193,88 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
               <p className="text-sm text-gray-500 mt-2">Jalankan analisis pertama untuk melihat riwayat</p>
             </div>
           ) : (
-            <div className="space-y-4">
-              {history.map((item) => (
-                <div
-                  key={item.id}
-                  className="group bg-gradient-to-br from-green-50/30 to-white rounded-2xl border-2 border-gray-200 hover:border-green-400 hover:shadow-lg transition-all cursor-pointer overflow-hidden"
-                  onClick={() => setSelectedItem(item)}
-                >
-                  <div className="p-5">
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">
-                          🧠
-                        </div>
-                        <div>
-                          <p className="font-bold text-gray-900">{item.timeRange}</p>
-                          <p className="text-sm text-gray-500">{formatTimestamp(item.timestamp)}</p>
-                        </div>
+            <div className="relative flex-1">
+              {/* Navigation Buttons */}
+              {history.length > 1 && (
+                <>
+                  <button
+                    onClick={scrollLeft}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white hover:bg-green-50 rounded-full shadow-lg border-2 border-green-500 flex items-center justify-center text-green-600 hover:text-green-700 transition-all hover:scale-110"
+                    aria-label="Scroll left"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={scrollRight}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white hover:bg-green-50 rounded-full shadow-lg border-2 border-green-500 flex items-center justify-center text-green-600 hover:text-green-700 transition-all hover:scale-110"
+                    aria-label="Scroll right"
+                  >
+                    →
+                  </button>
+                </>
+              )}
+
+              {/* Scrollable Carousel Container */}
+              <div
+                ref={scrollContainerRef}
+                className="flex gap-4 overflow-x-auto scroll-smooth pb-4 px-12 hide-scrollbar"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {history.map((item) => (
+                  <div
+                    key={item.id}
+                    className="group flex-shrink-0 w-72 bg-white rounded-2xl border-2 border-gray-200 hover:border-green-400 hover:shadow-xl transition-all cursor-pointer overflow-hidden"
+                    onClick={() => setSelectedItem(item)}
+                  >
+                    {/* Minimalist Card Header */}
+                    <div className="bg-green-100 p-4 border-b border-green-300">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-2xl">🧠</span>
+                        <span className={`px-2 py-1 rounded-lg text-xs font-bold bg-white border border-green-300 text-gray-700`}>
+                          {getTrendIcon(item.statistics?.tren || '')}
+                        </span>
                       </div>
-                      <div className={`px-3 py-1 rounded-lg text-sm font-medium ${getTrendColor(item.statistics?.tren || '')}`}>
-                        {getTrendIcon(item.statistics?.tren || '')} {item.statistics?.tren || 'N/A'}
+                      <p className="font-bold text-sm mb-1 text-gray-800">{item.timeRange}</p>
+                      <p className="text-xs text-gray-600">{formatTimestamp(item.timestamp)}</p>
+                    </div>
+
+                    {/* Minimalist Statistics */}
+                    <div className="p-4 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-gray-600">Rata-rata</span>
+                        <span className="text-lg font-bold text-blue-600">{item.statistics?.rata_rata || 0}%</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-gray-600">Range</span>
+                        <span className="text-sm font-bold text-gray-700">
+                          {item.statistics?.minimum || 0}% - {item.statistics?.maksimum || 0}%
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between pt-2 border-t border-gray-200">
+                        <span className="text-xs text-gray-600">⚙️ Pompa</span>
+                        <span className="text-sm font-bold text-orange-600">{item.pumpUsage?.aktivasi || 0}x</span>
                       </div>
                     </div>
 
-                    {/* Statistics */}
-                    <div className="grid grid-cols-3 gap-3 mb-3">
-                      <div className="bg-blue-50 rounded-xl p-3 border border-blue-100">
-                        <p className="text-xs text-blue-600 font-medium mb-1">Rata-rata</p>
-                        <p className="text-xl font-bold text-blue-700">{item.statistics?.rata_rata || 0}%</p>
-                      </div>
-                      <div className="bg-green-50 rounded-xl p-3 border border-green-100">
-                        <p className="text-xs text-green-600 font-medium mb-1">Maksimum</p>
-                        <p className="text-xl font-bold text-green-700">{item.statistics?.maksimum || 0}%</p>
-                      </div>
-                      <div className="bg-orange-50 rounded-xl p-3 border border-orange-100">
-                        <p className="text-xs text-orange-600 font-medium mb-1">Minimum</p>
-                        <p className="text-xl font-bold text-orange-700">{item.statistics?.minimum || 0}%</p>
-                      </div>
+                    {/* Minimalist View Button */}
+                    <div className="px-4 pb-4">
+                      <button className="w-full py-2 bg-green-50 hover:bg-green-100 text-green-700 rounded-xl text-sm font-medium transition-all border border-green-200">
+                        Lihat Detail →
+                      </button>
                     </div>
-
-                    {/* Pump Usage */}
-                    <div className="flex items-center justify-between bg-amber-50 rounded-xl p-3 border border-amber-100">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-lg">⚙️</span>
-                        <span className="text-sm text-gray-700">Pompa: <span className="font-bold text-orange-700">{item.pumpUsage?.aktivasi || 0}x</span></span>
-                      </div>
-                      <span className="text-sm font-bold text-orange-700">{item.pumpUsage?.persentase || 0}%</span>
-                    </div>
-
-                    {/* View Detail Button */}
-                    <button className="w-full mt-3 py-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-xl font-medium transition-all group-hover:shadow-md">
-                      Lihat Detail Analisis →
-                    </button>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
         </div>
       </div>
+
+      <style jsx>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
 
       {/* Modal Detail */}
       {selectedItem && (

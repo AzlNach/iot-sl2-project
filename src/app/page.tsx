@@ -306,35 +306,7 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Info Card */}
-        <div className="info-card">
-          <div className="info-header">
-            <h3>Informasi Sistem</h3>
-            <p>Detail koneksi dan status perangkat IoT</p>
-          </div>
-          <div className="info-grid">
-            <div className="info-item">
-              <span className="info-label">Sensor Suhu</span>
-              <span className="info-value">sensors/</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Soil Moisture</span>
-              <span className="info-value">sensorData/latest</span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Status Pompa</span>
-              <span className={`info-value ${stats.pumpStatus === "ON" ? "text-red" : "text-green"}`}>
-                {stats.pumpStatus}
-              </span>
-            </div>
-            <div className="info-item">
-              <span className="info-label">Koneksi</span>
-              <span className={`info-value ${stats.isActive ? "text-green" : "text-red"}`}>
-                {stats.isActive ? "Terhubung" : "Terputus"}
-              </span>
-            </div>
-          </div>
-        </div>
+
 
         {/* Footer */}
         <footer className="dashboard-footer">

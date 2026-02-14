@@ -3,20 +3,22 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { t } = useLanguage();
   const [sensorMenuOpen, setSensorMenuOpen] = useState(
-    pathname.includes("/soil-moisture") || 
-    pathname.includes("/air-quality") || 
-    pathname.includes("/weather")
+    pathname.includes("/dashboard/soil-moisture") || 
+    pathname.includes("/dashboard/air-quality") || 
+    pathname.includes("/dashboard/weather")
   );
   const sidebarRef = useRef<HTMLElement>(null);
   const submenuRef = useRef<HTMLDivElement>(null);
 
-  const isSensorActive = pathname === "/soil-moisture" || 
-                         pathname === "/air-quality" || 
-                         pathname === "/weather";
+  const isSensorActive = pathname === "/dashboard/soil-moisture" || 
+                         pathname === "/dashboard/air-quality" || 
+                         pathname === "/dashboard/weather";
 
   // Close submenu when clicking outside
   useEffect(() => {
@@ -54,9 +56,21 @@ export default function Sidebar() {
       <nav className="pill-nav">
         <Link
           href="/"
-          className={`pill-nav-btn ${pathname === "/" ? "active" : ""}`}
-          data-tooltip="Dashboard Utama"
-          title="Dashboard Utama"
+          className="pill-nav-btn"
+          data-tooltip={t('sidebar.home')}
+          title={t('sidebar.home')}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+        </Link>
+
+        <Link
+          href="/dashboard"
+          className={`pill-nav-btn ${pathname === "/dashboard" ? "active" : ""}`}
+          data-tooltip={t('sidebar.overview')}
+          title={t('sidebar.overview')}
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <rect x="3" y="3" width="7" height="7" rx="1" />
@@ -71,8 +85,8 @@ export default function Sidebar() {
           <button
             onClick={() => setSensorMenuOpen(!sensorMenuOpen)}
             className={`pill-nav-btn has-submenu ${isSensorActive ? "active" : ""} ${sensorMenuOpen ? "menu-open" : ""}`}
-            data-tooltip="Data Sensor"
-            title="Data Sensor"
+            data-tooltip="Sensors"
+            title="Sensors"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
@@ -83,35 +97,35 @@ export default function Sidebar() {
           {sensorMenuOpen && (
             <div className="pill-submenu" ref={submenuRef}>
               <Link
-                href="/soil-moisture"
-                className={`pill-submenu-item ${pathname === "/soil-moisture" ? "active" : ""}`}
+                href="/dashboard/soil-moisture"
+                className={`pill-submenu-item ${pathname === "/dashboard/soil-moisture" ? "active" : ""}`}
               >
                 <span className="submenu-icon">🌱</span>
-                <span className="submenu-text">Kelembapan Tanah</span>
+                <span className="submenu-text">{t('sidebar.soilMoisture')}</span>
               </Link>
               <Link
-                href="/air-quality"
-                className={`pill-submenu-item ${pathname === "/air-quality" ? "active" : ""}`}
+                href="/dashboard/air-quality"
+                className={`pill-submenu-item ${pathname === "/dashboard/air-quality" ? "active" : ""}`}
               >
                 <span className="submenu-icon">💨</span>
-                <span className="submenu-text">Kualitas Udara</span>
+                <span className="submenu-text">{t('sidebar.airQuality')}</span>
               </Link>
               <Link
-                href="/weather"
-                className={`pill-submenu-item ${pathname === "/weather" ? "active" : ""}`}
+                href="/dashboard/weather"
+                className={`pill-submenu-item ${pathname === "/dashboard/weather" ? "active" : ""}`}
               >
                 <span className="submenu-icon">☀️</span>
-                <span className="submenu-text">Kondisi Cuaca</span>
+                <span className="submenu-text">{t('sidebar.weather')}</span>
               </Link>
             </div>
           )}
         </div>
 
         <Link
-          href="/analytics"
-          className={`pill-nav-btn ${pathname === "/analytics" ? "active" : ""}`}
-          data-tooltip="Analisis Data"
-          title="Analisis Data"
+          href="/dashboard/analytics"
+          className={`pill-nav-btn ${pathname === "/dashboard/analytics" ? "active" : ""}`}
+          data-tooltip={t('sidebar.analytics')}
+          title={t('sidebar.analytics')}
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <path d="M3 3v18h18" />
@@ -124,8 +138,8 @@ export default function Sidebar() {
       <div className="pill-bottom">
         <button 
           className="pill-nav-btn" 
-          data-tooltip="Pengaturan"
-          title="Pengaturan"
+          data-tooltip={t('sidebar.settings')}
+          title={t('sidebar.settings')}
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <circle cx="12" cy="12" r="3" />

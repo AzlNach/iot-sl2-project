@@ -453,12 +453,40 @@ NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
 ```
 
-### Langkah 5: Jalankan Development Server
+### Langkah 5: Konfigurasi OpenWeather API (Untuk Prakiraan Cuaca)
+
+**Penjelasan Non-Teknis:** API ini memberi akses ke data prakiraan cuaca 7 hari untuk berbagai lokasi di dunia.
+
+1. **Daftar Akun OpenWeather:**
+   - Kunjungi: [https://openweathermap.org/api](https://openweathermap.org/api)
+   - Klik "Sign Up" untuk membuat akun gratis
+   - Konfirmasi email Anda
+
+2. **Dapatkan API Key:**
+   - Login ke akun OpenWeather Anda
+   - Pergi ke bagian "API Keys"
+   - Copy API key yang tersedia (atau generate baru)
+
+3. **Tambahkan ke `.env.local`:**
+   ```bash
+   NEXT_PUBLIC_OPENWEATHER_API_KEY=your_openweather_api_key_here
+   ```
+
+4. **Fitur yang Didapat (Free Tier):**
+   - ✅ 1,000 API calls per hari
+   - ✅ Prakiraan cuaca 7 hari
+   - ✅ Data cuaca terkini
+   - ✅ Update setiap 10 menit
+   - ✅ 15+ kota besar Indonesia sudah tercantum
+
+**Note:** Setelah menambahkan API key, restart development server (`npm run dev`)
+
+### Langkah 6: Jalankan Development Server
 ```bash
 npm run dev
 ```
 
-### Langkah 6: Akses Dashboard
+### Langkah 7: Akses Dashboard
 Buka browser dan kunjungi: [http://localhost:3000](http://localhost:3000)
 
 ---

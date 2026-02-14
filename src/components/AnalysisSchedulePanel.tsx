@@ -16,10 +16,10 @@ export default function AnalysisSchedulePanel() {
 
   return (
     <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden flex flex-col h-full">
-      {/* Header - Minimalist White with Green Border */}
-      <div className="bg-white border-b-4 border-green-500 px-6 py-5">
+      {/* Header - Minimalist White with Sage Green Border */}
+      <div className="bg-white border-b-4 border-[#9CAB84] px-6 py-5">
         <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-2xl shadow-md">
+          <div className="w-12 h-12 bg-gradient-to-br from-[#89986D] to-[#9CAB84] rounded-xl flex items-center justify-center text-2xl shadow-md">
             ⏰
           </div>
           <div>
@@ -43,8 +43,8 @@ export default function AnalysisSchedulePanel() {
                 className={`
                   px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200
                   ${scheduleInterval === option
-                    ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg transform scale-105 ring-2 ring-green-300'
-                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border-2 border-gray-200 hover:border-green-300'
+                    ? 'bg-gradient-to-r from-[#89986D] to-[#9CAB84] text-white shadow-lg transform scale-105 ring-2 ring-[#C5D89D]'
+                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border-2 border-gray-200 hover:border-[#C5D89D]'
                   }
                   ${isAnalyzing ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
                 `}
@@ -57,12 +57,12 @@ export default function AnalysisSchedulePanel() {
 
         {/* Active Schedule Status */}
         {scheduleInterval !== "manual" && (
-          <div className="mb-6 p-4 bg-green-50 rounded-xl border-2 border-green-200">
+          <div className="mb-6 p-4 bg-[#F6F0D7] rounded-xl border-2 border-[#C5D89D]">
             <div className="flex items-center space-x-3 mb-2">
-              <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="w-2.5 h-2.5 bg-[#9CAB84] rounded-full animate-pulse"></div>
               <span className="text-sm text-gray-900 font-bold">Analisis Otomatis Aktif</span>
             </div>
-            <p className="text-sm text-green-700 font-medium ml-5">
+            <p className="text-sm text-[#89986D] font-medium ml-5">
               Berikutnya: {getNextAnalysisTime()}
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function AnalysisSchedulePanel() {
               transition-all duration-200 border-2
               ${isAnalyzing
                 ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-200'
-                : 'bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 border-green-500 shadow-lg hover:shadow-xl transform hover:scale-[1.02]'
+                : 'bg-gradient-to-r from-[#89986D] to-[#9CAB84] text-white hover:from-[#89986D] hover:to-[#89986D] border-[#9CAB84] shadow-lg hover:shadow-xl transform hover:scale-[1.02]'
               }
             `}
           >

@@ -1,0 +1,620 @@
+"use client";
+
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+
+type Language = 'en' | 'id';
+
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+const translations = {
+  en: {
+    // Landing Page
+    'landing.title': 'IoT Smart Farming Dashboard',
+    'landing.subtitle': 'Real-time Monitoring & AI-Powered Analytics for Smart Agriculture',
+    'landing.cta': 'Open Dashboard',
+    'landing.learnMore': 'Learn More',
+    'landing.stats.realtime': 'Real-time',
+    'landing.stats.aiAnalytics': 'AI Analytics',
+    'landing.stats.iotSensors': 'IoT Sensors',
+    'landing.preview.liveMonitoring': 'Live Monitoring',
+    'landing.preview.soilMoisture': 'Soil Moisture',
+    'landing.preview.airTemp': 'Air Temp',
+    'landing.preview.airHumidity': 'Air Humidity',
+    'landing.preview.weather': 'Weather',
+    'landing.preview.aiPowered': 'AI-Powered Analytics',
+    'landing.preview.autoRecommendation': 'Automatic irrigation recommendations',
+    'landing.features.title': 'Key Features',
+    'landing.features.subtitle': 'Latest technology for modern agriculture',
+    'landing.features.soilMoisture': 'Soil Moisture',
+    'landing.features.soilMoistureDesc': 'Monitor soil moisture in real-time with 12-bit ADC sensor',
+    'landing.features.airQuality': 'Air Quality',
+    'landing.features.airQualityDesc': 'Monitor air temperature and humidity with DHT11 sensor',
+    'landing.features.weatherForecast': 'Weather Forecast',
+    'landing.features.weatherForecastDesc': '5-day weather forecast with OpenWeather API',
+    'landing.features.aiAnalytics': 'AI Analytics',
+    'landing.features.aiAnalyticsDesc': 'Smart analysis with Gemini AI for irrigation recommendations',
+    'landing.features.realtime': 'Real-time Monitoring',
+    'landing.features.realtime.desc': 'Monitor soil moisture, temperature, and humidity in real-time',
+    'landing.features.ai': 'AI Analysis',
+    'landing.features.ai.desc': 'Get intelligent recommendations powered by Gemini AI',
+    'landing.features.weather': 'Weather Forecast',
+    'landing.features.weather.desc': '5-day weather predictions for better planning',
+    'landing.features.history': 'Historical Data',
+    'landing.features.history.desc': 'Track trends and patterns over time',
+    'landing.cta.ready': 'Ready to Increase Agricultural Productivity?',
+    'landing.cta.startNow': 'Start monitoring now with integrated IoT system',
+    'landing.cta.button': 'Open Dashboard Now →',
+    'landing.footer.title': 'IoT Dashboard',
+    'landing.footer.subtitle': 'Smart Agriculture',
+    'landing.footer.description': 'Modern agricultural monitoring system with IoT and AI technology',
+    'landing.footer.features': 'Features',
+    'landing.footer.technology': 'Technology',
+    'landing.footer.copyright': '© 2026 IoT Dashboard - Smart Agriculture System. All rights reserved.',
+    
+    // Sidebar
+    'sidebar.home': 'Home',
+    'sidebar.overview': 'Overview',
+    'sidebar.soilMoisture': 'Soil Moisture',
+    'sidebar.airQuality': 'Air Quality',
+    'sidebar.weather': 'Weather',
+    'sidebar.analytics': 'Analytics',
+    'sidebar.settings': 'Settings',
+    'sidebar.logout': 'Logout',
+    
+    // Dashboard Overview
+    'dashboard.title': 'Smart Farming IoT Dashboard',
+    'dashboard.subtitle': 'Real-time Sensor Monitoring System',
+    'dashboard.lastUpdate': 'Last Update',
+    'dashboard.ago': 'ago',
+    
+    // Stats Cards
+    'stats.soilMoisture': 'Soil Moisture',
+    'stats.airTemp': 'Air Temperature',
+    'stats.airHumidity': 'Air Humidity',
+    'stats.soilTemp': 'Soil Temperature',
+    'stats.sensorReading': 'Sensor Reading',
+    'stats.pumpStatus': 'Pump Status',
+    'stats.weather': 'Weather Condition',
+    'stats.lastSync': 'Last Sync',
+    'stats.lastUpdate': 'Last Update',
+    'stats.systemStatus': 'System Status',
+    'stats.status.on': 'ON',
+    'stats.status.off': 'OFF',
+    'stats.weather.clear': 'Clear',
+    'stats.weather.rain': 'Rain',
+    'stats.weather.cloudy': 'Cloudy',
+    
+    // Charts
+    'chart.title': 'Time Series Monitoring',
+    'chart.description': 'Historical sensor data from last 20 readings',
+    'chart.soilMoisture': 'Soil Moisture',
+    'chart.airTemp': 'Air Temperature',
+    'chart.airHumidity': 'Air Humidity',
+    'chart.moistureLabel': 'Moisture (%)',
+    'chart.tempLabel': 'Temperature (°C)',
+    'chart.humidityLabel': 'Humidity (%)',
+    'chart.soilMoistureUnit': 'Soil Moisture (%)',
+    'chart.airTempUnit': 'Air Temperature (°C)',
+    'chart.airHumidityUnit': 'Air Humidity (%)',
+    'chart.realtime': 'Real-time',
+    'chart.temperature': 'Temperature',
+    'chart.humidity': 'Humidity',
+    
+    // Dashboard Greeting
+    'dashboard.greeting.morning': 'Good Morning',
+    'dashboard.greeting.afternoon': 'Good Afternoon',
+    'dashboard.greeting.evening': 'Good Evening',
+    'dashboard.greeting.night': 'Good Night',
+    
+    // Dashboard Status
+    'dashboard.status.high': 'High',
+    'dashboard.status.medium': 'Medium',
+    'dashboard.status.normal': 'Normal',
+    'dashboard.status.low': 'Low',
+    'dashboard.status.wet': 'Wet',
+    'dashboard.status.dry': 'Dry',
+    'dashboard.status.veryDry': 'Very Dry',
+    'dashboard.status.humid': 'Humid',
+    'dashboard.status.online': 'Online',
+    'dashboard.status.offline': 'Offline',
+    'dashboard.status.active': 'Active',
+    'dashboard.status.standby': 'Standby',
+    'dashboard.status.live': 'Live',
+    'dashboard.status.liveUpdate': 'Live Update',
+    
+    // Dashboard Weather
+    'dashboard.weather.rainy': 'Rainy',
+    'dashboard.weather.sunny': 'Sunny',
+    'dashboard.weather.rainDetected': 'Rain Sensor Detected',
+    'dashboard.weather.noRain': 'No Rain',
+    'dashboard.weather.rainRecommendation': 'Automatic watering pump disabled during rain',
+    'dashboard.weather.sunnyRecommendation': 'Clear conditions, watering can proceed as scheduled',
+    
+    // Dashboard Sections
+    'dashboard.section.soil': 'Soil Data',
+    'dashboard.section.air': 'Air Data',
+    'dashboard.section.weather': 'Weather Condition',
+    'dashboard.viewDetail': 'View Full Details',
+    'dashboard.viewDetailLink': 'View details',
+    'dashboard.airQuality': 'Air Quality',
+    'dashboard.recommendation': 'Recommendation',
+    
+    // Dashboard Temperature
+    'dashboard.temp.hot': 'Hot',
+    'dashboard.temp.warm': 'Warm',
+    'dashboard.temp.cool': 'Cool',
+    
+    // Dashboard Monitor
+    'dashboard.monitor.airTemp': 'Air Temperature Monitor',
+    'dashboard.monitor.airTempDesc': 'Real-time temperature visualization',
+    'dashboard.monitor.soilMoisture': 'Soil Moisture Monitor',
+    'dashboard.monitor.soilMoistureDesc': 'Data from soil moisture sensor',
+    
+    // Dashboard Alerts
+    'dashboard.alert.highTemp': 'High Temperature Warning!',
+    'dashboard.alert.highTempDesc': 'Air temperature exceeds 35°C ({temp}°C). Ensure good ventilation.',
+    'dashboard.alert.highHumidity': 'High Humidity',
+    'dashboard.alert.highHumidityDesc': 'Humidity exceeds 80% ({humidity}%). Consider turning on ventilation.',
+    'dashboard.alert.lowMoisture': 'Soil Moisture Very Low!',
+    'dashboard.alert.lowMoistureDesc': 'Soil moisture below 20% ({moisture}%). Pump {pumpStatus}.',
+    'dashboard.alert.pumpActive': 'is currently active',
+    'dashboard.alert.pumpWillActivate': 'will activate soon',
+    'dashboard.alert.rainDetected': 'Rain Detected',
+    'dashboard.alert.rainDetectedDesc': 'Sensor detected rain. Watering pump should be disabled to conserve water.',
+    
+    // Dashboard Footer
+    'dashboard.footer': 'Built with Next.js, Tailwind CSS & Firebase',
+    
+    // Soil Moisture Page
+    'soil.title': 'Soil Moisture Monitor',
+    'soil.subtitle': 'Real-time Soil Moisture Monitoring System',
+    'soil.moisture': 'Soil Moisture',
+    'soil.sensor': 'Soil Sensor (ADC)',
+    'soil.pumpStatus': 'Pump Status',
+    'soil.pumpActive': 'Pump is watering plants',
+    'soil.pumpStandby': 'Pump in standby mode',
+    'soil.active': 'Active',
+    'soil.inactive': 'Inactive',
+    'soil.adcValue': 'ADC Value',
+    'soil.adcRange': 'Range: 0 - 4095 (12-bit ADC)',
+    'soil.status.veryDry': 'Very Dry',
+    'soil.status.dry': 'Dry',
+    'soil.status.moist': 'Moist',
+    'soil.status.wet': 'Wet',
+    'soil.connected': 'Connected',
+    
+    // Air Quality Page
+    'air.title': 'Air Quality',
+    'air.subtitle': 'Real-time Air Temperature & Humidity Monitoring',
+    'air.temperature': 'Air Temperature',
+    'air.humidity': 'Air Humidity',
+    'air.lastUpdate': 'Last Update',
+    'air.sensor': 'Sensor DHT11',
+    'air.status.veryHot': 'Very Hot',
+    'air.status.hot': 'Hot',
+    'air.status.warm': 'Warm',
+    'air.status.cool': 'Cool',
+    'air.status.cold': 'Cold',
+    'air.status.dry': 'Dry',
+    'air.status.normal': 'Normal',
+    'air.status.humid': 'Humid',
+    'air.status.veryHumid': 'Very Humid',
+    'air.status.live': 'Live',
+    'air.chart.temperature': 'Temperature Chart',
+    'air.chart.humidity': 'Humidity Chart',
+    'air.loadingData': 'Loading air sensor data...',
+    'air.connected': 'Connected',
+    'air.infoDetail': 'Detailed Information',
+    'air.currentTemp': 'Current Temperature',
+    'air.currentHumidity': 'Current Humidity',
+    'air.airQualityStatus': 'Air Quality Status',
+    'air.recommendations': 'Recommendations',
+    'air.condition.coolAndHumid': '✅ Air is cool and humid, comfortable for activities',
+    'air.condition.hotAndDry': '⚠️ Air is hot and dry, drink more water',
+    'air.condition.veryHot': '🔴 Temperature very high, limit outdoor activities',
+    'air.condition.normal': '✅ Air condition is normal',
+    'air.recommendation.useAC': 'Turn on AC or fan',
+    'air.recommendation.useHumidifier': 'Use humidifier',
+    'air.recommendation.increaseVentilation': 'Increase ventilation',
+    'air.recommendation.optimalForPlants': 'Optimal conditions for plants',
+    
+    // Weather Page
+    'weather.title': 'Weather Monitoring',
+    'weather.subtitle': 'Real-time Weather & Rain Detection',
+    'weather.rainStatus': 'Rain Status',
+    'weather.rainDetected': 'Rain Detected',
+    'weather.noRain': 'No Rain',
+    'weather.sensor': 'Rain Sensor',
+    'weather.forecast': '5-Day Weather Forecast',
+    'weather.current': 'Current Weather',
+    'weather.location': 'Location',
+    'weather.feelsLike': 'Feels Like',
+    'weather.wind': 'Wind',
+    'weather.pressure': 'Pressure',
+    'weather.visibility': 'Visibility',
+    'weather.temperature': 'Temperature',
+    'weather.humidity': 'Humidity',
+    'weather.history': 'Weather History',
+    'weather.searchPlaceholder': 'Search city...',
+    'weather.loadingData': 'Loading weather data...',
+    'weather.detailInfo': 'Detail Information',
+    'weather.weatherStatus': 'Weather Status',
+    'weather.rainSensor': 'Rain Sensor Value (ADC)',
+    'weather.lastUpdate': 'Last Update',
+    'weather.impact': 'Impact & Recommendations',
+    'weather.rec.pumpDisabled': 'Automatic watering pump disabled to conserve water',
+    'weather.rec.naturalWater': 'Soil will receive water from natural rain',
+    'weather.rec.monitorSoil': 'Monitor soil moisture to avoid excess water',
+    'weather.rec.checkDrainage': 'Ensure drainage system is functioning properly',
+    'weather.rec.normalPump': 'Automatic watering system can operate normally',
+    'weather.rec.outdoorIdeal': 'Ideal conditions for outdoor activities',
+    'weather.rec.monitorSoilRegular': 'Monitor soil moisture regularly',
+    'weather.rec.watchTemp': 'Watch air temperature for optimal watering',
+    
+    // Analytics Page
+    'analytics.title': 'Data Analysis',
+    'analytics.subtitle': 'AI-Powered Soil Moisture Analysis & Recommendations',
+    'analytics.soilMoisture': 'Soil Moisture',
+    'analytics.airTemp': 'Air Temperature',
+    'analytics.airHumidity': 'Air Humidity',
+    'analytics.weather': 'Weather Condition',
+    'analytics.schedule': 'Analysis Schedule',
+    'analytics.history': 'Analysis History',
+    'analytics.results': 'AI Analysis Results',
+    'analytics.recommendations': 'Smart irrigation system recommendations',
+    'analytics.noData': 'No analysis available',
+    'analytics.viewFull': 'View Full Analysis',
+    'analytics.analyzing': 'Analyzing...',
+    'analytics.manual': 'Manual',
+    'analytics.analyzeNow': 'Analyze Now',
+    
+    // Time units
+    'time.seconds': 'seconds',
+    'time.minutes': 'minutes',
+    'time.hours': 'hours',
+    'time.days': 'days',
+    'time.secondsAgo': 'seconds ago',
+    'time.minutesAgo': 'minutes ago',
+    'time.hoursAgo': 'hours ago',
+    'time.daysAgo': 'days ago',
+    'time.justnow': 'just now',
+    
+    // Common
+    'common.loading': 'Loading dashboard...',
+    'common.loadingHistory': 'Loading historical data...',
+    'common.error': 'Error',
+    'common.retry': 'Retry',
+    'common.reload': 'Reload',
+    'common.close': 'Close',
+    'common.save': 'Save',
+    'common.cancel': 'Cancel',
+    'common.yes': 'Yes',
+    'common.no': 'No',
+    'common.noData': 'No data available',
+    'common.footerAir': 'IoT Air Quality Monitoring System © 2025',
+  },
+  id: {
+    // Landing Page
+    'landing.title': 'Dashboard IoT Pertanian Pintar',
+    'landing.subtitle': 'Monitoring Real-time & Analisis Berbasis AI untuk Pertanian Cerdas',
+    'landing.cta': 'Buka Dashboard',
+    'landing.learnMore': 'Pelajari Lebih Lanjut',
+    'landing.stats.realtime': 'Real-time',
+    'landing.stats.aiAnalytics': 'Analitik AI',
+    'landing.stats.iotSensors': 'Sensor IoT',
+    'landing.preview.liveMonitoring': 'Monitoring Langsung',
+    'landing.preview.soilMoisture': 'Kelembapan Tanah',
+    'landing.preview.airTemp': 'Suhu Udara',
+    'landing.preview.airHumidity': 'Kelembapan Udara',
+    'landing.preview.weather': 'Cuaca',
+    'landing.preview.aiPowered': 'Analitik Berbasis AI',
+    'landing.preview.autoRecommendation': 'Rekomendasi irigasi otomatis',
+    'landing.features.title': 'Fitur Unggulan',
+    'landing.features.subtitle': 'Teknologi terkini untuk pertanian modern',
+    'landing.features.soilMoisture': 'Kelembapan Tanah',
+    'landing.features.soilMoistureDesc': 'Monitor kelembapan tanah secara real-time dengan sensor ADC 12-bit',
+    'landing.features.airQuality': 'Kualitas Udara',
+    'landing.features.airQualityDesc': 'Pantau suhu dan kelembapan udara dengan sensor DHT11',
+    'landing.features.weatherForecast': 'Prakiraan Cuaca',
+    'landing.features.weatherForecastDesc': 'Prediksi cuaca 5 hari dengan OpenWeather API',
+    'landing.features.aiAnalytics': 'Analitik AI',
+    'landing.features.aiAnalyticsDesc': 'Analisis cerdas dengan Gemini AI untuk rekomendasi irigasi',
+    'landing.features.realtime': 'Monitoring Real-time',
+    'landing.features.realtime.desc': 'Pantau kelembapan tanah, suhu, dan kelembapan secara real-time',
+    'landing.features.ai': 'Analisis AI',
+    'landing.features.ai.desc': 'Dapatkan rekomendasi cerdas berbasis Gemini AI',
+    'landing.features.weather': 'Prakiraan Cuaca',
+    'landing.features.weather.desc': 'Prediksi cuaca 5 hari untuk perencanaan lebih baik',
+    'landing.features.history': 'Data Historis',
+    'landing.features.history.desc': 'Lacak tren dan pola dari waktu ke waktu',
+    'landing.cta.ready': 'Siap Meningkatkan Produktivitas Pertanian?',
+    'landing.cta.startNow': 'Mulai monitoring sekarang dengan sistem IoT terintegrasi',
+    'landing.cta.button': 'Buka Dashboard Sekarang →',
+    'landing.footer.title': 'IoT Dashboard',
+    'landing.footer.subtitle': 'Smart Agriculture',
+    'landing.footer.description': 'Sistem monitoring pertanian modern dengan teknologi IoT dan AI',
+    'landing.footer.features': 'Fitur',
+    'landing.footer.technology': 'Teknologi',
+    'landing.footer.copyright': '© 2026 IoT Dashboard - Smart Agriculture System. All rights reserved.',
+    
+    // Sidebar
+    'sidebar.home': 'Beranda',
+    'sidebar.overview': 'Ringkasan',
+    'sidebar.soilMoisture': 'Kelembapan Tanah',
+    'sidebar.airQuality': 'Kualitas Udara',
+    'sidebar.weather': 'Cuaca',
+    'sidebar.analytics': 'Analisis Data',
+    'sidebar.settings': 'Pengaturan',
+    'sidebar.logout': 'Keluar',
+    
+    // Dashboard Overview
+    'dashboard.title': 'Dashboard IoT Pertanian Pintar',
+    'dashboard.subtitle': 'Sistem Monitoring Sensor Real-time',
+    'dashboard.lastUpdate': 'Update Terakhir',
+    'dashboard.ago': 'yang lalu',
+    
+    // Stats Cards
+    'stats.soilMoisture': 'Kelembapan Tanah',
+    'stats.airTemp': 'Suhu Udara',
+    'stats.airHumidity': 'Kelembapan Udara',
+    'stats.soilTemp': 'Suhu Tanah',
+    'stats.sensorReading': 'Pembacaan Sensor',
+    'stats.pumpStatus': 'Status Pompa',
+    'stats.weather': 'Kondisi Cuaca',
+    'stats.lastSync': 'Sinkronisasi Terakhir',
+    'stats.lastUpdate': 'Update Terakhir',
+    'stats.systemStatus': 'Status Sistem',
+    'stats.status.on': 'HIDUP',
+    'stats.status.off': 'MATI',
+    'stats.weather.clear': 'Cerah',
+    'stats.weather.rain': 'Hujan',
+    'stats.weather.cloudy': 'Berawan',
+    
+    // Charts
+    'chart.title': 'Monitoring Time Series',
+    'chart.description': 'Data historis sensor dalam 20 pembacaan terakhir',
+    'chart.soilMoisture': 'Kelembapan Tanah',
+    'chart.airTemp': 'Suhu Udara',
+    'chart.airHumidity': 'Kelembapan Udara',
+    'chart.moistureLabel': 'Kelembapan (%)',
+    'chart.tempLabel': 'Suhu (°C)',
+    'chart.humidityLabel': 'Kelembapan (%)',
+    'chart.soilMoistureUnit': 'Kelembapan Tanah (%)',
+    'chart.airTempUnit': 'Suhu Udara (°C)',
+    'chart.airHumidityUnit': 'Kelembapan Udara (%)',
+    'chart.realtime': 'Real-time',
+    'chart.temperature': 'Suhu',
+    'chart.humidity': 'Kelembapan',
+    
+    // Dashboard Greeting
+    'dashboard.greeting.morning': 'Selamat Pagi',
+    'dashboard.greeting.afternoon': 'Selamat Siang',
+    'dashboard.greeting.evening': 'Selamat Sore',
+    'dashboard.greeting.night': 'Selamat Malam',
+    
+    // Dashboard Status
+    'dashboard.status.high': 'Tinggi',
+    'dashboard.status.medium': 'Sedang',
+    'dashboard.status.normal': 'Normal',
+    'dashboard.status.low': 'Rendah',
+    'dashboard.status.wet': 'Lembab',
+    'dashboard.status.dry': 'Kering',
+    'dashboard.status.veryDry': 'Sangat Kering',
+    'dashboard.status.humid': 'Lembap',
+    'dashboard.status.online': 'Online',
+    'dashboard.status.offline': 'Offline',
+    'dashboard.status.active': 'Aktif',
+    'dashboard.status.standby': 'Standby',
+    'dashboard.status.live': 'Live',
+    'dashboard.status.liveUpdate': 'Live Update',
+    
+    // Dashboard Weather
+    'dashboard.weather.rainy': 'Hujan',
+    'dashboard.weather.sunny': 'Cerah',
+    'dashboard.weather.rainDetected': 'Sensor Deteksi Hujan',
+    'dashboard.weather.noRain': 'Tidak Ada Hujan',
+    'dashboard.weather.rainRecommendation': 'Pompa penyiraman otomatis dinonaktifkan saat hujan',
+    'dashboard.weather.sunnyRecommendation': 'Kondisi cerah, penyiraman dapat dilakukan sesuai jadwal',
+    
+    // Dashboard Sections
+    'dashboard.section.soil': 'Data Tanah',
+    'dashboard.section.air': 'Data Udara',
+    'dashboard.section.weather': 'Kondisi Cuaca',
+    'dashboard.viewDetail': 'Lihat Detail Lengkap',
+    'dashboard.viewDetailLink': 'Lihat detail',
+    'dashboard.airQuality': 'Kualitas Udara',
+    'dashboard.recommendation': 'Rekomendasi',
+    
+    // Dashboard Temperature
+    'dashboard.temp.hot': 'Panas',
+    'dashboard.temp.warm': 'Hangat',
+    'dashboard.temp.cool': 'Sejuk',
+    
+    // Dashboard Monitor
+    'dashboard.monitor.airTemp': 'Monitor Suhu Udara',
+    'dashboard.monitor.airTempDesc': 'Visualisasi suhu real-time',
+    'dashboard.monitor.soilMoisture': 'Monitor Kelembapan Tanah',
+    'dashboard.monitor.soilMoistureDesc': 'Data dari sensor soil moisture',
+    
+    // Dashboard Alerts
+    'dashboard.alert.highTemp': 'Peringatan Suhu Tinggi!',
+    'dashboard.alert.highTempDesc': 'Suhu udara melebihi 35°C ({temp}°C). Pastikan ventilasi baik.',
+    'dashboard.alert.highHumidity': 'Kelembaban Udara Tinggi',
+    'dashboard.alert.highHumidityDesc': 'Kelembaban udara melebihi 80% ({humidity}%). Pertimbangkan untuk menyalakan ventilasi.',
+    'dashboard.alert.lowMoisture': 'Kelembapan Tanah Sangat Rendah!',
+    'dashboard.alert.lowMoistureDesc': 'Kelembapan tanah di bawah 20% ({moisture}%). Pompa {pumpStatus}.',
+    'dashboard.alert.pumpActive': 'sedang aktif',
+    'dashboard.alert.pumpWillActivate': 'akan segera aktif',
+    'dashboard.alert.rainDetected': 'Hujan Terdeteksi',
+    'dashboard.alert.rainDetectedDesc': 'Sensor mendeteksi hujan. Pompa penyiraman sebaiknya dinonaktifkan untuk menghemat air.',
+    
+    // Dashboard Footer
+    'dashboard.footer': 'Dibuat dengan Next.js, Tailwind CSS & Firebase',
+    
+    // Soil Moisture Page
+    'soil.title': 'Monitor Kelembapan Tanah',
+    'soil.subtitle': 'Sistem Monitoring Kelembapan Tanah Real-time',
+    'soil.moisture': 'Kelembapan Tanah',
+    'soil.sensor': 'Sensor Tanah (ADC)',
+    'soil.pumpStatus': 'Status Pompa',
+    'soil.pumpActive': 'Pompa sedang menyiram tanaman',
+    'soil.pumpStandby': 'Pompa dalam mode standby',
+    'soil.active': 'Aktif',
+    'soil.inactive': 'Tidak Aktif',
+    'soil.adcValue': 'Nilai ADC',
+    'soil.adcRange': 'Range: 0 - 4095 (ADC 12-bit)',
+    'soil.status.veryDry': 'Sangat Kering',
+    'soil.status.dry': 'Kering',
+    'soil.status.moist': 'Lembap',
+    'soil.status.wet': 'Basah',
+    'soil.connected': 'Terhubung',
+    'soil.errorMessage': 'Pastikan Firebase sudah terkonfigurasi dengan benar dan data sudah tersedia.',
+    
+    // Air Quality Page
+    'air.title': 'Kualitas Udara',
+    'air.subtitle': 'Monitoring Suhu & Kelembapan Udara Real-time',
+    'air.temperature': 'Suhu Udara',
+    'air.humidity': 'Kelembapan Udara',
+    'air.lastUpdate': 'Update Terakhir',
+    'air.sensor': 'Sensor DHT11',
+    'air.status.veryHot': 'Sangat Panas',
+    'air.status.hot': 'Panas',
+    'air.status.warm': 'Hangat',
+    'air.status.cool': 'Sejuk',
+    'air.status.cold': 'Dingin',
+    'air.status.dry': 'Kering',
+    'air.status.normal': 'Normal',
+    'air.status.humid': 'Lembap',
+    'air.status.veryHumid': 'Sangat Lembap',
+    'air.status.live': 'Live',
+    'air.chart.temperature': 'Grafik Suhu Udara',
+    'air.chart.humidity': 'Grafik Kelembapan Udara',
+    'air.loadingData': 'Memuat data sensor udara...',
+    'air.connected': 'Terhubung',
+    'air.infoDetail': 'Informasi Detail',
+    'air.currentTemp': 'Suhu Saat Ini',
+    'air.currentHumidity': 'Kelembapan Saat Ini',
+    'air.airQualityStatus': 'Status Kualitas Udara',
+    'air.recommendations': 'Rekomendasi',
+    'air.condition.coolAndHumid': '✅ Kondisi udara sejuk dan lembap, nyaman untuk aktivitas',
+    'air.condition.hotAndDry': '⚠️ Udara panas dan kering, disarankan minum air lebih banyak',
+    'air.condition.veryHot': '🔴 Suhu sangat tinggi, batasi aktivitas outdoor',
+    'air.condition.normal': '✅ Kondisi udara dalam batas normal',
+    'air.recommendation.useAC': 'Aktifkan AC atau kipas angin',
+    'air.recommendation.useHumidifier': 'Gunakan humidifier',
+    'air.recommendation.increaseVentilation': 'Tingkatkan ventilasi',
+    'air.recommendation.optimalForPlants': 'Kondisi optimal untuk tanaman',
+    
+    // Weather Page
+    'weather.title': 'Monitoring Cuaca',
+    'weather.subtitle': 'Cuaca Real-time & Deteksi Hujan',
+    'weather.rainStatus': 'Status Hujan',
+    'weather.rainDetected': 'Hujan Terdeteksi',
+    'weather.noRain': 'Tidak Ada Hujan',
+    'weather.sensor': 'Sensor Hujan',
+    'weather.forecast': 'Prakiraan Cuaca 5 Hari',
+    'weather.current': 'Cuaca Saat Ini',
+    'weather.location': 'Lokasi',
+    'weather.feelsLike': 'Terasa Seperti',
+    'weather.wind': 'Angin',
+    'weather.pressure': 'Tekanan',
+    'weather.visibility': 'Visibilitas',
+    'weather.temperature': 'Suhu',
+    'weather.humidity': 'Kelembapan',
+    'weather.history': 'Riwayat Cuaca',
+    'weather.searchPlaceholder': 'Cari kota...',
+    'weather.loadingData': 'Memuat data cuaca...',
+    'weather.errorMessage': 'Pastikan Firebase sudah terkonfigurasi dengan benar dan data sudah tersedia.',
+    'weather.detailInfo': 'Informasi Detail',
+    'weather.weatherStatus': 'Status Cuaca',
+    'weather.rainSensor': 'Nilai Sensor Hujan (ADC)',
+    'weather.lastUpdate': 'Update Terakhir',
+    'weather.impact': 'Dampak & Rekomendasi',
+    'weather.rec.pumpDisabled': 'Pompa penyiraman otomatis dinonaktifkan untuk menghemat air',
+    'weather.rec.naturalWater': 'Tanah akan mendapat air dari hujan alami',
+    'weather.rec.monitorSoil': 'Monitor kelembapan tanah untuk menghindari kelebihan air',
+    'weather.rec.checkDrainage': 'Pastikan sistem drainase berfungsi dengan baik',
+    'weather.rec.normalPump': 'Sistem penyiraman otomatis dapat beroperasi normal',
+    'weather.rec.outdoorIdeal': 'Kondisi ideal untuk aktivitas outdoor',
+    'weather.rec.monitorSoilRegular': 'Monitor kelembapan tanah secara berkala',
+    'weather.rec.watchTemp': 'Perhatikan suhu udara untuk optimasi penyiraman',
+    
+    // Analytics Page
+    'analytics.title': 'Analisis Data',
+    'analytics.subtitle': 'Analisis Kelembapan Tanah & Rekomendasi Berbasis AI',
+    'analytics.soilMoisture': 'Kelembapan Tanah',
+    'analytics.airTemp': 'Suhu Udara',
+    'analytics.airHumidity': 'Kelembapan Udara',
+    'analytics.weather': 'Kondisi Cuaca',
+    'analytics.schedule': 'Jadwal Analisis',
+    'analytics.history': 'Riwayat Analisis',
+    'analytics.results': 'Hasil Analisis AI',
+    'analytics.recommendations': 'Rekomendasi sistem irigasi cerdas',
+    'analytics.noData': 'Tidak ada analisis tersedia',
+    'analytics.viewFull': 'Lihat Analisis Lengkap',
+    'analytics.analyzing': 'Menganalisis...',
+    'analytics.manual': 'Manual',
+    'analytics.analyzeNow': 'Analisis Sekarang',
+    
+    // Time units
+    'time.seconds': 'detik',
+    'time.minutes': 'menit',
+    'time.hours': 'jam',
+    'time.days': 'hari',
+    'time.justnow': 'baru saja',
+    
+    // Common
+    'common.loading': 'Memuat dashboard...',
+    'common.loadingHistory': 'Memuat data historis...',
+    'common.error': 'Error',
+    'common.retry': 'Coba Lagi',
+    'common.close': 'Tutup',
+    'common.save': 'Simpan',
+    'common.cancel': 'Batal',
+    'common.yes': 'Ya',
+    'common.no': 'Tidak',
+    'common.noData': 'Tidak ada data tersedia',
+  }
+};
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [language, setLanguageState] = useState<Language>('id');
+
+  // Load language from localStorage on mount
+  useEffect(() => {
+    const savedLang = localStorage.getItem('language') as Language;
+    if (savedLang && (savedLang === 'en' || savedLang === 'id')) {
+      setLanguageState(savedLang);
+    }
+  }, []);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem('language', lang);
+  };
+
+  const t = (key: string): string => {
+    const langTranslations = translations[language] as Record<string, string>;
+    return langTranslations[key] || key;
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within LanguageProvider');
+  }
+  return context;
+}

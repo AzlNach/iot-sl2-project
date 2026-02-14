@@ -110,7 +110,7 @@ export default function AIAnalysisPanel() {
         const emoji = text.match(/^([^\w\s]+)\s+(.+)/);
         return (
           <div key={index} className="mt-6 mb-4 first:mt-0">
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border-l-4 border-green-500 shadow-sm">
+            <div className="bg-gradient-to-r from-[#F6F0D7] to-[#C5D89D]/30 rounded-xl p-4 border-l-4 border-[#9CAB84] shadow-sm">
               <div className="flex items-center space-x-3">
                 {emoji && (
                   <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-xl shadow-sm">
@@ -132,7 +132,7 @@ export default function AIAnalysisPanel() {
         return (
           <div key={index} className="mt-4 mb-2">
             <h4 className="text-base font-semibold text-gray-800 flex items-center space-x-2">
-              <span className="w-1 h-5 bg-green-500 rounded-full"></span>
+              <span className="w-1 h-5 bg-cream0 rounded-full"></span>
               <span>{text}</span>
             </h4>
           </div>
@@ -145,7 +145,7 @@ export default function AIAnalysisPanel() {
         return (
           <div key={index} className="mt-3 mb-2">
             <h5 className="text-base font-bold text-gray-800 flex items-center space-x-2">
-              <span className="text-green-500">▸</span>
+              <span className="text-[#9CAB84]">▸</span>
               <span>{text}</span>
             </h5>
           </div>
@@ -162,10 +162,10 @@ export default function AIAnalysisPanel() {
         return (
           <div key={index} className={`my-3 p-4 rounded-xl border-2 ${
             isWarningBold 
-              ? 'bg-amber-50 border-amber-300' 
+              ? 'bg-[#F6F0D7]/60 border-[#C5D89D]' 
               : isSuccessBold 
-              ? 'bg-green-50 border-green-300'
-              : 'bg-blue-50 border-blue-300'
+              ? 'bg-[#F6F0D7] border-[#C5D89D]'
+              : 'bg-[#F6F0D7]/40 border-[#C5D89D]/50'
           }`}>
             <div className="flex items-start space-x-3">
               <div className={`text-2xl ${
@@ -176,20 +176,20 @@ export default function AIAnalysisPanel() {
               <div>
                 <p className={`font-bold text-base mb-1 ${
                   isWarningBold 
-                    ? 'text-amber-900' 
+                    ? 'text-[#89986D]' 
                     : isSuccessBold 
-                    ? 'text-green-900'
-                    : 'text-blue-900'
+                    ? 'text-[#89986D]'
+                    : 'text-[#89986D]'
                 }`}>
                   {boldText}
                 </p>
                 {restText && (
                   <p className={`text-sm ${
                     isWarningBold 
-                      ? 'text-amber-800' 
+                      ? 'text-gray-700' 
                       : isSuccessBold 
-                      ? 'text-green-800'
-                      : 'text-blue-800'
+                      ? 'text-olive-dark'
+                      : 'text-olive-dark'
                   }`}>
                     {restText}
                   </p>
@@ -206,7 +206,7 @@ export default function AIAnalysisPanel() {
         const number = line.match(/^(\d+)\./)?.[1];
         return (
           <div key={index} className="flex items-start space-x-3 my-2 ml-2">
-            <div className="w-7 h-7 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+            <div className="w-7 h-7 bg-gradient-to-br from-[#9CAB84] to-[#89986D] rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
               <span className="text-xs font-bold text-white">{number}</span>
             </div>
             <p className="text-sm text-gray-700 leading-relaxed pt-1">
@@ -235,7 +235,7 @@ export default function AIAnalysisPanel() {
         const hasEmoji = text.match(/^([^\w\s]+)\s+(.+)/);
         return (
           <div key={index} className="flex items-start space-x-3 my-2 ml-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+            <div className="w-2 h-2 bg-cream0 rounded-full flex-shrink-0 mt-2"></div>
             <p className="text-sm text-gray-700 leading-relaxed flex items-start space-x-2">
               {hasEmoji && <span className="text-base">{hasEmoji[1]}</span>}
               <span>{processInlineMarkdown(hasEmoji ? hasEmoji[2] : text)}</span>
@@ -267,8 +267,8 @@ export default function AIAnalysisPanel() {
 
       if (isSuccess) {
         return (
-          <div key={index} className="my-2 p-3 bg-green-50 border-l-4 border-green-500 rounded-r-lg">
-            <p className="text-sm text-green-900 leading-relaxed">
+          <div key={index} className="my-2 p-3 bg-[#F6F0D7] border-l-4 border-[#9CAB84] rounded-r-lg">
+            <p className="text-sm text-[#89986D] leading-relaxed">
               {processInlineMarkdown(line)}
             </p>
           </div>
@@ -292,10 +292,10 @@ export default function AIAnalysisPanel() {
       {lastAnalysis && (
         <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
           {/* Results Header */}
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 md:p-8 border-b border-gray-100">
+          <div className="bg-gradient-to-r from-[#F6F0D7] to-[#C5D89D]/30 p-6 md:p-8 border-b border-gray-100">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white text-2xl shadow-md">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#9CAB84] to-[#89986D] rounded-xl flex items-center justify-center text-white text-2xl shadow-md">
                   📊
                 </div>
                 <div>
@@ -303,9 +303,9 @@ export default function AIAnalysisPanel() {
                   <p className="text-sm text-gray-600 mt-0.5">Rekomendasi sistem irigasi cerdas</p>
                 </div>
               </div>
-              <div className="px-4 py-2 bg-white rounded-xl border-2 border-green-200 shadow-sm">
+              <div className="px-4 py-2 bg-white rounded-xl border-2 border-[#C5D89D] shadow-sm">
                 <span className="text-xs text-gray-500 font-medium block mb-0.5">Periode Data</span>
-                <span className="text-sm text-green-700 font-bold">{lastAnalysis?.timeRange || 'N/A'}</span>
+                <span className="text-sm text-[#89986D] font-bold">{lastAnalysis?.timeRange || 'N/A'}</span>
               </div>
             </div>
           </div>
@@ -313,51 +313,51 @@ export default function AIAnalysisPanel() {
           {/* Statistics Grid - Minimalist Cards */}
           <div className="p-6 md:p-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-              <div className="group relative bg-gradient-to-br from-blue-50 to-blue-100/50 p-5 rounded-2xl border border-blue-200/50 hover:shadow-md transition-all">
-                <div className="absolute top-3 right-3 w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center text-lg">
+              <div className="group relative bg-gradient-to-br from-[#F6F0D7] to-[#F6F0D7]/50 p-5 rounded-2xl border border-[#C5D89D]/50 hover:shadow-md transition-all">
+                <div className="absolute top-3 right-3 w-8 h-8 bg-[#89986D]/10 rounded-lg flex items-center justify-center text-lg">
                   📊
                 </div>
-                <div className="text-xs text-blue-600 font-semibold uppercase tracking-wide mb-2">Rata-rata</div>
-                <div className="text-3xl font-bold text-blue-700">{lastAnalysis.statistics?.rata_rata ?? 0}<span className="text-xl">%</span></div>
+                <div className="text-xs text-[#89986D] font-semibold uppercase tracking-wide mb-2">Rata-rata</div>
+                <div className="text-3xl font-bold text-[#89986D]">{lastAnalysis.statistics?.rata_rata ?? 0}<span className="text-xl">%</span></div>
               </div>
-              <div className="group relative bg-gradient-to-br from-green-50 to-green-100/50 p-5 rounded-2xl border border-green-200/50 hover:shadow-md transition-all">
-                <div className="absolute top-3 right-3 w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center text-lg">
+              <div className="group relative bg-gradient-to-br from-[#C5D89D]/40 to-[#C5D89D]/20 p-5 rounded-2xl border border-[#C5D89D]/50 hover:shadow-md transition-all">
+                <div className="absolute top-3 right-3 w-8 h-8 bg-[#89986D]/10 rounded-lg flex items-center justify-center text-lg">
                   ⬆️
                 </div>
-                <div className="text-xs text-green-600 font-semibold uppercase tracking-wide mb-2">Maksimum</div>
-                <div className="text-3xl font-bold text-green-700">{lastAnalysis.statistics?.maksimum ?? 0}<span className="text-xl">%</span></div>
+                <div className="text-xs text-[#89986D] font-semibold uppercase tracking-wide mb-2">Maksimum</div>
+                <div className="text-3xl font-bold text-[#89986D]">{lastAnalysis.statistics?.maksimum ?? 0}<span className="text-xl">%</span></div>
               </div>
-              <div className="group relative bg-gradient-to-br from-orange-50 to-orange-100/50 p-5 rounded-2xl border border-orange-200/50 hover:shadow-md transition-all">
-                <div className="absolute top-3 right-3 w-8 h-8 bg-orange-500/10 rounded-lg flex items-center justify-center text-lg">
+              <div className="group relative bg-gradient-to-br from-[#F6F0D7] to-[#F6F0D7]/50 p-5 rounded-2xl border border-[#C5D89D]/50 hover:shadow-md transition-all">
+                <div className="absolute top-3 right-3 w-8 h-8 bg-[#89986D]/10 rounded-lg flex items-center justify-center text-lg">
                   ⬇️
                 </div>
-                <div className="text-xs text-orange-600 font-semibold uppercase tracking-wide mb-2">Minimum</div>
-                <div className="text-3xl font-bold text-orange-700">{lastAnalysis.statistics?.minimum ?? 0}<span className="text-xl">%</span></div>
+                <div className="text-xs text-[#89986D] font-semibold uppercase tracking-wide mb-2">Minimum</div>
+                <div className="text-3xl font-bold text-[#89986D]">{lastAnalysis.statistics?.minimum ?? 0}<span className="text-xl">%</span></div>
               </div>
-              <div className="group relative bg-gradient-to-br from-purple-50 to-purple-100/50 p-5 rounded-2xl border border-green-200/50 hover:shadow-md transition-all">
-                <div className="absolute top-3 right-3 w-8 h-8 bg-purple-500/10 rounded-lg flex items-center justify-center text-lg">
+              <div className="group relative bg-gradient-to-br from-[#C5D89D]/30 to-[#C5D89D]/20 p-5 rounded-2xl border border-[#C5D89D]/50 hover:shadow-md transition-all">
+                <div className="absolute top-3 right-3 w-8 h-8 bg-[#89986D]/10 rounded-lg flex items-center justify-center text-lg">
                   📈
                 </div>
-                <div className="text-xs text-purple-600 font-semibold uppercase tracking-wide mb-2">Tren</div>
-                <div className="text-3xl font-bold text-purple-700 capitalize">{lastAnalysis.statistics?.tren ?? 'N/A'}</div>
+                <div className="text-xs text-[#89986D] font-semibold uppercase tracking-wide mb-2">Tren</div>
+                <div className="text-3xl font-bold text-[#89986D] capitalize">{lastAnalysis.statistics?.tren ?? 'N/A'}</div>
               </div>
             </div>
 
             {/* Pump Usage - Elegant Card */}
-            <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-5 mb-6 border border-orange-200/50">
+            <div className="bg-gradient-to-r from-[#F6F0D7] to-[#C5D89D]/30 rounded-2xl p-5 mb-6 border border-[#C5D89D]/50">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center text-xl">
+                  <div className="w-10 h-10 bg-[#89986D]/10 rounded-xl flex items-center justify-center text-xl">
                     ⚙️
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 text-base">Penggunaan Pompa</h4>
-                    <p className="text-sm text-gray-600">Aktivasi: <span className="font-bold text-orange-700">{lastAnalysis.pumpUsage?.aktivasi ?? 0} kali</span></p>
+                    <p className="text-sm text-gray-600">Aktivasi: <span className="font-bold text-[#89986D]">{lastAnalysis.pumpUsage?.aktivasi ?? 0} kali</span></p>
                   </div>
                 </div>
-                <div className="px-5 py-2.5 bg-orange-100 border-2 border-orange-200 rounded-xl">
-                  <span className="text-xs text-orange-600 font-medium block mb-0.5">Persentase Waktu</span>
-                  <span className="text-2xl font-bold text-orange-700">{lastAnalysis.pumpUsage?.persentase ?? 0}%</span>
+                <div className="px-5 py-2.5 bg-[#F6F0D7] border-2 border-[#C5D89D] rounded-xl">
+                  <span className="text-xs text-[#89986D] font-medium block mb-0.5">Persentase Waktu</span>
+                  <span className="text-2xl font-bold text-[#89986D]">{lastAnalysis.pumpUsage?.persentase ?? 0}%</span>
                 </div>
               </div>
             </div>
@@ -365,7 +365,7 @@ export default function AIAnalysisPanel() {
             {/* AI Analysis Text - Clean Typography */}
             <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-2xl p-6 border border-gray-200">
               <div className="flex items-center space-x-3 mb-5">
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#9CAB84] to-[#89986D] rounded-xl flex items-center justify-center text-white text-xl shadow-md">
                   🧠
                 </div>
                 <h4 className="font-bold text-xl text-gray-900">Analisis & Rekomendasi AI</h4>
@@ -381,7 +381,7 @@ export default function AIAnalysisPanel() {
                 <div className="mt-6 text-center pt-4 border-t border-gray-200">
                   <button
                     onClick={() => setShowFullAnalysis(true)}
-                    className="inline-flex items-center space-x-2 px-6 py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all shadow-md hover:shadow-lg"
+                    className="inline-flex items-center space-x-2 px-6 py-2.5 bg-gradient-to-r from-[#9CAB84] to-[#89986D] text-white rounded-xl font-semibold hover:from-[#89986D] hover:to-[#89986D] transition-all shadow-md hover:shadow-lg"
                   >
                     <span>Lihat Analisis Lengkap</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -397,7 +397,7 @@ export default function AIAnalysisPanel() {
               <div className="flex flex-wrap items-center justify-between gap-4 text-sm">
                 {lastAnalysis.metadata?.analyzedAt && (
                   <div className="flex items-center space-x-2 px-4 py-2 bg-gray-50 rounded-xl border border-gray-200">
-                    <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center text-xs">
+                    <div className="w-6 h-6 bg-sage-light/15 rounded-lg flex items-center justify-center text-xs">
                       📅
                     </div>
                     <span className="text-gray-600">Dianalisis: <span className="font-semibold text-gray-900">{lastAnalysis.metadata.analyzedAt}</span></span>
@@ -405,7 +405,7 @@ export default function AIAnalysisPanel() {
                 )}
                 {lastAnalysis.metadata?.dataPoints && (
                   <div className="flex items-center space-x-2 px-4 py-2 bg-gray-50 rounded-xl border border-gray-200">
-                    <div className="w-6 h-6 bg-green-100 rounded-lg flex items-center justify-center text-xs">
+                    <div className="w-6 h-6 bg-sage-light/20 rounded-lg flex items-center justify-center text-xs">
                       📊
                     </div>
                     <span className="text-gray-600"><span className="font-semibold text-gray-900">{lastAnalysis.metadata.dataPoints}</span> data points</span>
@@ -431,25 +431,25 @@ export default function AIAnalysisPanel() {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8">
-              <div className="p-4 bg-blue-50 rounded-2xl border border-blue-100">
+              <div className="p-4 bg-[#F6F0D7]/50 rounded-2xl border border-[#C5D89D]">
                 <div className="text-3xl mb-2">📊</div>
                 <div className="text-sm font-semibold text-gray-900 mb-1">Analisis Mendalam</div>
                 <div className="text-xs text-gray-600">Evaluasi pola & tren kelembaban</div>
               </div>
-              <div className="p-4 bg-green-50 rounded-2xl border border-green-100">
+              <div className="p-4 bg-[#F6F0D7] rounded-2xl border border-[#C5D89D]">
                 <div className="text-3xl mb-2">💡</div>
                 <div className="text-sm font-semibold text-gray-900 mb-1">Rekomendasi Cerdas</div>
                 <div className="text-xs text-gray-600">Saran optimalisasi sistem irigasi</div>
               </div>
-              <div className="p-4 bg-purple-50 rounded-2xl border border-purple-100">
+              <div className="p-4 bg-[#C5D89D]/30 rounded-2xl border border-[#C5D89D]">
                 <div className="text-3xl mb-2">⚙️</div>
                 <div className="text-sm font-semibold text-gray-900 mb-1">Evaluasi Pompa</div>
                 <div className="text-xs text-gray-600">Analisis efisiensi penggunaan</div>
               </div>
             </div>
 
-            <div className="inline-flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl">
-              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center text-white text-lg">
+            <div className="inline-flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-sage-light rounded-2xl">
+              <div className="w-8 h-8 bg-cream0 rounded-lg flex items-center justify-center text-white text-lg">
                 💡
               </div>
               <span className="text-sm text-gray-700 font-medium">AI akan menganalisis data dari periode waktu yang Anda pilih</span>

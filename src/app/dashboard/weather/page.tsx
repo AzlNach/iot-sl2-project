@@ -2,10 +2,12 @@
 
 import { useSoilMoistureData } from "@/hooks/useSoilMoistureData";
 import { useWeatherForecast } from "@/hooks/useWeatherForecast";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import { ref, query, orderByChild, limitToLast, onValue } from "firebase/database";
 import { database } from "@/firebase/config";
 import DashboardLayout from "@/components/DashboardLayout";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import WeatherForecastCard from "@/components/WeatherForecastCard";
 import LocationSearch from "@/components/LocationSearch";
 
@@ -19,10 +21,10 @@ interface WeatherHistoryPoint {
 }
 
 // Format timestamp
-const formatTimestamp = (timestamp: number) => {
+const formatTimestamp = (timestamp: number, language: string) => {
   if (!timestamp) return "N/A";
   const date = new Date(timestamp);
-  return date.toLocaleString("id-ID", {
+  return date.toLocaleString(language === 'id' ? 'id-ID' : 'en-US', {
     day: "2-digit",
     month: "short",
     year: "numeric",
@@ -33,7 +35,7 @@ const formatTimestamp = (timestamp: number) => {
 };
 
 // Calculate time ago
-const getTimeAgo = (timestamp: number) => {
+const getTimeAgo = (timestamp: number, t: (key: string) => string) => {
   if (!timestamp) return "N/A";
   const now = Date.now();
   const diff = now - timestamp;
@@ -43,14 +45,15 @@ const getTimeAgo = (timestamp: number) => {
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
 
-  if (days > 0) return `${days} hari yang lalu`;
-  if (hours > 0) return `${hours} jam yang lalu`;
-  if (minutes > 0) return `${minutes} menit yang lalu`;
-  return `${seconds} detik yang lalu`;
+  if (days > 0) return `${days} ${t('time.daysAgo')}`;
+  if (hours > 0) return `${hours} ${t('time.hoursAgo')}`;
+  if (minutes > 0) return `${minutes} ${t('time.minutesAgo')}`;
+  return `${seconds} ${t('time.secondsAgo')}`;
 };
 
 export default function WeatherPage() {
   const { data, loading, error } = useSoilMoistureData();
+  const { t, language } = useLanguage();
   const { 
     forecast, 
     loading: forecastLoading, 
@@ -104,7 +107,7 @@ export default function WeatherPage() {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#89986D]"></div>
-          <p className="mt-4 text-gray-600 text-lg">Memuat data cuaca...</p>
+          <p className="mt-4 text-gray-600 text-lg">{t('weather.loadingData')}</p>
         </div>
       </div>
     );
@@ -122,7 +125,7 @@ export default function WeatherPage() {
               onClick={() => window.location.reload()}
               className="px-6 py-2 bg-[#89986D] text-white rounded-lg hover:bg-[#9CAB84] transition"
             >
-              Muat Ulang
+              {t('common.reload')}
             </button>
           </div>
         </div>
@@ -137,16 +140,17 @@ export default function WeatherPage() {
       {/* Header */}
       <div className="content-header">
         <div className="header-left">
-          <h1>{isRaining ? "🌧️" : "☀️"} Kondisi Cuaca</h1>
-          <p>Monitoring Cuaca & Sensor Hujan Real-time</p>
+          <h1>{isRaining ? "🌧️" : "☀️"} {t('sidebar.weather')}</h1>
+          <p>{t('weather.subtitle')}</p>
         </div>
         <div className="header-right">
+          <LanguageSwitcher />
           <div className="header-date">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" />
               <path d="M12 6v6l4 2" />
             </svg>
-            <span>{currentTime.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
+            <span>{currentTime.toLocaleTimeString(language === 'id' ? 'id-ID' : 'en-US', { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
           </div>
           <div className="header-date">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -155,11 +159,11 @@ export default function WeatherPage() {
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
-            <span>{currentTime.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })}</span>
+            <span>{currentTime.toLocaleDateString(language === 'id' ? 'id-ID' : 'en-US', { weekday: "short", day: "numeric", month: "short" })}</span>
           </div>
           <div className={`status-indicator ${data.timestamp > 0 ? "active" : "inactive"}`}>
             <div className="status-dot"></div>
-            <span>{data.timestamp > 0 ? "Live" : "Offline"}</span>
+            <span>{data.timestamp > 0 ? t('dashboard.status.live') : t('dashboard.status.offline')}</span>
           </div>
         </div>
       </div>
@@ -182,17 +186,17 @@ export default function WeatherPage() {
                 ? "bg-[#89986D] text-white" 
                 : "bg-[#9CAB84] text-white"
             }`}>
-              {isRaining ? "Hujan Terdeteksi" : "Tidak Ada Hujan"}
+              {isRaining ? t('weather.rainDetected') : t('weather.noRain')}
             </div>
             
             <div className="mt-8 pt-8 border-t-2 border-gray-300">
               <div className="grid grid-cols-2 gap-4 text-left">
                 <div className="bg-white bg-opacity-50 rounded-xl p-4">
-                  <div className="text-sm text-gray-600 mb-1">Suhu</div>
+                  <div className="text-sm text-gray-600 mb-1">{t('weather.temperature')}</div>
                   <div className="text-2xl font-bold text-gray-800">{data.airTemp.toFixed(1)}°C</div>
                 </div>
                 <div className="bg-white bg-opacity-50 rounded-xl p-4">
-                  <div className="text-sm text-gray-600 mb-1">Kelembapan</div>
+                  <div className="text-sm text-gray-600 mb-1">{t('weather.humidity')}</div>
                   <div className="text-2xl font-bold text-gray-800">{data.airHumidity}%</div>
                 </div>
               </div>
@@ -204,21 +208,21 @@ export default function WeatherPage() {
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
             <span className="text-3xl mr-3">📊</span>
-            Informasi Detail
+            {t('weather.detailInfo')}
           </h2>
           
           <div className="space-y-4 mb-8">
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-              <span className="text-gray-600 font-medium">Status Cuaca</span>
+              <span className="text-gray-600 font-medium">{t('weather.weatherStatus')}</span>
               <span className="text-xl font-bold text-gray-800">{data.weather}</span>
             </div>
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-              <span className="text-gray-600 font-medium">Nilai Sensor Hujan (ADC)</span>
+              <span className="text-gray-600 font-medium">{t('weather.rainSensor')}</span>
               <span className="text-xl font-bold text-gray-800">{data.rainADC}</span>
             </div>
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-              <span className="text-gray-600 font-medium">Update Terakhir</span>
-              <span className="text-sm font-semibold text-gray-800">{getTimeAgo(data.timestamp)}</span>
+              <span className="text-gray-600 font-medium">{t('weather.lastUpdate')}</span>
+              <span className="text-sm font-semibold text-gray-800">{getTimeAgo(data.timestamp, t)}</span>
             </div>
           </div>
 
@@ -228,45 +232,45 @@ export default function WeatherPage() {
           }`}>
             <h3 className="font-bold text-gray-800 mb-3 flex items-center">
               <span className="text-xl mr-2">💡</span>
-              Dampak & Rekomendasi
+              {t('weather.impact')}
             </h3>
             <ul className="space-y-2 text-sm text-gray-700">
               {isRaining ? (
                 <>
                   <li className="flex items-start">
                     <span className="mr-2">✅</span>
-                    <span>Pompa penyiraman otomatis dinonaktifkan untuk menghemat air</span>
+                    <span>{t('weather.rec.pumpDisabled')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">✅</span>
-                    <span>Tanah akan mendapat air dari hujan alami</span>
+                    <span>{t('weather.rec.naturalWater')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">⚠️</span>
-                    <span>Monitor kelembapan tanah untuk menghindari kelebihan air</span>
+                    <span>{t('weather.rec.monitorSoil')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">📌</span>
-                    <span>Pastikan sistem drainase berfungsi dengan baik</span>
+                    <span>{t('weather.rec.checkDrainage')}</span>
                   </li>
                 </>
               ) : (
                 <>
                   <li className="flex items-start">
                     <span className="mr-2">✅</span>
-                    <span>Sistem penyiraman otomatis dapat beroperasi normal</span>
+                    <span>{t('weather.rec.normalPump')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">✅</span>
-                    <span>Kondisi ideal untuk aktivitas outdoor</span>
+                    <span>{t('weather.rec.outdoorIdeal')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">💧</span>
-                    <span>Monitor kelembapan tanah secara berkala</span>
+                    <span>{t('weather.rec.monitorSoilRegular')}</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">🌡️</span>
-                    <span>Perhatikan suhu udara untuk optimasi penyiraman</span>
+                    <span>{t('weather.rec.watchTemp')}</span>
                   </li>
                 </>
               )}
@@ -353,7 +357,7 @@ export default function WeatherPage() {
                 weatherHistory.map((item, index) => (
                   <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition">
                     <td className="px-4 py-3 text-sm text-gray-600">
-                      {formatTimestamp(item.timestamp)}
+                      {formatTimestamp(item.timestamp, language)}
                     </td>
                     <td className="px-4 py-3 text-center">
                       <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${

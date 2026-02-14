@@ -46,7 +46,7 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
               const processedItem = item.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>');
               return (
                 <li key={idx} className="flex items-start space-x-2">
-                  <span className="text-green-600 mt-1 font-bold">•</span>
+                  <span className="text-olive mt-1 font-bold">•</span>
                   <span className="flex-1" dangerouslySetInnerHTML={{ __html: processedItem }} />
                 </li>
               );
@@ -82,7 +82,7 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
         const text = processInlineMarkdown(trimmed.substring(5));
         elements.push(
           <h4 key={`h4-${index}`} className="text-base font-bold text-gray-800 mt-3 mb-2 flex items-center space-x-2">
-            <span className="text-green-500">▸</span>
+            <span className="text-[#9CAB84]">▸</span>
             <span dangerouslySetInnerHTML={{ __html: text }} />
           </h4>
         );
@@ -91,7 +91,7 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
         const text = processInlineMarkdown(trimmed.substring(4));
         elements.push(
           <h3 key={`h3-${index}`} className="text-lg font-bold text-gray-800 mt-4 mb-2 flex items-center space-x-2">
-            <span className="text-blue-500">▸</span>
+            <span className="text-[#89986D]">▸</span>
             <span dangerouslySetInnerHTML={{ __html: text }} />
           </h3>
         );
@@ -99,7 +99,7 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
         flushList();
         const text = processInlineMarkdown(trimmed.substring(3));
         elements.push(
-          <h2 key={`h2-${index}`} className="text-xl font-bold text-gray-900 mt-5 mb-3 pb-2 border-b-2 border-green-200">
+          <h2 key={`h2-${index}`} className="text-xl font-bold text-gray-900 mt-5 mb-3 pb-2 border-b-2 border-sage-light">
             <span dangerouslySetInnerHTML={{ __html: text }} />
           </h2>
         );
@@ -107,7 +107,7 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
         flushList();
         const text = processInlineMarkdown(trimmed.substring(2));
         elements.push(
-          <h1 key={`h1-${index}`} className="text-2xl font-bold text-green-700 mt-6 mb-4">
+          <h1 key={`h1-${index}`} className="text-2xl font-bold text-olive mt-6 mb-4">
             <span dangerouslySetInnerHTML={{ __html: text }} />
           </h1>
         );
@@ -156,11 +156,11 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
   return (
     <>
       <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden flex flex-col h-full">
-        {/* Header - Minimalist White with Green Border */}
-        <div className="bg-white border-b-4 border-green-500 px-6 py-5">
+        {/* Header - Minimalist White with Sage Green Border */}
+        <div className="bg-white border-b-4 border-[#9CAB84] px-6 py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-2xl shadow-md">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#89986D] to-[#9CAB84] rounded-xl flex items-center justify-center text-2xl shadow-md">
                 📚
               </div>
               <div>
@@ -171,7 +171,7 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
             <button
               onClick={onRefresh}
               disabled={isLoading}
-              className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-xl border-2 border-green-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 shadow-md hover:shadow-lg"
+              className="px-4 py-2 bg-[#9CAB84] hover:bg-[#89986D] text-white rounded-xl border-2 border-[#C5D89D] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 shadow-md hover:shadow-lg"
             >
               <span className={isLoading ? 'animate-spin' : ''}>🔄</span>
               <span className="font-medium">Refresh</span>
@@ -199,14 +199,14 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
                 <>
                   <button
                     onClick={scrollLeft}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white hover:bg-green-50 rounded-full shadow-lg border-2 border-green-500 flex items-center justify-center text-green-600 hover:text-green-700 transition-all hover:scale-110"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white hover:bg-[#F6F0D7] rounded-full shadow-lg border-2 border-[#C5D89D] flex items-center justify-center text-[#89986D] hover:text-[#89986D] transition-all hover:scale-110"
                     aria-label="Scroll left"
                   >
                     ←
                   </button>
                   <button
                     onClick={scrollRight}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white hover:bg-green-50 rounded-full shadow-lg border-2 border-green-500 flex items-center justify-center text-green-600 hover:text-green-700 transition-all hover:scale-110"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white hover:bg-[#F6F0D7] rounded-full shadow-lg border-2 border-[#C5D89D] flex items-center justify-center text-[#89986D] hover:text-[#89986D] transition-all hover:scale-110"
                     aria-label="Scroll right"
                   >
                     →
@@ -223,14 +223,14 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
                 {history.map((item) => (
                   <div
                     key={item.id}
-                    className="group flex-shrink-0 w-72 bg-white rounded-2xl border-2 border-gray-200 hover:border-green-400 hover:shadow-xl transition-all cursor-pointer overflow-hidden"
+                    className="group flex-shrink-0 w-72 bg-white rounded-2xl border-2 border-gray-200 hover:border-[#C5D89D] hover:shadow-xl transition-all cursor-pointer overflow-hidden"
                     onClick={() => setSelectedItem(item)}
                   >
                     {/* Minimalist Card Header */}
-                    <div className="bg-green-100 p-4 border-b border-green-300">
+                    <div className="bg-[#F6F0D7]/40 p-4 border-b border-[#C5D89D]">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-2xl">🧠</span>
-                        <span className={`px-2 py-1 rounded-lg text-xs font-bold bg-white border border-green-300 text-gray-700`}>
+                        <span className={`px-2 py-1 rounded-lg text-xs font-bold bg-white border border-[#C5D89D] text-gray-700`}>
                           {getTrendIcon(item.statistics?.tren || '')}
                         </span>
                       </div>
@@ -242,7 +242,7 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
                     <div className="p-4 space-y-3">
                       <div className="flex items-center justify-between">
                         <span className="text-xs text-gray-600">Rata-rata</span>
-                        <span className="text-lg font-bold text-blue-600">{item.statistics?.rata_rata || 0}%</span>
+                        <span className="text-lg font-bold text-sage-dark">{item.statistics?.rata_rata || 0}%</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-xs text-gray-600">Range</span>
@@ -258,7 +258,7 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
 
                     {/* Minimalist View Button */}
                     <div className="px-4 pb-4">
-                      <button className="w-full py-2 bg-green-50 hover:bg-green-100 text-green-700 rounded-xl text-sm font-medium transition-all border border-green-200">
+                      <button className="w-full py-2 bg-cream hover:bg-sage-light/20 text-olive rounded-xl text-sm font-medium transition-all border border-sage-light">
                         Lihat Detail →
                       </button>
                     </div>
@@ -293,7 +293,7 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
               </div>
               <button
                 onClick={() => setSelectedItem(null)}
-                className="w-10 h-10 bg-red-100 hover:bg-red-200 rounded-xl flex items-center justify-center text-red-600 text-xl transition-all shadow-sm hover:shadow-md"
+                className="w-10 h-10 bg-cream/70 hover:bg-red-200 rounded-xl flex items-center justify-center text-olive-dark text-xl transition-all shadow-sm hover:shadow-md"
               >
                 ✕
               </button>
@@ -303,13 +303,13 @@ export default function AnalysisHistoryPanel({ history, isLoading, onRefresh }: 
             <div className="p-6 overflow-y-auto max-h-[calc(90vh-100px)]">
               {/* Statistics Grid */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 p-4 rounded-2xl border border-blue-200/50">
-                  <div className="text-xs text-blue-600 font-semibold uppercase tracking-wide mb-2">Rata-rata</div>
-                  <div className="text-3xl font-bold text-blue-700">{selectedItem.statistics?.rata_rata || 0}<span className="text-xl">%</span></div>
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 p-4 rounded-2xl border border-sage-light/50">
+                  <div className="text-xs text-sage-dark font-semibold uppercase tracking-wide mb-2">Rata-rata</div>
+                  <div className="text-3xl font-bold text-olive">{selectedItem.statistics?.rata_rata || 0}<span className="text-xl">%</span></div>
                 </div>
-                <div className="bg-gradient-to-br from-green-50 to-green-100/50 p-4 rounded-2xl border border-green-200/50">
-                  <div className="text-xs text-green-600 font-semibold uppercase tracking-wide mb-2">Maksimum</div>
-                  <div className="text-3xl font-bold text-green-700">{selectedItem.statistics?.maksimum || 0}<span className="text-xl">%</span></div>
+                <div className="bg-gradient-to-br from-green-50 to-green-100/50 p-4 rounded-2xl border border-sage-light/50">
+                  <div className="text-xs text-olive font-semibold uppercase tracking-wide mb-2">Maksimum</div>
+                  <div className="text-3xl font-bold text-olive">{selectedItem.statistics?.maksimum || 0}<span className="text-xl">%</span></div>
                 </div>
                 <div className="bg-gradient-to-br from-orange-50 to-orange-100/50 p-4 rounded-2xl border border-orange-200/50">
                   <div className="text-xs text-orange-600 font-semibold uppercase tracking-wide mb-2">Minimum</div>

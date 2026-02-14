@@ -1,20 +1,23 @@
 "use client";
 
 import { useSoilMoistureData } from "@/hooks/useSoilMoistureData";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import DashboardLayout from "@/components/DashboardLayout";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { saveToHistory, initializeHistoryIfNeeded } from "@/utils/historyManager";
 
 // Get moisture status and color
-const getMoistureStatus = (moisture: number) => {
-  if (moisture >= 70) return { label: "Lembab", color: "text-[#89986D]", bg: "bg-[#C5D89D]/20" };
-  if (moisture >= 40) return { label: "Normal", color: "text-[#89986D]", bg: "bg-[#C5D89D]/20" };
-  if (moisture >= 20) return { label: "Kering", color: "text-[#89986D]", bg: "bg-[#F6F0D7]" };
-  return { label: "Sangat Kering", color: "text-[#89986D]", bg: "bg-[#9CAB84]/30" };
+const getMoistureStatus = (moisture: number, t: (key: string) => string) => {
+  if (moisture >= 70) return { label: t('soil.status.wet'), color: "text-[#89986D]", bg: "bg-[#C5D89D]/20" };
+  if (moisture >= 40) return { label: t('dashboard.status.normal'), color: "text-[#89986D]", bg: "bg-[#C5D89D]/20" };
+  if (moisture >= 20) return { label: t('soil.status.dry'), color: "text-[#89986D]", bg: "bg-[#F6F0D7]" };
+  return { label: t('soil.status.veryDry'), color: "text-[#89986D]", bg: "bg-[#9CAB84]/30" };
 };
 
 export default function SoilMoisturePage() {
   const { data, loading, error } = useSoilMoistureData();
+  const { t, language } = useLanguage();
   const [currentTime, setCurrentTime] = useState(new Date());
   const [historyInitialized, setHistoryInitialized] = useState(false);
 
@@ -60,7 +63,7 @@ export default function SoilMoisturePage() {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#89986D]"></div>
-          <p className="mt-4 text-[#666666] text-lg">Memuat data sensor...</p>
+          <p className="mt-4 text-[#666666] text-lg">{t('common.loading')}</p>
         </div>
       </div>
     );
@@ -75,13 +78,13 @@ export default function SoilMoisturePage() {
             <h2 className="text-2xl font-bold text-[#2c2c2c] mb-2">Error</h2>
             <p className="text-[#666666] mb-4">{error}</p>
             <p className="text-sm text-[#89986D] mb-6">
-              Pastikan Firebase sudah terkonfigurasi dengan benar dan data sudah tersedia.
+              {t('soil.errorMessage')}
             </p>
             <button
               onClick={() => window.location.reload()}
               className="px-6 py-2 bg-[#9CAB84] text-white rounded-lg hover:bg-[#89986D] transition"
             >
-              Muat Ulang
+              {t('common.reload')}
             </button>
           </div>
         </div>
@@ -89,23 +92,24 @@ export default function SoilMoisturePage() {
     );
   }
 
-  const moistureStatus = getMoistureStatus(data.moisture);
+  const moistureStatus = getMoistureStatus(data.moisture, t);
 
   return (
     <DashboardLayout>
       {/* Header */}
       <div className="content-header">
         <div className="header-left">
-          <h1>🌱 Soil Moisture Monitor</h1>
-          <p>Sistem Monitoring Kelembapan Tanah Real-time</p>
+          <h1>🌱 {t('sidebar.soilMoisture')}</h1>
+          <p>{t('soil.subtitle')}</p>
         </div>
         <div className="header-right">
+          <LanguageSwitcher />
           <div className="header-date">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" />
               <path d="M12 6v6l4 2" />
             </svg>
-            <span>{currentTime.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
+            <span>{currentTime.toLocaleTimeString(language === 'id' ? 'id-ID' : 'en-US', { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
           </div>
           <div className="header-date">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -114,11 +118,11 @@ export default function SoilMoisturePage() {
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
-            <span>{currentTime.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })}</span>
+            <span>{currentTime.toLocaleDateString(language === 'id' ? 'id-ID' : 'en-US', { weekday: "short", day: "numeric", month: "short" })}</span>
           </div>
           <div className={`status-indicator ${data.timestamp > 0 ? "active" : "inactive"}`}>
             <div className="status-dot"></div>
-            <span>{data.timestamp > 0 ? "Live" : "Offline"}</span>
+            <span>{data.timestamp > 0 ? t('dashboard.status.live') : t('dashboard.status.offline')}</span>
           </div>
         </div>
       </div>
@@ -132,7 +136,7 @@ export default function SoilMoisturePage() {
                 {moistureStatus.label}
               </span>
             </div>
-            <h3 className="text-[#666666] text-sm font-medium mb-2">Kelembapan Tanah</h3>
+            <h3 className="text-[#666666] text-sm font-medium mb-2">{t('soil.moisture')}</h3>
             <div className="flex items-end space-x-2">
               <span className="text-4xl md:text-5xl font-bold text-[#2c2c2c]">{data.moisture}</span>
               <span className="text-xl md:text-2xl text-[#666666] pb-2">%</span>
@@ -151,15 +155,15 @@ export default function SoilMoisturePage() {
             <div className="flex items-center justify-between mb-4">
               <div className="text-4xl">📊</div>
               <span className="px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-[#C5D89D]/20 text-[#89986D]">
-                ADC Value
+                {t('soil.adcValue')}
               </span>
             </div>
-            <h3 className="text-[#666666] text-sm font-medium mb-2">Sensor Tanah (ADC)</h3>
+            <h3 className="text-[#666666] text-sm font-medium mb-2">{t('soil.sensor')}</h3>
             <div className="flex items-end space-x-2">
               <span className="text-4xl md:text-5xl font-bold text-[#2c2c2c]">{data.soilADC}</span>
             </div>
             <p className="mt-4 text-xs text-[#89986D]">
-              Range: 0 - 4095 (12-bit ADC)
+              {t('soil.adcRange')}
             </p>
           </div>
 
@@ -174,10 +178,10 @@ export default function SoilMoisturePage() {
                   ? "bg-[#F6F0D7] text-[#89986D]"
                   : "bg-[#C5D89D]/20 text-[#89986D]"
               }`}>
-                {data.pumpStatus === "ON" ? "Aktif" : "Tidak Aktif"}
+                {data.pumpStatus === "ON" ? t('soil.active') : t('soil.inactive')}
               </span>
             </div>
-            <h3 className="text-[#666666] text-sm font-medium mb-2">Status Pompa</h3>
+            <h3 className="text-[#666666] text-sm font-medium mb-2">{t('soil.pumpStatus')}</h3>
             <div className="flex items-center space-x-3">
               <div className={`w-4 h-4 rounded-full ${
                 data.pumpStatus === "ON" ? "bg-[#89986D] animate-pulse" : "bg-[#C5D89D]"
@@ -188,8 +192,8 @@ export default function SoilMoisturePage() {
             </div>
             <p className="mt-4 text-xs text-[#89986D]">
               {data.pumpStatus === "ON" 
-                ? "Pompa sedang menyiram tanaman" 
-                : "Pompa dalam mode standby"}
+                ? t('soil.pumpActive')
+                : t('soil.pumpStandby')}
             </p>
           </div>
         </div>

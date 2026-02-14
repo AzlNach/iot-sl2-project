@@ -55,7 +55,7 @@ export default function HistoryManagerButton() {
             w-full px-4 py-3 rounded-xl font-semibold text-sm transition-all
             ${isInitializing
               ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-              : 'bg-green-500 text-white hover:bg-green-600 shadow-md hover:shadow-lg'
+              : 'bg-cream0 text-white hover:bg-olive shadow-md hover:shadow-lg'
             }
           `}
         >
@@ -80,16 +80,16 @@ export default function HistoryManagerButton() {
       {message && (
         <div className={`
           mt-4 p-3 rounded-xl text-sm font-medium
-          ${message.includes('✅') ? 'bg-green-50 text-green-800 border border-green-200' : ''}
-          ${message.includes('⚠️') ? 'bg-yellow-50 text-yellow-800 border border-yellow-200' : ''}
+          ${message.includes('✅') ? 'bg-cream text-olive-dark border border-sage-light' : ''}
+          ${message.includes('⚠️') ? 'bg-cream text-yellow-800 border border-yellow-200' : ''}
           ${message.includes('❌') ? 'bg-red-50 text-red-800 border border-red-200' : ''}
         `}>
           {message}
         </div>
       )}
 
-      <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-blue-200">
-        <p className="text-xs text-blue-800">
+      <div className="mt-4 p-3 bg-cream/50 rounded-xl border border-sage-light">
+        <p className="text-xs text-olive-dark">
           💡 <strong>Tip:</strong> Gunakan &quot;Initialize&quot; jika analisis AI error karena tidak ada data history.
           Sistem akan generate 24 jam sample data untuk testing.
         </p>

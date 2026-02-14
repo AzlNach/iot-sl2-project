@@ -3,10 +3,6 @@
 import { useSoilMoistureData } from "@/hooks/useSoilMoistureData";
 import { useEffect, useState } from "react";
 import DashboardLayout from "@/components/DashboardLayout";
-import AIAnalysisPanel from "@/components/AIAnalysisPanel";
-import AnalysisSchedulePanel from "@/components/AnalysisSchedulePanel";
-import AnalysisHistoryPanel from "@/components/AnalysisHistoryPanel";
-import { useAIAnalysis } from "@/hooks/useAIAnalysis";
 import { saveToHistory, initializeHistoryIfNeeded } from "@/utils/historyManager";
 
 // Get moisture status and color
@@ -17,51 +13,10 @@ const getMoistureStatus = (moisture: number) => {
   return { label: "Sangat Kering", color: "text-red-600", bg: "bg-red-100" };
 };
 
-// Format timestamp
-const formatTimestamp = (timestamp: number) => {
-  if (!timestamp) return "N/A";
-  const date = new Date(timestamp);
-  return date.toLocaleString("id-ID", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
-};
-
-// Calculate time ago
-const getTimeAgo = (timestamp: number) => {
-  if (!timestamp) return "N/A";
-  const now = Date.now();
-  const diff = now - timestamp;
-  
-  const seconds = Math.floor(diff / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hours = Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
-
-  if (days > 0) return `${days} hari yang lalu`;
-  if (hours > 0) return `${hours} jam yang lalu`;
-  if (minutes > 0) return `${minutes} menit yang lalu`;
-  return `${seconds} detik yang lalu`;
-};
-
 export default function SoilMoisturePage() {
   const { data, loading, error } = useSoilMoistureData();
-  const { analysisHistory, isLoadingHistory, loadAnalysisHistory } = useAIAnalysis();
   const [currentTime, setCurrentTime] = useState(new Date());
   const [historyInitialized, setHistoryInitialized] = useState(false);
-
-  // Debug: Log history data
-  useEffect(() => {
-    console.log("📊 Analysis History State:", {
-      count: analysisHistory.length,
-      isLoading: isLoadingHistory,
-      items: analysisHistory
-    });
-  }, [analysisHistory, isLoadingHistory]);
 
   // Initialize history data if needed (one-time)
   useEffect(() => {
@@ -78,8 +33,12 @@ export default function SoilMoisturePage() {
       const saveInterval = setInterval(() => {
         saveToHistory({
           moisture: data.moisture,
-          rawADC: data.rawADC,
+          soilADC: data.soilADC,
+          rainADC: data.rainADC,
+          airTemp: data.airTemp,
+          airHumidity: data.airHumidity,
           pumpStatus: data.pumpStatus,
+          weather: data.weather,
           timestamp: Date.now()
         });
       }, 5 * 60 * 1000); // Every 5 minutes
@@ -146,16 +105,25 @@ export default function SoilMoisturePage() {
               <circle cx="12" cy="12" r="10" />
               <path d="M12 6v6l4 2" />
             </svg>
+            <span>{currentTime.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}</span>
+          </div>
+          <div className="header-date">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
             <span>{currentTime.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })}</span>
           </div>
-          <div className={`status-indicator ${data.moisture > 0 ? "active" : "inactive"}`}>
+          <div className={`status-indicator ${data.timestamp > 0 ? "active" : "inactive"}`}>
             <div className="status-dot"></div>
-            <span>{data.moisture > 0 ? "Live" : "Offline"}</span>
+            <span>{data.timestamp > 0 ? "Live" : "Offline"}</span>
           </div>
         </div>
       </div>
-        {/* Status Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        {/* Status Cards - Only Soil Related */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {/* Moisture Card */}
           <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-green-600 hover:shadow-2xl transition transform hover:scale-105">
             <div className="flex items-center justify-between mb-4">
@@ -178,7 +146,7 @@ export default function SoilMoisturePage() {
             </div>
           </div>
 
-          {/* Raw ADC Card */}
+          {/* Soil Sensor ADC Card */}
           <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-blue-600 hover:shadow-2xl transition transform hover:scale-105">
             <div className="flex items-center justify-between mb-4">
               <div className="text-4xl">📊</div>
@@ -186,9 +154,9 @@ export default function SoilMoisturePage() {
                 ADC Value
               </span>
             </div>
-            <h3 className="text-gray-600 text-sm font-medium mb-2">Nilai ADC Sensor</h3>
+            <h3 className="text-gray-600 text-sm font-medium mb-2">Sensor Tanah (ADC)</h3>
             <div className="flex items-end space-x-2">
-              <span className="text-4xl md:text-5xl font-bold text-gray-800">{data.rawADC}</span>
+              <span className="text-4xl md:text-5xl font-bold text-gray-800">{data.soilADC}</span>
             </div>
             <p className="mt-4 text-xs text-gray-500">
               Range: 0 - 4095 (12-bit ADC)
@@ -223,27 +191,6 @@ export default function SoilMoisturePage() {
                 ? "Pompa sedang menyiram tanaman" 
                 : "Pompa dalam mode standby"}
             </p>
-          </div>
-
-          {/* Last Update Card */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-purple-600 hover:shadow-2xl transition transform hover:scale-105">
-            <div className="flex items-center justify-between mb-4">
-              <div className="text-4xl">⏱️</div>
-              <span className="px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-purple-100 text-purple-600">
-                Live
-              </span>
-            </div>
-            <h3 className="text-gray-600 text-sm font-medium mb-2">Update Terakhir</h3>
-            <div className="text-sm text-gray-800 font-semibold mb-2">
-              {getTimeAgo(data.timestamp)}
-            </div>
-            <p className="text-xs text-gray-500">
-              {formatTimestamp(data.timestamp)}
-            </p>
-            <div className="mt-4 flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-xs text-gray-600">Connected</span>
-            </div>
           </div>
         </div>
 
@@ -298,16 +245,16 @@ export default function SoilMoisturePage() {
           <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
             <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-6 flex items-center">
               <span className="text-2xl md:text-3xl mr-3">ℹ️</span>
-              Informasi Sistem
+              Informasi Sensor Tanah
             </h2>
             <div className="space-y-4">
               <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                <span className="text-gray-600 font-medium text-sm md:text-base">Nilai ADC</span>
-                <span className="text-xl md:text-2xl font-bold text-gray-800">{data.rawADC}</span>
+                <span className="text-gray-600 font-medium text-sm md:text-base">Kelembapan Tanah</span>
+                <span className="text-xl md:text-2xl font-bold text-gray-800">{data.moisture}%</span>
               </div>
               <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                <span className="text-gray-600 font-medium text-sm md:text-base">Kelembapan</span>
-                <span className="text-xl md:text-2xl font-bold text-gray-800">{data.moisture}%</span>
+                <span className="text-gray-600 font-medium text-sm md:text-base">Sensor ADC</span>
+                <span className="text-xl md:text-2xl font-bold text-gray-800">{data.soilADC}</span>
               </div>
               <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
                 <span className="text-gray-600 font-medium text-sm md:text-base">Status Pompa</span>
@@ -317,15 +264,11 @@ export default function SoilMoisturePage() {
                   {data.pumpStatus}
                 </span>
               </div>
-              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                <span className="text-gray-600 font-medium text-sm md:text-base">Timestamp</span>
-                <span className="text-base md:text-lg font-mono text-gray-800">{data.timestamp}</span>
-              </div>
             </div>
 
             {/* Status Indicators */}
             <div className="mt-6 pt-6 border-t border-gray-200">
-              <h3 className="text-sm font-semibold text-gray-600 mb-3">Status Indikator</h3>
+              <h3 className="text-sm font-semibold text-gray-600 mb-3">Status Sistem</h3>
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex items-center space-x-2 p-3 bg-green-50 rounded-lg">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -333,32 +276,12 @@ export default function SoilMoisturePage() {
                 </div>
                 <div className="flex items-center space-x-2 p-3 bg-blue-50 rounded-lg">
                   <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs md:text-sm text-gray-700">Firebase Online</span>
+                  <span className="text-xs md:text-sm text-gray-700">Firebase Live</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* AI Analysis Controls & History - Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          {/* Left: Analysis Schedule (1 column) */}
-          <div className="lg:col-span-1">
-            <AnalysisSchedulePanel />
-          </div>
-
-          {/* Right: Analysis History (2 columns - wider) */}
-          <div className="lg:col-span-2">
-            <AnalysisHistoryPanel 
-              history={analysisHistory} 
-              isLoading={isLoadingHistory} 
-              onRefresh={loadAnalysisHistory}
-            />
-          </div>
-        </div>
-
-        {/* AI Analysis Results Panel */}
-        <AIAnalysisPanel />
 
       {/* Footer */}
       <div className="dashboard-footer">

@@ -6,16 +6,24 @@ import { database } from "@/firebase/config";
 
 export interface SoilMoistureData {
   moisture: number;
-  rawADC: number;
+  soilADC: number;
+  rainADC: number;
+  airHumidity: number;
+  airTemp: number;
   pumpStatus: "ON" | "OFF";
+  weather: string;
   timestamp: number;
 }
 
 export function useSoilMoistureData() {
   const [latestData, setLatestData] = useState<SoilMoistureData>({
     moisture: 0,
-    rawADC: 0,
+    soilADC: 0,
+    rainADC: 0,
+    airHumidity: 0,
+    airTemp: 0,
     pumpStatus: "OFF",
+    weather: "Unknown",
     timestamp: 0,
   });
   const [loading, setLoading] = useState(true);
@@ -25,15 +33,19 @@ export function useSoilMoistureData() {
     const dataRef = ref(database, "sensorData/latest");
 
     // Subscribe to real-time updates
-    const unsubscribe = onValue(
+    onValue(
       dataRef,
       (snapshot) => {
         if (snapshot.exists()) {
           const data = snapshot.val();
           setLatestData({
             moisture: data.moisture || 0,
-            rawADC: data.rawADC || 0,
+            soilADC: data.soilADC || 0,
+            rainADC: data.rainADC || 0,
+            airHumidity: data.airHumidity || 0,
+            airTemp: data.airTemp || 0,
             pumpStatus: data.pumpStatus || "OFF",
+            weather: data.weather || "Unknown",
             timestamp: data.timestamp || 0,
           });
           setError(null);

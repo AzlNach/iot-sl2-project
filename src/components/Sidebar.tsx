@@ -2,12 +2,49 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const [sensorMenuOpen, setSensorMenuOpen] = useState(
+    pathname.includes("/soil-moisture") || 
+    pathname.includes("/air-quality") || 
+    pathname.includes("/weather")
+  );
+  const sidebarRef = useRef<HTMLElement>(null);
+  const submenuRef = useRef<HTMLDivElement>(null);
+
+  const isSensorActive = pathname === "/soil-moisture" || 
+                         pathname === "/air-quality" || 
+                         pathname === "/weather";
+
+  // Close submenu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        sensorMenuOpen &&
+        sidebarRef.current &&
+        submenuRef.current &&
+        !sidebarRef.current.contains(event.target as Node) &&
+        !submenuRef.current.contains(event.target as Node)
+      ) {
+        setSensorMenuOpen(false);
+      }
+    };
+
+    // Add event listener when submenu is open
+    if (sensorMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    // Cleanup
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [sensorMenuOpen]);
 
   return (
-    <aside className="pill-sidebar">
+    <aside className="pill-sidebar" ref={sidebarRef}>
       {/* Logo Circle */}
       <div className="logo-circle">
         <span>IoT</span>
@@ -29,27 +66,46 @@ export default function Sidebar() {
           </svg>
         </Link>
         
-        <Link
-          href="/soil-moisture"
-          className={`pill-nav-btn ${pathname === "/soil-moisture" ? "active" : ""}`}
-          data-tooltip="Kelembaban Tanah"
-          title="Kelembaban Tanah"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-          </svg>
-        </Link>
-
-        <Link
-          href="/sensors"
-          className={`pill-nav-btn ${pathname === "/sensors" ? "active" : ""}`}
-          data-tooltip="Data Sensor"
-          title="Data Sensor"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-          </svg>
-        </Link>
+        {/* Data Sensor Menu with Submenu */}
+        <div className="pill-nav-group">
+          <button
+            onClick={() => setSensorMenuOpen(!sensorMenuOpen)}
+            className={`pill-nav-btn has-submenu ${isSensorActive ? "active" : ""} ${sensorMenuOpen ? "menu-open" : ""}`}
+            data-tooltip="Data Sensor"
+            title="Data Sensor"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </button>
+          
+          {/* Submenu */}
+          {sensorMenuOpen && (
+            <div className="pill-submenu" ref={submenuRef}>
+              <Link
+                href="/soil-moisture"
+                className={`pill-submenu-item ${pathname === "/soil-moisture" ? "active" : ""}`}
+              >
+                <span className="submenu-icon">🌱</span>
+                <span className="submenu-text">Kelembapan Tanah</span>
+              </Link>
+              <Link
+                href="/air-quality"
+                className={`pill-submenu-item ${pathname === "/air-quality" ? "active" : ""}`}
+              >
+                <span className="submenu-icon">💨</span>
+                <span className="submenu-text">Kualitas Udara</span>
+              </Link>
+              <Link
+                href="/weather"
+                className={`pill-submenu-item ${pathname === "/weather" ? "active" : ""}`}
+              >
+                <span className="submenu-icon">☀️</span>
+                <span className="submenu-text">Kondisi Cuaca</span>
+              </Link>
+            </div>
+          )}
+        </div>
 
         <Link
           href="/analytics"

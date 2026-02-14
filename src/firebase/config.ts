@@ -16,14 +16,14 @@ const firebaseConfig = {
 
 // Initialize Firebase (prevent multiple instances)
 let app: FirebaseApp;
-let database: Database;
+const database: Database = (() => {
+  if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+  } else {
+    app = getApps()[0];
+  }
 
-if (!getApps().length) {
-  app = initializeApp(firebaseConfig);
-} else {
-  app = getApps()[0];
-}
-
-database = getDatabase(app);
+  return getDatabase(app);
+})();
 
 export { app, database };

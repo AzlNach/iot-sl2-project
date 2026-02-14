@@ -32,9 +32,9 @@ export default function AnalyticsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-purple-600"></div>
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#89986D]"></div>
           <p className="mt-4 text-gray-600 text-lg">Memuat analisis data...</p>
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function AnalyticsPage() {
 
       {/* Current Data Overview */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-green-600">
+        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#9CAB84]">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-600 text-sm font-medium">Kelembapan Tanah</span>
             <span className="text-3xl">💧</span>
@@ -103,7 +103,7 @@ export default function AnalyticsPage() {
           <div className="text-3xl font-bold text-gray-800">{data.moisture}%</div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-red-500">
+        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#89986D]">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-600 text-sm font-medium">Suhu Udara</span>
             <span className="text-3xl">🌡️</span>
@@ -111,7 +111,7 @@ export default function AnalyticsPage() {
           <div className="text-3xl font-bold text-gray-800">{data.airTemp.toFixed(1)}°C</div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-cyan-500">
+        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#C5D89D]">
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-600 text-sm font-medium">Kelembapan Udara</span>
             <span className="text-3xl">💨</span>
@@ -120,7 +120,7 @@ export default function AnalyticsPage() {
         </div>
 
         <div className={`bg-white rounded-2xl shadow-xl p-6 border-t-4 ${
-          data.weather === "Hujan" ? "border-blue-600" : "border-yellow-500"
+          data.weather === "Hujan" ? "border-[#9CAB84]" : "border-[#F6F0D7]"
         }`}>
           <div className="flex items-center justify-between mb-2">
             <span className="text-gray-600 text-sm font-medium">Kondisi Cuaca</span>

@@ -1,745 +1,311 @@
 "use client";
 
-import { useMemo, useEffect, useState } from "react";
-import { useSoilMoistureData } from "@/hooks/useSoilMoistureData";
-import { ref, query, orderByChild, limitToLast, onValue } from "firebase/database";
-import { database } from "@/firebase/config";
-import Sidebar from "@/components/Sidebar";
 import Link from "next/link";
-import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-// Interface for historical data
-interface HistoricalDataPoint {
-  timestamp: number;
-  moisture: number;
-  airTemp: number;
-  airHumidity: number;
-  soilADC: number;
-  rainADC: number;
-  weather: string;
-}
+export default function LandingPage() {
+  const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
-// Get current time greeting
-const getGreeting = () => {
-  const hour = new Date().getHours();
-  if (hour < 12) return "Selamat Pagi";
-  if (hour < 15) return "Selamat Siang";
-  if (hour < 18) return "Selamat Sore";
-  return "Selamat Malam";
-};
-
-// Get temperature status
-const getTemperatureStatus = (temp: number) => {
-  if (temp >= 35) return { label: "Tinggi", className: "badge-high" };
-  if (temp >= 28) return { label: "Sedang", className: "badge-medium" };
-  return { label: "Normal", className: "badge-low" };
-};
-
-// Get humidity status
-const getHumidityStatus = (humidity: number) => {
-  if (humidity >= 80) return { label: "Tinggi", className: "badge-high" };
-  if (humidity >= 60) return { label: "Sedang", className: "badge-medium" };
-  return { label: "Normal", className: "badge-low" };
-};
-
-// Get moisture status for soil
-const getMoistureStatus = (moisture: number) => {
-  if (moisture >= 70) return { label: "Lembab", className: "badge-low" };
-  if (moisture >= 40) return { label: "Normal", className: "badge-medium" };
-  if (moisture >= 20) return { label: "Kering", className: "badge-medium" };
-  return { label: "Sangat Kering", className: "badge-high" };
-};
-
-// Loading Screen Component
-function LoadingScreen() {
-  return (
-    <div className="loading-screen">
-      <div className="loading-content">
-        <div className="loading-spinner"></div>
-        <p>Memuat dashboard...</p>
-      </div>
-    </div>
-  );
-}
-
-// Main Dashboard Component
-export default function Dashboard() {
-  const { data: soilData, loading, error } = useSoilMoistureData();
-  const [historicalData, setHistoricalData] = useState<HistoricalDataPoint[]>([]);
-  const [currentTime, setCurrentTime] = useState(new Date());
-
-  // Update current time every second
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-    return () => clearInterval(timer);
+    setIsVisible(true);
   }, []);
 
-  // Fetch historical data from Firebase
-  useEffect(() => {
-    const historyRef = ref(database, "sensorData/history");
-    const historyQuery = query(historyRef, orderByChild("timestamp"), limitToLast(20));
-
-    const unsubscribe = onValue(historyQuery, (snapshot) => {
-      if (snapshot.exists()) {
-        const data: HistoricalDataPoint[] = [];
-        snapshot.forEach((child) => {
-          const point = child.val();
-          data.push({
-            timestamp: point.timestamp || Date.now(),
-            moisture: point.moisture || 0,
-            airTemp: point.airTemp || 0,
-            airHumidity: point.airHumidity || 0,
-            soilADC: point.soilADC || 0,
-            rainADC: point.rainADC || 0,
-            weather: point.weather || "Unknown"
-          });
-        });
-        // Sort by timestamp
-        data.sort((a, b) => a.timestamp - b.timestamp);
-        setHistoricalData(data);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  // Format data for charts
-  const chartData = useMemo(() => {
-    return historicalData.map(point => ({
-      time: new Date(point.timestamp).toLocaleTimeString("id-ID", { 
-        hour: "2-digit", 
-        minute: "2-digit",
-        second: "2-digit"
-      }),
-      moisture: point.moisture,
-      airTemp: point.airTemp,
-      airHumidity: point.airHumidity,
-      timestamp: point.timestamp
-    }));
-  }, [historicalData]);
-
-  // Calculate stats
-  const stats = useMemo(() => {
-    const tempStatus = getTemperatureStatus(soilData.airTemp);
-    const humidityStatus = getHumidityStatus(soilData.airHumidity);
-    const moistureStatus = getMoistureStatus(soilData.moisture);
-    // Check if data is recent (within last 5 minutes)
-    const isActive = soilData.timestamp > 0 && (Date.now() - soilData.timestamp) < 300000;
-    
-    return {
-      temperature: soilData.airTemp,
-      humidity: soilData.airHumidity,
-      moisture: soilData.moisture,
-      pumpStatus: soilData.pumpStatus,
-      weather: soilData.weather,
-      tempStatus,
-      humidityStatus,
-      moistureStatus,
-      isActive
-    };
-  }, [soilData]);
-
-  if (loading) {
-    return <LoadingScreen />;
-  }
-
   return (
-    <div className="dashboard-layout">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#F6F0D7] via-white to-[#C5D89D] opacity-50"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#C5D89D] rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-[#9CAB84] rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-[#89986D] rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
 
-      {/* Main Content */}
-      <main className="main-content">
-        {/* Header */}
-        <header className="content-header">
-          <div className="header-left">
-            <h1>{getGreeting()}! 👋</h1>
-            <p>Pantau sensor IoT Anda secara real-time</p>
-          </div>
-          <div className="header-right">
-            <div className="header-date">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
-              </svg>
-              <span>
-                {currentTime.toLocaleTimeString("id-ID", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  second: "2-digit",
-                })}
-              </span>
-            </div>
-            <div className="header-date">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
-              <span>
-                {currentTime.toLocaleDateString("id-ID", {
-                  weekday: "short",
-                  day: "numeric",
-                  month: "short",
-                  year: "numeric",
-                })}
-              </span>
-            </div>
-            <div className={`status-indicator ${stats.isActive ? "active" : "inactive"}`}>
-              <span className="status-dot"></span>
-              <span>{stats.isActive ? "Online" : "Offline"}</span>
-            </div>
-          </div>
-        </header>
-
-        {/* Error Message */}
-        {error && (
-          <div className="error-banner">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="8" x2="12" y2="12" />
-              <line x1="12" y1="16" x2="12.01" y2="16" />
-            </svg>
-            <span>{error}</span>
-          </div>
-        )}
-
-        {/* Stats Grid */}
-        <div className="stats-grid">
-          {/* Air Temperature */}
-          <div className="stat-card">
-            <div className="stat-icon blue">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <span className="stat-value">{stats.temperature.toFixed(1)}°C</span>
-              <span className="stat-label">Suhu Udara</span>
-            </div>
-            <span className={`badge ${stats.tempStatus.className}`}>{stats.tempStatus.label}</span>
-          </div>
-
-          {/* Air Humidity */}
-          <div className="stat-card">
-            <div className="stat-icon cyan">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <span className="stat-value">{stats.humidity}%</span>
-              <span className="stat-label">Kelembapan Udara</span>
-            </div>
-            <span className={`badge ${stats.humidityStatus.className}`}>{stats.humidityStatus.label}</span>
-          </div>
-
-          {/* Soil Moisture */}
-          <Link href="/soil-moisture" className="stat-card" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <div className="stat-icon green">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <span className="stat-value">{stats.moisture}%</span>
-              <span className="stat-label">Kelembapan Tanah</span>
-            </div>
-            <span className={`badge ${stats.moistureStatus.className}`}>{stats.moistureStatus.label}</span>
-          </Link>
-
-          {/* Weather Status */}
-          <div className="stat-card">
-            <div className={`stat-icon ${stats.weather === "Hujan" ? "blue" : "yellow"}`}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                {stats.weather === "Hujan" ? (
-                  <path d="M19 16.9A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.8M8 19v2m0-8v2m8 6v2m0-8v2m-4 6v2m0-8v2" />
-                ) : (
-                  <circle cx="12" cy="12" r="5" />
-                )}
-              </svg>
-            </div>
-            <div className="stat-info">
-              <span className="stat-value">{stats.weather}</span>
-              <span className="stat-label">Kondisi Cuaca</span>
-            </div>
-            <span className={`badge ${stats.weather === "Hujan" ? "badge-medium" : "badge-low"}`}>
-              {stats.weather === "Hujan" ? "🌧️" : "☀️"}
-            </span>
-          </div>
-
-          {/* System Status */}
-          <div className="stat-card">
-            <div className={`stat-icon ${stats.isActive ? "green" : "red"}`}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <span className="stat-value capitalize">{stats.isActive ? "Online" : "Offline"}</span>
-              <span className="stat-label">Status Sistem</span>
-            </div>
-          </div>
-
-          {/* Pump Status */}
-          <div className="stat-card">
-            <div className={`stat-icon ${stats.pumpStatus === "ON" ? "orange" : "gray"}`}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <span className="stat-value">{stats.pumpStatus}</span>
-              <span className="stat-label">Status Pompa</span>
-            </div>
-            <span className={`badge ${stats.pumpStatus === "ON" ? "badge-high" : "badge-low"}`}>
-              {stats.pumpStatus === "ON" ? "Aktif" : "Standby"}
-            </span>
-          </div>
-
-          {/* Last Update */}
-          <div className="stat-card">
-            <div className="stat-icon purple">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <span className="stat-value">Real-time</span>
-              <span className="stat-label">Update Terakhir</span>
-            </div>
-            <span className="badge badge-live">
-              <span className="live-dot"></span>
-              Live
-            </span>
-          </div>
-        </div>
-
-        {/* Charts Row - Time Series */}
-        <div className="mb-8">
-          <div className="bg-white rounded-2xl shadow-xl p-6">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800">📊 Monitoring Time Series</h2>
-                <p className="text-gray-600 mt-1">Data historis sensor dalam 20 pembacaan terakhir</p>
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          {/* Header/Navbar */}
+          <nav className={`flex justify-between items-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#89986D] to-[#9CAB84] rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-2xl">🌱</span>
               </div>
-              <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-                <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></span>
-                Live Update
-              </span>
+              <div>
+                <h1 className="text-2xl font-bold text-[#89986D]">IoT Dashboard</h1>
+                <p className="text-xs text-gray-500">Smart Agriculture System</p>
+              </div>
             </div>
             
-            {chartData.length > 0 ? (
-              <div className="space-y-8">
-                {/* Soil Moisture Chart */}
-                <div className="border-t pt-6">
-                  <h3 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
-                    <span className="text-2xl mr-2">🌱</span>
-                    Kelembapan Tanah
-                  </h3>
-                  <ResponsiveContainer width="100%" height={250}>
-                    <AreaChart data={chartData}>
-                      <defs>
-                        <linearGradient id="colorMoisture" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#10b981" stopOpacity={0.8}/>
-                          <stop offset="95%" stopColor="#10b981" stopOpacity={0.1}/>
-                        </linearGradient>
-                      </defs>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                      <XAxis 
-                        dataKey="time" 
-                        stroke="#6b7280"
-                        style={{ fontSize: '12px' }}
-                      />
-                      <YAxis 
-                        stroke="#6b7280"
-                        style={{ fontSize: '12px' }}
-                        label={{ value: 'Kelembapan (%)', angle: -90, position: 'insideLeft' }}
-                      />
-                      <Tooltip 
-                        contentStyle={{ 
-                          backgroundColor: '#fff', 
-                          border: '1px solid #e5e7eb',
-                          borderRadius: '8px',
-                          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                        }}
-                      />
-                      <Area 
-                        type="monotone" 
-                        dataKey="moisture" 
-                        stroke="#10b981" 
-                        strokeWidth={2}
-                        fill="url(#colorMoisture)" 
-                        name="Kelembapan Tanah (%)"
-                      />
-                    </AreaChart>
-                  </ResponsiveContainer>
-                </div>
-
-                {/* Air Temperature Chart */}
-                <div className="border-t pt-6">
-                  <h3 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
-                    <span className="text-2xl mr-2">🌡️</span>
-                    Suhu Udara
-                  </h3>
-                  <ResponsiveContainer width="100%" height={250}>
-                    <LineChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                      <XAxis 
-                        dataKey="time" 
-                        stroke="#6b7280"
-                        style={{ fontSize: '12px' }}
-                      />
-                      <YAxis 
-                        stroke="#6b7280"
-                        style={{ fontSize: '12px' }}
-                        label={{ value: 'Suhu (°C)', angle: -90, position: 'insideLeft' }}
-                      />
-                      <Tooltip 
-                        contentStyle={{ 
-                          backgroundColor: '#fff', 
-                          border: '1px solid #e5e7eb',
-                          borderRadius: '8px',
-                          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                        }}
-                      />
-                      <Line 
-                        type="monotone" 
-                        dataKey="airTemp" 
-                        stroke="#ef4444" 
-                        strokeWidth={3}
-                        dot={{ fill: '#ef4444', r: 4 }}
-                        activeDot={{ r: 6 }}
-                        name="Suhu Udara (°C)"
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-
-                {/* Air Humidity Chart */}
-                <div className="border-t pt-6">
-                  <h3 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
-                    <span className="text-2xl mr-2">💨</span>
-                    Kelembapan Udara
-                  </h3>
-                  <ResponsiveContainer width="100%" height={250}>
-                    <AreaChart data={chartData}>
-                      <defs>
-                        <linearGradient id="colorHumidity" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8}/>
-                          <stop offset="95%" stopColor="#3b82f6" stopOpacity={0.1}/>
-                        </linearGradient>
-                      </defs>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                      <XAxis 
-                        dataKey="time" 
-                        stroke="#6b7280"
-                        style={{ fontSize: '12px' }}
-                      />
-                      <YAxis 
-                        stroke="#6b7280"
-                        style={{ fontSize: '12px' }}
-                        label={{ value: 'Kelembapan (%)', angle: -90, position: 'insideLeft' }}
-                      />
-                      <Tooltip 
-                        contentStyle={{ 
-                          backgroundColor: '#fff', 
-                          border: '1px solid #e5e7eb',
-                          borderRadius: '8px',
-                          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                        }}
-                      />
-                      <Area 
-                        type="monotone" 
-                        dataKey="airHumidity" 
-                        stroke="#3b82f6" 
-                        strokeWidth={2}
-                        fill="url(#colorHumidity)" 
-                        name="Kelembapan Udara (%)"
-                      />
-                    </AreaChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-            ) : (
-              <div className="text-center py-12">
-                <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-blue-600 mb-4"></div>
-                <p className="text-gray-600">Memuat data historis...</p>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Sections Grid - Tanah, Udara, Cuaca */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          {/* Section 1: Tanah (Soil) */}
-          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-6 border-2 border-green-200">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-green-800 flex items-center">
-                <span className="text-3xl mr-3">🌱</span>
-                Data Tanah
-              </h3>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm font-medium">Kelembapan Tanah</span>
-                  <span className="text-2xl font-bold text-green-700">{stats.moisture}%</span>
-                </div>
-                <div className="mt-3 bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div
-                    className="bg-green-500 h-full transition-all duration-500"
-                    style={{ width: `${stats.moisture}%` }}
-                  ></div>
-                </div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm font-medium">Status Pompa</span>
-                  <span className={`text-xl font-bold ${stats.pumpStatus === "ON" ? "text-orange-600" : "text-gray-600"}`}>
-                    {stats.pumpStatus}
-                  </span>
-                </div>
-              </div>
+            <div className="flex items-center gap-4">
+              <LanguageSwitcher />
               <Link 
-                href="/soil-moisture"
-                className="block w-full mt-4 px-4 py-3 bg-green-600 text-white text-center rounded-xl hover:bg-green-700 transition font-semibold"
+                href="/dashboard"
+                className="px-6 py-3 bg-[#89986D] text-white rounded-xl font-semibold hover:bg-[#9CAB84] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                Lihat Detail Lengkap →
+                {t('landing.cta')} →
               </Link>
             </div>
-          </div>
+          </nav>
 
-          {/* Section 2: Udara (Air) */}
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl shadow-xl p-6 border-2 border-blue-200">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-blue-800 flex items-center">
-                <span className="text-3xl mr-3">💨</span>
-                Data Udara
-              </h3>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm font-medium">Suhu Udara</span>
-                  <span className="text-2xl font-bold text-red-600">{stats.temperature.toFixed(1)}°C</span>
-                </div>
-                <div className="mt-2">
-                  <span className={`text-xs px-2 py-1 rounded-full ${
-                    stats.temperature >= 30 ? "bg-red-100 text-red-700" :
-                    stats.temperature >= 25 ? "bg-orange-100 text-orange-700" :
-                    "bg-blue-100 text-blue-700"
-                  }`}>
-                    {stats.temperature >= 30 ? "Panas" : stats.temperature >= 25 ? "Hangat" : "Sejuk"}
-                  </span>
-                </div>
+          {/* Hero Content */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text Content */}
+            <div className={`space-y-8 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+              <div className="inline-block px-4 py-2 bg-[#F6F0D7] rounded-full text-[#89986D] font-semibold text-sm">
+                ✨ Real-time Monitoring System
               </div>
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm font-medium">Kelembapan Udara</span>
-                  <span className="text-2xl font-bold text-blue-700">{stats.humidity}%</span>
-                </div>
-                <div className="mt-3 bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div
-                    className="bg-blue-500 h-full transition-all duration-500"
-                    style={{ width: `${stats.humidity}%` }}
-                  ></div>
-                </div>
+              
+              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                {t('landing.title').split(' ').slice(0, -2).join(' ')}
+                <span className="block text-[#89986D] mt-2">
+                  {t('landing.title').split(' ').slice(-2).join(' ')}
+                </span>
+              </h2>
+              
+              <p className="text-xl text-gray-600 leading-relaxed">
+                {t('landing.subtitle')}
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link 
+                  href="/dashboard"
+                  className="px-8 py-4 bg-[#89986D] text-white rounded-xl font-bold text-lg hover:bg-[#9CAB84] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+                >
+                  {t('landing.cta')}
+                </Link>
+                <a 
+                  href="#features"
+                  className="px-8 py-4 bg-white border-2 border-[#C5D89D] text-[#89986D] rounded-xl font-bold text-lg hover:bg-[#F6F0D7] transition-all duration-300"
+                >
+                  {t('landing.learnMore')}
+                </a>
               </div>
-              <div className="bg-white rounded-xl p-4 shadow">
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 pt-8">
                 <div className="text-center">
-                  <div className="text-sm text-gray-600 mb-1">Kualitas Udara</div>
-                  <div className="text-lg font-bold text-blue-800">
-                    {stats.humidity >= 70 ? "Lembap" : stats.humidity >= 50 ? "Normal" : "Kering"}
+                  <div className="text-3xl font-bold text-[#89986D]">24/7</div>
+                  <div className="text-sm text-gray-600">{t('landing.stats.realtime')}</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#89986D]">AI</div>
+                  <div className="text-sm text-gray-600">{t('landing.stats.analytics')}</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#89986D]">IoT</div>
+                  <div className="text-sm text-gray-600">{t('landing.stats.sensors')}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Visual/Dashboard Preview */}
+            <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              <div className="relative">
+                {/* Dashboard Preview Card */}
+                <div className="bg-white rounded-2xl shadow-2xl p-8 border-2 border-[#C5D89D]">
+                  <div className="space-y-6">
+                    {/* Header */}
+                    <div className="flex items-center justify-between pb-4 border-b-2 border-[#F6F0D7]">
+                      <h3 className="text-xl font-bold text-gray-800">{t('landing.preview.title')}</h3>
+                      <span className="px-3 py-1 bg-[#F6F0D7] text-[#89986D] rounded-full text-sm font-semibold flex items-center gap-2">
+                        <span className="w-2 h-2 bg-[#89986D] rounded-full animate-pulse"></span>
+                        {t('dashboard.status.live')}
+                      </span>
+                    </div>
+
+                    {/* Stats Grid */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-gradient-to-br from-[#F6F0D7] to-[#C5D89D] p-4 rounded-xl">
+                        <div className="text-3xl mb-2">💧</div>
+                        <div className="text-2xl font-bold text-[#89986D]">65%</div>
+                        <div className="text-xs text-gray-600">{t('stats.soilMoisture')}</div>
+                      </div>
+                      <div className="bg-gradient-to-br from-[#C5D89D] to-[#9CAB84] p-4 rounded-xl">
+                        <div className="text-3xl mb-2">🌡️</div>
+                        <div className="text-2xl font-bold text-white">28°C</div>
+                        <div className="text-xs text-white">{t('stats.airTemp')}</div>
+                      </div>
+                      <div className="bg-gradient-to-br from-[#9CAB84] to-[#89986D] p-4 rounded-xl">
+                        <div className="text-3xl mb-2">💨</div>
+                        <div className="text-2xl font-bold text-white">70%</div>
+                        <div className="text-xs text-white">{t('stats.airHumidity')}</div>
+                      </div>
+                      <div className="bg-gradient-to-br from-[#F6F0D7] to-[#C5D89D] p-4 rounded-xl">
+                        <div className="text-3xl mb-2">☀️</div>
+                        <div className="text-lg font-bold text-[#89986D]">{t('dashboard.weather.sunny')}</div>
+                        <div className="text-xs text-gray-600">{t('stats.weather')}</div>
+                      </div>
+                    </div>
+
+                    {/* AI Badge */}
+                    <div className="bg-gradient-to-r from-[#89986D] to-[#9CAB84] p-4 rounded-xl text-white">
+                      <div className="flex items-center gap-3">
+                        <div className="text-2xl">🤖</div>
+                        <div>
+                          <div className="font-bold">{t('landing.preview.aiTitle')}</div>
+                          <div className="text-xs opacity-90">{t('landing.preview.aiDesc')}</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Section 3: Cuaca (Weather) */}
-          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl shadow-xl p-6 border-2 border-yellow-200">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-yellow-800 flex items-center">
-                <span className="text-3xl mr-3">{stats.weather === "Hujan" ? "🌧️" : "☀️"}</span>
-                Kondisi Cuaca
-              </h3>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-6 shadow text-center">
-                <div className="text-6xl mb-4">
-                  {stats.weather === "Hujan" ? "🌧️" : "☀️"}
+                {/* Floating Icons */}
+                <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#C5D89D] rounded-xl flex items-center justify-center shadow-lg animate-bounce">
+                  <span className="text-3xl">📊</span>
                 </div>
-                <div className="text-3xl font-bold text-gray-800 mb-2">
-                  {stats.weather}
-                </div>
-                <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
-                  stats.weather === "Hujan" 
-                    ? "bg-blue-100 text-blue-700" 
-                    : "bg-yellow-100 text-yellow-700"
-                }`}>
-                  {stats.weather === "Hujan" ? "Sensor Deteksi Hujan" : "Tidak Ada Hujan"}
-                </div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="text-sm text-gray-600 mb-2">Rekomendasi:</div>
-                <div className="text-sm text-gray-800">
-                  {stats.weather === "Hujan" 
-                    ? "⚠️ Pompa penyiraman otomatis dinonaktifkan saat hujan" 
-                    : "✅ Kondisi cerah, penyiraman dapat dilakukan sesuai jadwal"}
+                <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-[#9CAB84] rounded-xl flex items-center justify-center shadow-lg animate-bounce animation-delay-1000">
+                  <span className="text-3xl">🌾</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Old Charts Row - Keep for visual gauges */}
-        <div className="charts-row">
-          <div className="chart-card">
-            <div className="chart-header">
-              <div>
-                <h3>Monitor Suhu Udara</h3>
-                <p>Visualisasi suhu real-time</p>
-              </div>
-              <span className="chart-badge">Live</span>
-            </div>
-            <div className="chart-body">
-              <div className="gauge-container">
-                <div className="gauge">
-                  <div 
-                    className="gauge-fill" 
-                    style={{ 
-                      "--percentage": `${Math.min(100, (stats.temperature / 50) * 100)}%`,
-                      "--color": stats.temperature >= 35 ? "#ef4444" : stats.temperature >= 28 ? "#f59e0b" : "#22c55e"
-                    } as React.CSSProperties}
-                  ></div>
-                  <div className="gauge-center">
-                    <span className="gauge-value">{stats.temperature.toFixed(1)}</span>
-                    <span className="gauge-unit">°C</span>
-                  </div>
-                </div>
-                <div className="gauge-labels">
-                  <span>0°C</span>
-                  <span>25°C</span>
-                  <span>50°C</span>
-                </div>
-              </div>
-            </div>
+      {/* Features Section */}
+      <div id="features" className="py-20 bg-gradient-to-b from-white to-[#F6F0D7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('landing.features.title')}</h2>
+            <p className="text-xl text-gray-600">{t('landing.features.subtitle')}</p>
           </div>
 
-          <div className="chart-card">
-            <div className="chart-header">
-              <div>
-                <h3>Monitor Kelembapan Tanah</h3>
-                <p>Data dari sensor soil moisture</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-[#F6F0D7] hover:border-[#C5D89D]">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#C5D89D] to-[#9CAB84] rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">💧</span>
               </div>
-              <span className="chart-badge">Live</span>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('landing.features.soilMoisture')}</h3>
+              <p className="text-gray-600">{t('landing.features.soilMoistureDesc')}</p>
             </div>
-            <div className="chart-body">
-              <div className="gauge-container">
-                <div className="gauge">
-                  <div 
-                    className="gauge-fill" 
-                    style={{ 
-                      "--percentage": `${stats.moisture}%`,
-                      "--color": stats.moisture >= 70 ? "#22c55e" : stats.moisture >= 40 ? "#3b82f6" : stats.moisture >= 20 ? "#f59e0b" : "#ef4444"
-                    } as React.CSSProperties}
-                  ></div>
-                  <div className="gauge-center">
-                    <span className="gauge-value">{stats.moisture}</span>
-                    <span className="gauge-unit">%</span>
-                  </div>
-                </div>
-                <div className="gauge-labels">
-                  <span>0%</span>
-                  <span>50%</span>
-                  <span>100%</span>
-                </div>
+
+            {/* Feature 2 */}
+            <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-[#F6F0D7] hover:border-[#C5D89D]">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#9CAB84] to-[#89986D] rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">🌡️</span>
               </div>
-              <Link 
-                href="/soil-moisture"
-                className="mt-4 inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-green-700 bg-green-50 rounded-lg hover:bg-green-100 transition"
-              >
-                <span>Lihat Detail</span>
-                <svg className="ml-2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </Link>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('landing.features.airQuality')}</h3>
+              <p className="text-gray-600">{t('landing.features.airQualityDesc')}</p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-[#F6F0D7] hover:border-[#C5D89D]">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#C5D89D] to-[#9CAB84] rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">🌦️</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('landing.features.weatherForecast')}</h3>
+              <p className="text-gray-600">{t('landing.features.weatherForecastDesc')}</p>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-[#F6F0D7] hover:border-[#C5D89D]">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#89986D] to-[#9CAB84] rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">🤖</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('landing.features.aiAnalytics')}</h3>
+              <p className="text-gray-600">{t('landing.features.aiAnalyticsDesc')}</p>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Alert Section */}
-        {stats.temperature >= 35 && (
-          <div className="alert-card alert-danger">
-            <div className="alert-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                <line x1="12" y1="9" x2="12" y2="13" />
-                <line x1="12" y1="17" x2="12.01" y2="17" />
-              </svg>
+      {/* CTA Section */}
+      <div className="py-20 bg-gradient-to-br from-[#89986D] to-[#9CAB84]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            {t('landing.cta.ready')}
+          </h2>
+          <p className="text-xl text-white opacity-90 mb-8">
+            {t('landing.cta.startNow')}
+          </p>
+          <Link 
+            href="/dashboard"
+            className="inline-block px-10 py-5 bg-white text-[#89986D] rounded-xl font-bold text-lg hover:bg-[#F6F0D7] transition-all duration-300 shadow-2xl hover:shadow-xl transform hover:scale-105"
+          >
+            {t('landing.cta.button')}
+          </Link>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="py-12 bg-[#2c2c2c] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#89986D] to-[#9CAB84] rounded-lg flex items-center justify-center">
+                  <span className="text-xl">🌱</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">{t('landing.footer.title')}</h3>
+                  <p className="text-xs text-gray-400">{t('landing.footer.subtitle')}</p>
+                </div>
+              </div>
+              <p className="text-sm text-gray-400">
+                {t('landing.footer.description')}
+              </p>
             </div>
-            <div className="alert-content">
-              <h4>⚠️ Peringatan Suhu Tinggi!</h4>
-              <p>Suhu udara melebihi 35°C ({stats.temperature.toFixed(1)}°C). Pastikan ventilasi baik.</p>
+
+            <div>
+              <h4 className="font-bold mb-4">{t('landing.footer.features')}</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><Link href="/dashboard" className="hover:text-[#C5D89D] transition">Dashboard</Link></li>
+                <li><Link href="/dashboard/soil-moisture" className="hover:text-[#C5D89D] transition">Soil Moisture</Link></li>
+                <li><Link href="/dashboard/air-quality" className="hover:text-[#C5D89D] transition">Air Quality</Link></li>
+                <li><Link href="/dashboard/weather" className="hover:text-[#C5D89D] transition">Weather</Link></li>
+                <li><Link href="/dashboard/analytics" className="hover:text-[#C5D89D] transition">AI Analytics</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-4">{t('landing.footer.technology')}</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>Next.js 14</li>
+                <li>Firebase Realtime Database</li>
+                <li>Gemini AI</li>
+                <li>OpenWeather API</li>
+                <li>ESP32 IoT Sensors</li>
+              </ul>
             </div>
           </div>
-        )}
 
-        {stats.humidity >= 80 && (
-          <div className="alert-card alert-warning">
-            <div className="alert-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-              </svg>
-            </div>
-            <div className="alert-content">
-              <h4>💧 Kelembaban Udara Tinggi</h4>
-              <p>Kelembaban udara melebihi 80% ({stats.humidity}%). Pertimbangkan untuk menyalakan ventilasi.</p>
-            </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+            <p>{t('landing.footer.copyright')}</p>
           </div>
-        )}
+        </div>
+      </div>
 
-        {stats.moisture < 20 && (
-          <div className="alert-card alert-danger">
-            <div className="alert-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-              </svg>
-            </div>
-            <div className="alert-content">
-              <h4>🌱 Kelembapan Tanah Sangat Rendah!</h4>
-              <p>Kelembapan tanah di bawah 20% ({stats.moisture}%). Pompa {stats.pumpStatus === "ON" ? "sedang aktif" : "akan segera aktif"}. <Link href="/soil-moisture" className="underline font-semibold">Lihat detail →</Link></p>
-            </div>
-          </div>
-        )}
-
-        {stats.weather === "Hujan" && stats.pumpStatus === "ON" && (
-          <div className="alert-card alert-warning">
-            <div className="alert-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M19 16.9A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.8M8 19v2m0-8v2m8 6v2m0-8v2m-4 6v2m0-8v2" />
-              </svg>
-            </div>
-            <div className="alert-content">
-              <h4>🌧️ Hujan Terdeteksi</h4>
-              <p>Sensor mendeteksi hujan. Pompa penyiraman sebaiknya dinonaktifkan untuk menghemat air.</p>
-            </div>
-          </div>
-        )}
-
-
-
-        {/* Footer */}
-        <footer className="dashboard-footer">
-          <p>Built with Next.js, Tailwind CSS & Firebase</p>
-        </footer>
-      </main>
+      {/* Custom Animations */}
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        .animation-delay-1000 {
+          animation-delay: 1s;
+        }
+      `}</style>
     </div>
   );
 }

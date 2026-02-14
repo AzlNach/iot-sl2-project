@@ -112,9 +112,9 @@ export default function AirQualityPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-600"></div>
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#89986D]"></div>
           <p className="mt-4 text-gray-600 text-lg">Memuat data sensor udara...</p>
         </div>
       </div>
@@ -179,7 +179,7 @@ export default function AirQualityPage() {
       {/* Status Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {/* Temperature Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-red-500 hover:shadow-2xl transition transform hover:scale-105">
+        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#9CAB84] hover:shadow-2xl transition transform hover:scale-105">
           <div className="flex items-center justify-between mb-4">
             <div className="text-4xl">🌡️</div>
             <span className={`px-3 py-1 rounded-full text-xs sm:text-sm font-semibold ${tempStatus.bg} ${tempStatus.color}`}>
@@ -199,7 +199,7 @@ export default function AirQualityPage() {
         </div>
 
         {/* Humidity Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-cyan-500 hover:shadow-2xl transition transform hover:scale-105">
+        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#C5D89D] hover:shadow-2xl transition transform hover:scale-105">
           <div className="flex items-center justify-between mb-4">
             <div className="text-4xl">💧</div>
             <span className={`px-3 py-1 rounded-full text-xs sm:text-sm font-semibold ${humidityStatus.bg} ${humidityStatus.color}`}>
@@ -214,17 +214,17 @@ export default function AirQualityPage() {
           {/* Progress Bar */}
           <div className="mt-4 bg-gray-200 rounded-full h-3 overflow-hidden">
             <div
-              className="bg-gradient-to-r from-cyan-400 to-blue-600 h-full transition-all duration-500 rounded-full"
+              className="bg-gradient-to-r from-[#C5D89D] to-[#9CAB84] h-full transition-all duration-500 rounded-full"
               style={{ width: `${data.airHumidity}%` }}
             ></div>
           </div>
         </div>
 
         {/* Last Update Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-purple-600 hover:shadow-2xl transition transform hover:scale-105">
+        <div className="bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#89986D] hover:shadow-2xl transition transform hover:scale-105">
           <div className="flex items-center justify-between mb-4">
             <div className="text-4xl">⏱️</div>
-            <span className="px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-purple-100 text-purple-600">
+            <span className="px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-[#F6F0D7] text-[#89986D]">
               Live
             </span>
           </div>
@@ -267,16 +267,16 @@ export default function AirQualityPage() {
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: '#fff', 
-                    border: '1px solid #e5e7eb',
+                    border: '1px solid #C5D89D',
                     borderRadius: '8px'
                   }}
                 />
                 <Line 
                   type="monotone" 
                   dataKey="airTemp" 
-                  stroke="#ef4444" 
+                  stroke="#9CAB84" 
                   strokeWidth={3}
-                  dot={{ fill: '#ef4444', r: 4 }}
+                  dot={{ fill: '#9CAB84', r: 4 }}
                   activeDot={{ r: 6 }}
                   name="Suhu (°C)"
                 />
@@ -300,32 +300,32 @@ export default function AirQualityPage() {
               <AreaChart data={chartData}>
                 <defs>
                   <linearGradient id="colorHumidity" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#3b82f6" stopOpacity={0.1}/>
+                    <stop offset="5%" stopColor="#C5D89D" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#C5D89D" stopOpacity={0.1}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#F6F0D7" />
                 <XAxis 
                   dataKey="time" 
-                  stroke="#6b7280"
+                  stroke="#89986D"
                   style={{ fontSize: '12px' }}
                 />
                 <YAxis 
-                  stroke="#6b7280"
+                  stroke="#89986D"
                   style={{ fontSize: '12px' }}
                   label={{ value: 'Kelembapan (%)', angle: -90, position: 'insideLeft' }}
                 />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: '#fff', 
-                    border: '1px solid #e5e7eb',
+                    border: '1px solid #C5D89D',
                     borderRadius: '8px'
                   }}
                 />
                 <Area 
                   type="monotone" 
                   dataKey="airHumidity" 
-                  stroke="#3b82f6" 
+                  stroke="#C5D89D" 
                   strokeWidth={2}
                   fill="url(#colorHumidity)" 
                   name="Kelembapan (%)"

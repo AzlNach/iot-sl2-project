@@ -8,8 +8,12 @@ import { database } from "@/firebase/config";
  */
 export async function saveToHistory(data: {
   moisture: number;
-  rawADC: number;
+  soilADC: number;
+  rainADC: number;
+  airTemp: number;
+  airHumidity: number;
   pumpStatus: string;
+  weather: string;
   timestamp: number;
 }) {
   try {
@@ -60,11 +64,17 @@ export async function initializeHistoryIfNeeded() {
       const timeOffset = i * 60 * 60 * 1000; // 1 hour
       const moistureVariation = Math.random() * 20 - 10; // ±10%
       const moisture = Math.max(0, Math.min(100, (latestData.moisture || 45) + moistureVariation));
+      const tempVariation = Math.random() * 4 - 2; // ±2°C
+      const humidityVariation = Math.random() * 10 - 5; // ±5%
       
       const historicalData = {
         moisture: Math.round(moisture),
-        rawADC: (latestData.rawADC || 2048) + Math.round((moistureVariation / 100) * 2048),
+        soilADC: (latestData.soilADC || 2048) + Math.round((moistureVariation / 100) * 2048),
+        rainADC: latestData.rainADC || 4095,
+        airTemp: Math.max(0, (latestData.airTemp || 25) + tempVariation),
+        airHumidity: Math.max(0, Math.min(100, (latestData.airHumidity || 60) + humidityVariation)),
         pumpStatus: moisture < 30 ? "ON" : "OFF",
+        weather: latestData.weather || "Cerah",
         timestamp: baseTime - timeOffset
       };
       

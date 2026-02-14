@@ -20,10 +20,10 @@ const defaultSensorData: SensorData = {
 
 /**
  * Custom hook to subscribe to real-time sensor data from Firebase Realtime Database
- * @param path - The Firebase path to listen to (default: "sensors/")
+ * @param path - The Firebase path to listen to (default: "sensorData/latest")
  * @returns Object containing sensor data, loading state, and error state
  */
-export function useSensorData(path: string = "sensors") {
+export function useSensorData(path: string = "sensorData/latest") {
   const [data, setData] = useState<SensorData>(defaultSensorData);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -33,7 +33,7 @@ export function useSensorData(path: string = "sensors") {
     const sensorRef = ref(database, path);
 
     // Set up real-time listener
-    const unsubscribe = onValue(
+    onValue(
       sensorRef,
       (snapshot) => {
         if (snapshot.exists()) {
@@ -41,9 +41,9 @@ export function useSensorData(path: string = "sensors") {
           setData(sensorData);
           setError(null);
         } else {
-          // No data exists at this path
+          // No data exists at this path - but don't show error, just use defaults
           setData(defaultSensorData);
-          setError("No sensor data available");
+          setError(null); // Changed from showing error to null
         }
         setLoading(false);
       },

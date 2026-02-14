@@ -226,7 +226,7 @@ export async function POST(request: NextRequest) {
       }))
     };
 
-    // Prompt untuk Gemini AI
+    // Prompt untuk OpenRouter (Meta Llama 3.3 70B)
     const prompt = `
 Kamu adalah ahli agrikultur dan sistem irigasi pintar. Analisis data kelembaban tanah berikut dan berikan rekomendasi yang detail dan praktis.
 

@@ -153,7 +153,7 @@ export default function AnalyticsPage() {
       {/* Footer */}
       <div className="dashboard-footer">
         <p>🤖 AI-Powered Analytics System © 2025</p>
-        <p className="text-xs mt-1">Powered by Gemini API + Firebase + Next.js</p>
+        <p className="text-xs mt-1">Powered by OpenRouter (Meta Llama 3.3 70B) + Firebase + Next.js</p>
       </div>
     </DashboardLayout>
   );

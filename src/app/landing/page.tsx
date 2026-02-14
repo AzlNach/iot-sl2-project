@@ -200,7 +200,7 @@ export default function LandingPage() {
                 <span className="text-3xl">🤖</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">AI Analytics</h3>
-              <p className="text-gray-600">Analisis cerdas dengan Gemini AI untuk rekomendasi irigasi</p>
+              <p className="text-gray-600">Analisis cerdas dengan Meta Llama 3.3 70B via OpenRouter untuk rekomendasi irigasi</p>
             </div>
           </div>
         </div>
@@ -259,7 +259,7 @@ export default function LandingPage() {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>Next.js 14</li>
                 <li>Firebase Realtime Database</li>
-                <li>Gemini AI</li>
+                <li>Meta Llama 3.3 70B (OpenRouter)</li>
                 <li>OpenWeather API</li>
                 <li>ESP32 IoT Sensors</li>
               </ul>

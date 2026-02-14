@@ -36,8 +36,22 @@ const CACHE_DURATION = 30 * 60 * 1000; // 30 menit cache
 let lastRequestTime = 0;
 const MIN_REQUEST_INTERVAL = 15 * 1000; // Minimal 15 detik antar request
 
+type AnalysisInput = {
+  totalReadings: number;
+  statistics: {
+    rata_rata: string;
+    minimum: number;
+    maksimum: number;
+    tren: string;
+  };
+  pumpUsage: {
+    aktivasi: number;
+    persentase: string;
+  };
+};
+
 // Fungsi fallback untuk analisis otomatis ketika quota exceeded
-function generateFallbackAnalysis(dataForAI: any): string {
+function generateFallbackAnalysis(dataForAI: AnalysisInput): string {
   const stats = dataForAI.statistics;
   const pump = dataForAI.pumpUsage;
   const avgMoisture = parseFloat(stats.rata_rata);

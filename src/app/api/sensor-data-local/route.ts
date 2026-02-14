@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { readFileSync } from "fs";
 import { join } from "path";
 
@@ -9,15 +9,7 @@ interface SensorDataPoint {
   timestamp: number;
 }
 
-interface SensorDataResponse {
-  success: boolean;
-  data: SensorDataPoint[];
-  total: number;
-  limited: number;
-  source: string;
-}
-
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     console.log("📂 Reading sensor data from local JSON file...");
 
@@ -27,7 +19,7 @@ export async function GET(request: NextRequest) {
     const jsonData = JSON.parse(fileContent);
 
     // Extract data dari struktur Firebase
-    let allData: SensorDataPoint[] = [];
+  const allData: SensorDataPoint[] = [];
 
     // Cek berbagai path yang mungkin ada
     if (jsonData.sensorData?.history) {
@@ -61,8 +53,8 @@ export async function GET(request: NextRequest) {
     // Sort by timestamp descending (terbaru dulu)
     allData.sort((a, b) => b.timestamp - a.timestamp);
 
-    // Limit to 500 most recent data points
-    const limitedData = allData.slice(0, 1);
+  // Limit to 500 most recent data points
+  const limitedData = allData.slice(0, 500);
 
     console.log(`✅ Returning ${limitedData.length} most recent data points`);
 

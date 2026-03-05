@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import TeamSection from "@/components/TeamSection";
 
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -205,6 +206,9 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
+
+      {/* Get In Touch - Team Section */}
+      <TeamSection />
 
       {/* CTA Section */}
       <div className="py-20 bg-gradient-to-br from-[#89986D] to-[#9CAB84]">

@@ -8,6 +8,7 @@ import AnalysisHistoryPanel from "@/components/AnalysisHistoryPanel";
 import { useAIAnalysis } from "@/hooks/useAIAnalysis";
 import { useSoilMoistureData } from "@/hooks/useSoilMoistureData";
 import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function AnalyticsPage() {
   const { data, loading, error } = useSoilMoistureData();
@@ -88,6 +89,7 @@ export default function AnalyticsPage() {
             </svg>
             <span>{currentTime.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })}</span>
           </div>
+          <LanguageSwitcher />
           <div className={`status-indicator ${data.timestamp > 0 ? "active" : "inactive"}`}>
             <div className="status-dot"></div>
             <span>{data.timestamp > 0 ? "Live" : "Offline"}</span>

@@ -122,6 +122,11 @@ Firebase Realtime Database
 - Analisis bisa dijadwalkan (otomatis setiap periode tertentu)
 - Riwayat analisis tersimpan untuk referensi
 
+### 5.1 **Multi-Bahasa (ID/EN) untuk Analitik** 🌐
+- Bagian **Analisis Data (Analytics)** mendukung Bahasa Indonesia dan Inggris
+- Tersedia tombol **ID / EN** di header (di samping jam) untuk mengganti bahasa
+- Pilihan bahasa tersimpan otomatis di browser (localStorage)
+
 ### 6. **Responsive Design** 📱💻
 - Bisa diakses dari handphone, tablet, atau komputer
 - Tampilan menyesuaikan ukuran layar
@@ -229,6 +234,7 @@ Firebase Realtime Database
 | **Firebase** | Database cloud | Gudang penyimpanan di internet |
 | **Recharts** | Library grafik | Alat untuk menggambar grafik dan chart |
 | **Google Gemini AI** | Analisis cerdas | Konsultan AI yang memberikan saran |
+| **Language Context (ID/EN)** | Multi-bahasa UI | Saklar bahasa untuk mengganti teks di aplikasi |
 
 ---
 
@@ -357,6 +363,17 @@ Firebase → Push Update → Dashboard Auto-Update → Display
 │  ⏱️ 2 menit lalu    │ ← Timestamp
 └─────────────────────┘
 ```
+
+### 2.1 **Tombol Bahasa (ID/EN)**
+Pada halaman **Analytics**, di bagian header kanan (dekat jam & tanggal) terdapat tombol:
+
+- **ID**: Bahasa Indonesia
+- **EN**: English
+
+Perubahan bahasa akan memengaruhi teks di panel:
+- Jadwal Analisis
+- Riwayat Analisis
+- Hasil Analisis AI (label statistik, tombol aksi, dan empty state)
 
 ### 3. **Grafik Historis**
 ```
@@ -869,6 +886,7 @@ Untuk memudahkan pemahaman, berikut penjelasan istilah teknis:
 - ✨ Tambah AI Analysis dengan Gemini
 - ✨ Soil moisture heatmap visualization
 - ✨ Analysis scheduling
+- ✨ Multi-bahasa (ID/EN) untuk halaman Analytics + tombol language switcher di header
 - 🐛 Fix real-time data sync issues
 - 📝 Comprehensive documentation
 
@@ -1024,4 +1042,4 @@ Dashboard IoT ini dirancang untuk memudahkan monitoring sensor secara real-time 
 
 **Dibuat dengan ❤️ untuk memudahkan monitoring IoT**
 
-*Last Updated: January 10, 2026*
+*Last Updated: March 21, 2026*

@@ -80,7 +80,7 @@ Firebase Realtime Database
 ### 5️⃣ **Analisis Cerdas dengan AI (AI Analysis)**
 
 ```
-[Data Sensor] → [Gemini AI] → [Rekomendasi & Analisis]
+[Data Sensor] → [Meta Llama 3.3 70B AI] → [Rekomendasi & Analisis]
 ```
 
 **Penjelasan Sederhana:**
@@ -233,7 +233,7 @@ Firebase Realtime Database
 | **Tailwind CSS** | Styling | Cat dan dekorasi untuk mempercantik tampilan |
 | **Firebase** | Database cloud | Gudang penyimpanan di internet |
 | **Recharts** | Library grafik | Alat untuk menggambar grafik dan chart |
-| **Google Gemini AI** | Analisis cerdas | Konsultan AI yang memberikan saran |
+| **Meta Llama 3.3 70B AI** | Analisis cerdas | Konsultan AI yang memberikan saran |
 | **Language Context (ID/EN)** | Multi-bahasa UI | Saklar bahasa untuk mengganti teks di aplikasi |
 
 ---
@@ -883,7 +883,7 @@ Untuk memudahkan pemahaman, berikut penjelasan istilah teknis:
 ## 📝 Changelog (Riwayat Perubahan)
 
 ### Version 2.0.0 (Current)
-- ✨ Tambah AI Analysis dengan Gemini
+- ✨ Tambah AI Analysis dengan Meta Llama 3.3 70B
 - ✨ Soil moisture heatmap visualization
 - ✨ Analysis scheduling
 - ✨ Multi-bahasa (ID/EN) untuk halaman Analytics + tombol language switcher di header

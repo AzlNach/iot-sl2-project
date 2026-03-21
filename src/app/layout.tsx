@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "IoT Smart Farming Dashboard",
-  description: "Real-time monitoring and AI-powered analytics for smart agriculture",
+  title: "Mizugami – Smart Irrigation Systems",
+  description: "Real-time monitoring and AI-powered analytics for smart irrigation and agriculture",
 };
 
 export default function RootLayout({

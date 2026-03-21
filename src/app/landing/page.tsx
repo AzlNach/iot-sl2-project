@@ -28,12 +28,17 @@ export default function LandingPage() {
           {/* Header/Navbar */}
           <nav className={`flex justify-between items-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#89986D] to-[#9CAB84] rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-2xl">🌱</span>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg bg-white/70 border border-[#F6F0D7] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/mizugami-logo.png"
+                  alt="Mizugami"
+                  className="w-full h-full object-contain p-1"
+                />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-[#89986D]">IoT Dashboard</h1>
-                <p className="text-xs text-gray-500">Smart Agriculture System</p>
+                <h1 className="text-2xl font-bold text-[#89986D]">Mizugami</h1>
+                <p className="text-xs text-gray-500">Smart Irrigation Systems</p>
               </div>
             </div>
             

@@ -15,8 +15,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   en: {
     // Landing Page
-    'landing.title': 'IoT Smart Farming Dashboard',
-    'landing.subtitle': 'Real-time Monitoring & AI-Powered Analytics for Smart Agriculture',
+    'landing.title': 'Mizugami Smart Irrigation Dashboard',
+    'landing.subtitle': 'Real-time Monitoring & AI-Powered Analytics for Smart Irrigation and Agriculture',
     'landing.cta': 'Open Dashboard',
     'landing.learnMore': 'Learn More',
     'landing.stats.realtime': 'Real-time',
@@ -50,12 +50,12 @@ const translations = {
     'landing.cta.ready': 'Ready to Increase Agricultural Productivity?',
     'landing.cta.startNow': 'Start monitoring now with integrated IoT system',
     'landing.cta.button': 'Open Dashboard Now →',
-    'landing.footer.title': 'IoT Dashboard',
-    'landing.footer.subtitle': 'Smart Agriculture',
+  'landing.footer.title': 'Mizugami',
+  'landing.footer.subtitle': 'Smart Irrigation Systems',
     'landing.footer.description': 'Modern agricultural monitoring system with IoT and AI technology',
     'landing.footer.features': 'Features',
     'landing.footer.technology': 'Technology',
-    'landing.footer.copyright': '© 2026 IoT Dashboard - Smart Agriculture System. All rights reserved.',
+  'landing.footer.copyright': '© 2026 Mizugami - Smart Irrigation Systems. All rights reserved.',
     
     // Sidebar
     'sidebar.home': 'Home',
@@ -68,7 +68,7 @@ const translations = {
     'sidebar.logout': 'Logout',
     
     // Dashboard Overview
-    'dashboard.title': 'Smart Farming IoT Dashboard',
+  'dashboard.title': 'Mizugami Smart Irrigation Dashboard',
     'dashboard.subtitle': 'Real-time Sensor Monitoring System',
     'dashboard.lastUpdate': 'Last Update',
     'dashboard.ago': 'ago',
@@ -359,8 +359,8 @@ const translations = {
   },
   id: {
     // Landing Page
-    'landing.title': 'Dashboard IoT Pertanian Pintar',
-    'landing.subtitle': 'Monitoring Real-time & Analisis Berbasis AI untuk Pertanian Cerdas',
+    'landing.title': 'Dashboard Irigasi Pintar Mizugami',
+    'landing.subtitle': 'Monitoring Real-time & Analisis Berbasis AI untuk Irigasi dan Pertanian',
     'landing.cta': 'Buka Dashboard',
     'landing.learnMore': 'Pelajari Lebih Lanjut',
     'landing.stats.realtime': 'Real-time',
@@ -394,12 +394,12 @@ const translations = {
     'landing.cta.ready': 'Siap Meningkatkan Produktivitas Pertanian?',
     'landing.cta.startNow': 'Mulai monitoring sekarang dengan sistem IoT terintegrasi',
     'landing.cta.button': 'Buka Dashboard Sekarang →',
-    'landing.footer.title': 'IoT Dashboard',
-    'landing.footer.subtitle': 'Smart Agriculture',
+  'landing.footer.title': 'Mizugami',
+  'landing.footer.subtitle': 'Smart Irrigation Systems',
     'landing.footer.description': 'Sistem monitoring pertanian modern dengan teknologi IoT dan AI',
     'landing.footer.features': 'Fitur',
     'landing.footer.technology': 'Teknologi',
-    'landing.footer.copyright': '© 2026 IoT Dashboard - Smart Agriculture System. All rights reserved.',
+  'landing.footer.copyright': '© 2026 Mizugami - Smart Irrigation Systems. All rights reserved.',
     
     // Sidebar
     'sidebar.home': 'Beranda',
@@ -412,7 +412,7 @@ const translations = {
     'sidebar.logout': 'Keluar',
     
     // Dashboard Overview
-    'dashboard.title': 'Dashboard IoT Pertanian Pintar',
+  'dashboard.title': 'Dashboard Irigasi Pintar Mizugami',
     'dashboard.subtitle': 'Sistem Monitoring Sensor Real-time',
     'dashboard.lastUpdate': 'Update Terakhir',
     'dashboard.ago': 'yang lalu',

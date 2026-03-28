@@ -2,6 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---- FullCalendar (SmartCalendar) minimal theming ---- */
+.fc {
+  --fc-border-color: #e5e7eb; /* gray-200 */
+  --fc-today-bg-color: rgba(197, 216, 157, 0.22); /* #C5D89D */
+  --fc-page-bg-color: transparent;
+  --fc-small-font-size: 0.8rem;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+}
+
+.fc .fc-button {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  border-radius: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  box-shadow: none;
+}
+
+.fc .fc-button:hover {
+  background: #f9fafb;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background: #89986d;
+  border-color: #89986d;
+  color: #0b1220;
+}
+
+.fc .fc-daygrid-day-number {
+  color: #374151;
+}
+
+/* ---- FullCalendar event label: avoid truncated titles like 'Risiko' ---- */
+.fc .fc-daygrid-event {
+  margin-top: 2px;
+}
+
+.fc .fc-daygrid-event .fc-event-main {
+  padding: 2px 6px;
+}
+
+/* Allow the event title to fully show (wrap) instead of getting clipped */
+.fc .fc-daygrid-event .fc-event-title,
+.fc .fc-daygrid-event .fc-event-title-container {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.1;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #2c2c2c;

@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { OpenRouter } from "@openrouter/sdk";
+import Groq from "groq-sdk";
 
-// Inisialisasi OpenRouter with Llama 3.3 70B (FREE!)
-const openrouter = new OpenRouter({
-  apiKey: process.env.OPENROUTER_API_KEY || ""
+// Groq API (Model: llama-3.3-70b-versatile)
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY || "",
 });
 
 interface SoilDataPoint {
@@ -226,7 +226,7 @@ export async function POST(request: NextRequest) {
       }))
     };
 
-    // Prompt untuk OpenRouter (Meta Llama 3.3 70B)
+  // Prompt untuk Groq (llama-3.3-70b-versatile)
     const prompt = `
 Kamu adalah ahli agrikultur dan sistem irigasi pintar. Analisis data kelembaban tanah berikut dan berikan rekomendasi yang detail dan praktis.
 
@@ -276,34 +276,34 @@ TUGAS ANALISIS:
 Berikan analisis dalam format yang jelas, terstruktur dengan poin-poin, dan mudah dipahami oleh petani atau pengguna sistem IoT. Gunakan bahasa Indonesia yang profesional namun mudah dimengerti.
 `;
 
-    // Panggil OpenRouter Llama 3.3 70B (FREE & UNLIMITED!)
-    console.log(`🤖 Memanggil OpenRouter Llama 3.3 70B untuk analisis ${totalReadings} data points...`);
+    // Panggil Groq Llama 3.3 70B
+    console.log(`🤖 Memanggil Groq API (llama-3.3-70b-versatile) untuk analisis ${totalReadings} data points...`);
     
     let analysis: string;
     try {
-      const completion = await openrouter.chat.send({
-        model: "meta-llama/llama-3.3-70b-instruct:free",
+      const completion = await groq.chat.completions.create({
+        model: "llama-3.3-70b-versatile",
         messages: [
           {
             role: "user",
-            content: prompt
-          }
+            content: prompt,
+          },
         ],
         temperature: 0.7,
-        maxTokens: 2048,
+        max_tokens: 2048,
       });
-      
-      const content = completion.choices[0]?.message?.content;
+
+      const content = completion.choices?.[0]?.message?.content;
       analysis = typeof content === 'string' ? content : JSON.stringify(content);
       
       if (!analysis) {
         throw new Error("No response from AI");
       }
       
-      console.log("✅ Analisis AI berhasil dengan Llama 3.3 70B");
+      console.log("✅ Analisis AI berhasil dengan Groq (llama-3.3-70b-versatile)");
     } catch (aiError) {
       // Handle any API errors with fallback
-      console.error("❌ OpenRouter API Error:", aiError);
+      console.error("❌ Groq API Error:", aiError);
       
       // Gunakan fallback analysis untuk semua error
       return NextResponse.json(
@@ -351,7 +351,7 @@ Berikan analisis dalam format yang jelas, terstruktur dengan poin-poin, dan muda
       { 
         error: "Gagal menganalisis data", 
         details: errorMessage,
-        hint: "Pastikan OPENROUTER_API_KEY sudah diset di .env.local. Dapatkan gratis di https://openrouter.ai/keys"
+        hint: "Pastikan GROQ_API_KEY sudah diset di .env.local. Dapatkan API key di Groq Cloud."
       },
       { status: 500 }
     );

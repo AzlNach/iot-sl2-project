@@ -21,6 +21,15 @@ interface AIAnalysisResult {
     persentase: string;
   };
   analysis: string;
+  /** Optional structured payload embedded by AI for downstream UI components. */
+  structured?: {
+    agronomy?: {
+      predictedHarvestDate?: string;
+      predictedHarvestLabel?: string;
+      estimasiPanenTotalUbinan?: number;
+      notes?: string;
+    };
+  };
   metadata: {
     dataPoints: number;
     analyzedAt: string;
@@ -40,6 +49,22 @@ export function useAIAnalysis() {
   const [analysisHistory, setAnalysisHistory] = useState<AnalysisHistoryItem[]>([]);
   const [isLoadingHistory, setIsLoadingHistory] = useState(false);
 
+  const parseStructuredFromAnalysis = useCallback((analysisText?: string) => {
+    if (!analysisText) return undefined;
+    // Convention: allow the AI to embed a JSON block in a fenced code segment.
+    // Example:
+    // ```json
+    // {"agronomy": {"predictedHarvestDate": "2026-09-22"}}
+    // ```
+    const fenced = analysisText.match(/```json\s*([\s\S]*?)\s*```/i);
+    if (!fenced?.[1]) return undefined;
+    try {
+      return JSON.parse(fenced[1]);
+    } catch {
+      return undefined;
+    }
+  }, []);
+
   // Load settings dari localStorage
   useEffect(() => {
     const savedInterval = localStorage.getItem("aiAnalysisInterval") as ScheduleInterval;
@@ -47,9 +72,19 @@ export function useAIAnalysis() {
     const savedLastTime = localStorage.getItem("lastAnalysisTime");
 
     if (savedInterval) setScheduleInterval(savedInterval);
-    if (savedLastAnalysis) setLastAnalysis(JSON.parse(savedLastAnalysis));
+    if (savedLastAnalysis) {
+      try {
+        const parsed = JSON.parse(savedLastAnalysis) as AIAnalysisResult;
+        if (!parsed.structured) {
+          parsed.structured = parseStructuredFromAnalysis(parsed.analysis);
+        }
+        setLastAnalysis(parsed);
+      } catch {
+        // ignore corrupted localStorage
+      }
+    }
     if (savedLastTime) setLastAnalysisTime(parseInt(savedLastTime));
-  }, []);
+  }, [parseStructuredFromAnalysis]);
 
   // Fungsi untuk mendapatkan interval dalam milidetik
   const getIntervalMs = (interval: ScheduleInterval): number => {
@@ -447,7 +482,7 @@ export function useAIAnalysis() {
       // Pastikan analysis tidak undefined
       if (!result.analysis) {
         console.error("No analysis in response:", result);
-        throw new Error("API tidak mengembalikan analisis. Cek OPENROUTER_API_KEY di .env.local");
+        throw new Error("API tidak mengembalikan analisis. Cek GROQ_API_KEY di .env.local");
       }
 
       // Simpan hasil

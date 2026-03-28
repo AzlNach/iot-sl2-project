@@ -290,7 +290,7 @@ export default function LandingPage() {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>Next.js 14</li>
                 <li>Firebase Realtime Database</li>
-                <li>Meta Llama 3.3 70B (OpenRouter)</li>
+                <li>Groq API (llama-3.3-70b-versatile)</li>
                 <li>OpenWeather API</li>
                 <li>ESP32 IoT Sensors</li>
               </ul>

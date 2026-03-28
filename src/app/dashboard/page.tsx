@@ -9,6 +9,12 @@ import Sidebar from "@/components/Sidebar";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import Link from "next/link";
 import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import PlantProfileForm from "@/components/PlantProfileForm";
+import SmartCalendar, { SmartCalendarPointEvent, SmartCalendarBackgroundStage } from "@/components/SmartCalendar";
+import WeatherEcoAlert from "@/components/WeatherEcoAlert";
+import { useWeatherForecast } from "@/hooks/useWeatherForecast";
+import PlantDetailPanel from "@/components/PlantDetailPanel";
+import { buildPestRiskAlert, calculateAgronomyData } from "@/utils/agronomyCalculator";
 
 // Interface for historical data
 interface HistoricalDataPoint {
@@ -20,6 +26,18 @@ interface HistoricalDataPoint {
   rainADC: number;
   weather: string;
 }
+
+type PlantProfile = {
+  api_plant_id: number;
+  jenis_tanaman: string;
+  tanggal_tanam: string;
+  luas_lahan_hektar: number;
+  estimasi_hasil_ton: number;
+  kebutuhan_air_harian_unit: string;
+  gambar_tanaman: string;
+  predicted_harvest_date?: string;
+  predicted_harvest_label?: string;
+};
 
 // Get current time greeting
 const getGreeting = (t: (key: string) => string) => {
@@ -68,8 +86,78 @@ function LoadingScreen({ t }: { t: (key: string) => string }) {
 export default function Dashboard() {
   const { data: soilData, loading, error } = useSoilMoistureData();
   const { t } = useLanguage();
+  const { forecast } = useWeatherForecast();
   const [historicalData, setHistoricalData] = useState<HistoricalDataPoint[]>([]);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [plantProfile, setPlantProfile] = useState<PlantProfile | null>(null);
+  const [selectedPlantId, setSelectedPlantId] = useState<number | null>(null);
+  const [sopTasks, setSopTasks] = useState<
+    Array<{
+      id: string;
+      title: string;
+      dateISO: string;
+      category: string;
+      priority: "low" | "medium" | "high";
+      description?: string;
+      dosage?: string;
+      notes?: string;
+    }>
+  >([]);
+
+  const [sopGenerating, setSopGenerating] = useState(false);
+  const [sopError, setSopError] = useState<string | null>(null);
+
+  async function generateSopForProfile(input: {
+    namaTanaman: string;
+    tanggalTanam: string;
+    tanggalPanen?: string;
+  }) {
+    setSopError(null);
+
+    const tanggalPanen = input.tanggalPanen;
+    if (!tanggalPanen) {
+      setSopError(
+        "Prediksi tanggal panen belum tersedia. Jalankan AI Analysis / pastikan estimasi panen muncul di Plant Profile dulu."
+      );
+      return;
+    }
+
+    try {
+      setSopGenerating(true);
+
+      const res = await fetch("/api/agronomy-sop", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          namaTanaman: input.namaTanaman,
+          tanggalTanam: input.tanggalTanam,
+          tanggalPanen,
+          weather: forecast
+            ? {
+                city: forecast.city?.name,
+                list: forecast.list,
+              }
+            : undefined,
+        }),
+      });
+
+      const data = (await res.json()) as
+        | { ok: true; tasks: typeof sopTasks }
+        | { ok: false; error?: string; details?: string };
+
+      if (!res.ok || !data.ok) {
+        const msg = "error" in data && data.error ? data.error : "Gagal generate SOP";
+        const details = "details" in data && data.details ? `: ${data.details}` : "";
+        throw new Error(`${msg}${details}`);
+      }
+
+      setSopTasks(data.tasks);
+    } catch (e) {
+      setSopError(e instanceof Error ? e.message : "Gagal generate SOP");
+    } finally {
+      setSopGenerating(false);
+    }
+  }
 
   // Update current time every second
   useEffect(() => {
@@ -105,6 +193,19 @@ export default function Dashboard() {
       }
     });
 
+    return () => unsubscribe();
+  }, []);
+
+  // Load plant profile from Firebase
+  useEffect(() => {
+    const profileRef = ref(database, "devices/dummy_device/plant_profile");
+    const unsubscribe = onValue(profileRef, (snapshot) => {
+      if (snapshot.exists()) {
+        setPlantProfile(snapshot.val() as PlantProfile);
+      } else {
+        setPlantProfile(null);
+      }
+    });
     return () => unsubscribe();
   }, []);
 
@@ -324,7 +425,128 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Charts Row - Time Series */}
+
+        {/* Smart Farm Setup & Planning */}
+        <div className="mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+            {/* Left: setup form */}
+            <div className="space-y-6">
+              <PlantProfileForm
+                onSelectedPlantIdChange={setSelectedPlantId}
+                onSaved={(p) => {
+                  // Trigger SOP generation immediately after saving profile
+                  void generateSopForProfile({
+                    namaTanaman: p.jenis_tanaman,
+                    tanggalTanam: p.tanggal_tanam,
+                    tanggalPanen: p.predicted_harvest_date,
+                  });
+                }}
+              />
+              <WeatherEcoAlert forecast={forecast} />
+            </div>
+
+            {/* Right: detail panel (appears after selection) + calendar below it */}
+            <div className="space-y-6">
+              {sopError ? (
+                <div className="rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
+                  {sopError}
+                </div>
+              ) : null}
+
+              {sopGenerating ? (
+                <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
+                  Generating SOP AI...
+                </div>
+              ) : null}
+
+              <PlantDetailPanel
+                plantId={selectedPlantId}
+                visible={Boolean(selectedPlantId)}
+              />
+              <SmartCalendar
+                initialDateISO={plantProfile?.tanggal_tanam}
+                defaultCropName={plantProfile?.jenis_tanaman}
+                defaultHarvestDateISO={plantProfile?.predicted_harvest_date}
+                sopTasks={sopTasks}
+                onSopTasksChange={setSopTasks}
+                backgroundStages={((): SmartCalendarBackgroundStage[] => {
+                  if (!plantProfile?.tanggal_tanam) return [];
+
+                  // We only have harvest season label from Perenual here;
+                  // for full phenotype blocks we use a default umurPanenHari.
+                  const agr = calculateAgronomyData({
+                    tanggalTanamISO: plantProfile.tanggal_tanam,
+                    // These three numbers are required for ubinan estimation.
+                    // If your profile uses different field names, adjust here.
+                    luasTotal: Number((plantProfile as unknown as { luas_lahan_hektar?: number }).luas_lahan_hektar ?? 0),
+                    luasPetakUbinan: Number((plantProfile as unknown as { luas_petak_ubinan?: number }).luas_petak_ubinan ?? 0),
+                    hasilUbinan: Number((plantProfile as unknown as { hasil_panen_petak_ubinan?: number }).hasil_panen_petak_ubinan ?? 0),
+                    umurPanenHari: 90,
+                  });
+
+                  return agr.stages.map((s) => ({
+                    id: `stage-${s.stage}`,
+                    title:
+                      s.stage === "vegetative"
+                        ? "Fase Vegetatif"
+                        : s.stage === "generative"
+                          ? "Fase Generatif"
+                          : "Fase Pematangan",
+                    startISO: s.startISO,
+                    endISO: s.endISO,
+                    color: s.color,
+                  }));
+                })()}
+                pointEvents={((): SmartCalendarPointEvent[] => {
+                  if (!plantProfile?.tanggal_tanam) return [];
+
+                  const agr = calculateAgronomyData({
+                    tanggalTanamISO: plantProfile.tanggal_tanam,
+                    luasTotal: Number((plantProfile as unknown as { luas_lahan_hektar?: number }).luas_lahan_hektar ?? 0),
+                    luasPetakUbinan: Number((plantProfile as unknown as { luas_petak_ubinan?: number }).luas_petak_ubinan ?? 0),
+                    hasilUbinan: Number((plantProfile as unknown as { hasil_panen_petak_ubinan?: number }).hasil_panen_petak_ubinan ?? 0),
+                    umurPanenHari: 90,
+                  });
+
+                  const pointEvents: SmartCalendarPointEvent[] = agr.tasks.map((t) => ({
+                    id: t.id,
+                    title: t.title,
+                    dateISO: t.dateISO,
+                    color: t.color,
+                    textColor: t.textColor,
+                    extendedProps: t.extendedProps,
+                  }));
+
+                  // Weather-based pest risk on tomorrow (simple MVP)
+                  const tomorrow = forecast?.list?.[1];
+                  if (tomorrow) {
+                    const dateISO = new Date(tomorrow.dt * 1000).toISOString().slice(0, 10);
+                    const alert = buildPestRiskAlert({
+                      dateISO,
+                      pop: tomorrow.pop,
+                      main: tomorrow.weather?.[0]?.main,
+                      pestSusceptibility: "medium",
+                    });
+                    if (alert) {
+                      pointEvents.push({
+                        id: alert.id,
+                        title: alert.title,
+                        dateISO: alert.dateISO,
+                        color: alert.color,
+                        textColor: alert.textColor,
+                        extendedProps: alert.extendedProps,
+                      });
+                    }
+                  }
+
+                  return pointEvents;
+                })()}
+              />
+            </div>
+          </div>
+        </div>
+
+{/* Charts Row - Time Series */}
         <div className="mb-8">
           <div className="bg-white rounded-2xl shadow-xl p-6">
             <div className="flex items-center justify-between mb-6">
@@ -476,205 +698,6 @@ export default function Dashboard() {
                 <p className="text-gray-600">{t('common.loadingHistory')}</p>
               </div>
             )}
-          </div>
-        </div>
-
-        {/* Sections Grid - Tanah, Udara, Cuaca */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          {/* Section 1: Tanah (Soil) */}
-          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-6 border-2 border-green-200">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-green-800 flex items-center">
-                <span className="text-3xl mr-3">🌱</span>
-                {t('dashboard.section.soil')}
-              </h3>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm font-medium">{t('stats.soilMoisture')}</span>
-                  <span className="text-2xl font-bold text-green-700">{stats.moisture}%</span>
-                </div>
-                <div className="mt-3 bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div
-                    className="bg-green-500 h-full transition-all duration-500"
-                    style={{ width: `${stats.moisture}%` }}
-                  ></div>
-                </div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm font-medium">{t('stats.pumpStatus')}</span>
-                  <span className={`text-xl font-bold ${stats.pumpStatus === "ON" ? "text-orange-600" : "text-gray-600"}`}>
-                    {stats.pumpStatus}
-                  </span>
-                </div>
-              </div>
-              <Link 
-                href="/soil-moisture"
-                className="block w-full mt-4 px-4 py-3 bg-green-600 text-white text-center rounded-xl hover:bg-green-700 transition font-semibold"
-              >
-                {t('dashboard.viewDetail')} →
-              </Link>
-            </div>
-          </div>
-
-          {/* Section 2: Udara (Air) */}
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl shadow-xl p-6 border-2 border-blue-200">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-blue-800 flex items-center">
-                <span className="text-3xl mr-3">💨</span>
-                {t('dashboard.section.air')}
-              </h3>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm font-medium">{t('stats.airTemp')}</span>
-                  <span className="text-2xl font-bold text-red-600">{stats.temperature.toFixed(1)}°C</span>
-                </div>
-                <div className="mt-2">
-                  <span className={`text-xs px-2 py-1 rounded-full ${
-                    stats.temperature >= 30 ? "bg-red-100 text-red-700" :
-                    stats.temperature >= 25 ? "bg-orange-100 text-orange-700" :
-                    "bg-blue-100 text-blue-700"
-                  }`}>
-                    {stats.temperature >= 30 ? t('dashboard.temp.hot') : stats.temperature >= 25 ? t('dashboard.temp.warm') : t('dashboard.temp.cool')}
-                  </span>
-                </div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm font-medium">{t('stats.airHumidity')}</span>
-                  <span className="text-2xl font-bold text-blue-700">{stats.humidity}%</span>
-                </div>
-                <div className="mt-3 bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div
-                    className="bg-blue-500 h-full transition-all duration-500"
-                    style={{ width: `${stats.humidity}%` }}
-                  ></div>
-                </div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="text-center">
-                  <div className="text-sm text-gray-600 mb-1">{t('dashboard.airQuality')}</div>
-                  <div className="text-lg font-bold text-blue-800">
-                    {stats.humidity >= 70 ? t('dashboard.status.humid') : stats.humidity >= 50 ? t('dashboard.status.normal') : t('dashboard.status.dry')}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Section 3: Cuaca (Weather) */}
-          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl shadow-xl p-6 border-2 border-yellow-200">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-yellow-800 flex items-center">
-                <span className="text-3xl mr-3">{stats.weather === "Hujan" ? "🌧️" : "☀️"}</span>
-                {t('dashboard.section.weather')}
-              </h3>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-6 shadow text-center">
-                <div className="text-6xl mb-4">
-                  {stats.weather === "Hujan" ? "🌧️" : "☀️"}
-                </div>
-                <div className="text-3xl font-bold text-gray-800 mb-2">
-                  {stats.weather === "Hujan" ? t('dashboard.weather.rainy') : t('dashboard.weather.sunny')}
-                </div>
-                <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
-                  stats.weather === "Hujan" 
-                    ? "bg-blue-100 text-blue-700" 
-                    : "bg-yellow-100 text-yellow-700"
-                }`}>
-                  {stats.weather === "Hujan" ? t('dashboard.weather.rainDetected') : t('dashboard.weather.noRain')}
-                </div>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow">
-                <div className="text-sm text-gray-600 mb-2">{t('dashboard.recommendation')}:</div>
-                <div className="text-sm text-gray-800">
-                  {stats.weather === "Hujan" 
-                    ? `⚠️ ${t('dashboard.weather.rainRecommendation')}` 
-                    : `✅ ${t('dashboard.weather.sunnyRecommendation')}`}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Old Charts Row - Keep for visual gauges */}
-        <div className="charts-row">
-          <div className="chart-card">
-            <div className="chart-header">
-              <div>
-                <h3>{t('dashboard.monitor.airTemp')}</h3>
-                <p>{t('dashboard.monitor.airTempDesc')}</p>
-              </div>
-              <span className="chart-badge">{t('dashboard.status.live')}</span>
-            </div>
-            <div className="chart-body">
-              <div className="gauge-container">
-                <div className="gauge">
-                  <div 
-                    className="gauge-fill" 
-                    style={{ 
-                      "--percentage": `${Math.min(100, (stats.temperature / 50) * 100)}%`,
-                      "--color": stats.temperature >= 35 ? "#89986D" : stats.temperature >= 28 ? "#9CAB84" : "#C5D89D"
-                    } as React.CSSProperties}
-                  ></div>
-                  <div className="gauge-center">
-                    <span className="gauge-value">{stats.temperature.toFixed(1)}</span>
-                    <span className="gauge-unit">°C</span>
-                  </div>
-                </div>
-                <div className="gauge-labels">
-                  <span>0°C</span>
-                  <span>25°C</span>
-                  <span>50°C</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="chart-card">
-            <div className="chart-header">
-              <div>
-                <h3>{t('dashboard.monitor.soilMoisture')}</h3>
-                <p>{t('dashboard.monitor.soilMoistureDesc')}</p>
-              </div>
-              <span className="chart-badge">{t('dashboard.status.live')}</span>
-            </div>
-            <div className="chart-body">
-              <div className="gauge-container">
-                <div className="gauge">
-                  <div 
-                    className="gauge-fill" 
-                    style={{ 
-                      "--percentage": `${stats.moisture}%`,
-                      "--color": stats.moisture >= 70 ? "#9CAB84" : stats.moisture >= 40 ? "#9CAB84" : stats.moisture >= 20 ? "#C5D89D" : "#89986D"
-                    } as React.CSSProperties}
-                  ></div>
-                  <div className="gauge-center">
-                    <span className="gauge-value">{stats.moisture}</span>
-                    <span className="gauge-unit">%</span>
-                  </div>
-                </div>
-                <div className="gauge-labels">
-                  <span>0%</span>
-                  <span>50%</span>
-                  <span>100%</span>
-                </div>
-              </div>
-              <Link 
-                href="/soil-moisture"
-                className="mt-4 inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-green-700 bg-green-50 rounded-lg hover:bg-green-100 transition"
-              >
-                <span>{t('dashboard.viewDetail')}</span>
-                <svg className="ml-2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </Link>
-            </div>
           </div>
         </div>
 
